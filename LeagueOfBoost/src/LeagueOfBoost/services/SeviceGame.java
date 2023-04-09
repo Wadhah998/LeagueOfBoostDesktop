@@ -16,7 +16,7 @@ import LeagueOfBoost.utils.MyDB;
  *
  * @author Mega-PC
  */
-public class SeviceGame{
+public class SeviceGame implements IService<Game>{
     
     Connection con ; 
 
@@ -25,6 +25,8 @@ public class SeviceGame{
     con = MyDB.createorgetInstance().getCon();
 
     }
+    
+    @Override
     public void Afficher() {
     try {
         String sql = "SELECT * FROM `LOB`.`Game`";
@@ -51,6 +53,7 @@ public class SeviceGame{
     }
 }
     
+    @Override
     public void AfficherById(Game t) {
     try {
         String sql = "SELECT * FROM `LOB`.`Game` WHERE game_id=" + t.getGame_id();
@@ -79,7 +82,7 @@ public class SeviceGame{
 
 
     
-    
+    @Override
     public void Ajouter(Game t) {
         try {
             String sql = "INSERT INTO `LOB`.`Game` (game_id, title, description, price, date) VALUES (?,?,?,?,?);";
@@ -96,6 +99,7 @@ public class SeviceGame{
         }
     }
 
+    @Override
     public void Modifier(Game t) {
     try {
         String sql = "UPDATE `LOB`.`Game` SET title=?, description=?, price=?, date=? WHERE game_id=?";
@@ -113,7 +117,7 @@ public class SeviceGame{
 }
 
 
-
+    @Override
     public void Supprimer(Game t) {
     try {
         String sql = "DELETE FROM `LOB`.`Game` WHERE game_id=?";
@@ -125,10 +129,5 @@ public class SeviceGame{
         System.out.println(ex.getMessage());
     }
 }
-
-
-
-    
-     
     
 }

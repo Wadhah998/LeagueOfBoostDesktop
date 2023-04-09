@@ -19,7 +19,7 @@ import LeagueOfBoost.utils.MyDB;
  *
  * @author Andrew
  */
-public class ServicePersonne  implements IService<User>{
+public abstract class  ServicePersonne  implements IService<User>{
     
     Connection con ; 
     Statement ste;

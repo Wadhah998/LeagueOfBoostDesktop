@@ -11,7 +11,7 @@ import java.sql.Statement;
 import LeagueOfBoost.utils.MyDB;
 
 
-public class ServiceTeam {
+public class ServiceTeam implements IService<Team>{
     
     Connection con ; 
 
@@ -20,6 +20,8 @@ public class ServiceTeam {
     con = MyDB.createorgetInstance().getCon();
 
     }
+    
+    @Override
     public void Afficher() {
     try {
         String sql = "SELECT * FROM `LOB`.`Team`";
@@ -49,7 +51,7 @@ public class ServiceTeam {
         System.out.println(ex.getMessage());
     }
 }
-    
+    @Override
     public void AfficherById(Team t) {
     try {
         String sql = "SELECT * FROM `LOB`.`Team` WHERE id="+ t.getId();
@@ -80,7 +82,7 @@ public class ServiceTeam {
     }
 }
 
-    
+    @Override
     public void Ajouter(Team t) {
         try {
             String sql = "INSERT INTO `LOB`.`Team` (id, game_id, name, description, player1, player2, player3, player4, player5) VALUES (?,?,?,?,?,?,?,?,?);";
@@ -102,6 +104,7 @@ public class ServiceTeam {
         }
     }
 
+    @Override
     public void Modifier(Team t) {
      try {
          String sql = "UPDATE `LOB`.`Team` SET name=?, description=?, player1=?, player2=?, player3=?, player4=?, player5=? WHERE id=? AND game_id=?";
@@ -122,8 +125,7 @@ public class ServiceTeam {
         }  
     }
 
-
-
+    @Override
     public void Supprimer(Team t) {
     try {
         String sql = "DELETE FROM `LOB`.`Team` WHERE id=? AND game_id=?";

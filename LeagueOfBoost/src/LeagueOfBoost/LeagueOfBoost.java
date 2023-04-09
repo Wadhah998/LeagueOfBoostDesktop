@@ -6,9 +6,11 @@
 package LeagueOfBoost;
 
 import LeagueOfBoost.entities.Game;
+import LeagueOfBoost.entities.Team;
 import LeagueOfBoost.entities.User;
 import LeagueOfBoost.services.ServicePersonne;
 import LeagueOfBoost.services.SeviceGame;
+import LeagueOfBoost.services.ServiceTeam;
 import LeagueOfBoost.utils.MyDB;
 
 /**
@@ -22,8 +24,22 @@ public class LeagueOfBoost {
      */
     public static void main(String[] args) {
       SeviceGame sg = new SeviceGame();
+      //ServiceTeam st = new ServiceTeam();
+
       Game g1 = new Game(5,"aaa","aaa",111,12);
-      sg.Supprimer(g1);
+      sg.Ajouter(g1);
+      sg.AfficherById(g1);
+      sg.Modifier(g1);
+      sg.AfficherById(g1);
+      
+      //sg.Supprimer(g1);
+      //Team t1 = new Team(67,4,"Team wadhah","the best","rechpa","rechpa","rechpa","rechpa","rechpa");
+      //st.AfficherById(t1);
+      //st.Modifier(t1);
+      //st.AfficherById(t1);
+
+
+      
     }
     
 }

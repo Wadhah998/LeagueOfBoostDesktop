@@ -25,6 +25,59 @@ public class SeviceGame{
     con = MyDB.createorgetInstance().getCon();
 
     }
+    public void Afficher() {
+    try {
+        String sql = "SELECT * FROM `LOB`.`Game`";
+        PreparedStatement ste = con.prepareStatement(sql);
+        
+        ResultSet result = ste.executeQuery();
+        
+        while (result.next()) {
+            int game_id = result.getInt("game_id");
+            String title = result.getString("title");
+            String description = result.getString("description");
+            int price = result.getInt("price");
+            int date = result.getInt("date");
+            
+            System.out.println("Game ID: " + game_id);
+            System.out.println("Title: " + title);
+            System.out.println("Description: " + description);
+            System.out.println("Price: " + price);
+            System.out.println("Release Date: " + date);
+            System.out.println("---------------");
+        }
+    } catch (SQLException ex) {
+        System.out.println(ex.getMessage());
+    }
+}
+    
+    public void AfficherById(Game t) {
+    try {
+        String sql = "SELECT * FROM `LOB`.`Game` WHERE game_id=" + t.getGame_id();
+        PreparedStatement ste = con.prepareStatement(sql);
+        
+        ResultSet result = ste.executeQuery();
+        
+        while (result.next()) {
+            int game_id = result.getInt("game_id");
+            String title = result.getString("title");
+            String description = result.getString("description");
+            int price = result.getInt("price");
+            int date = result.getInt("date");
+            
+            System.out.println("Game ID: " + game_id);
+            System.out.println("Title: " + title);
+            System.out.println("Description: " + description);
+            System.out.println("Price: " + price);
+            System.out.println("Release Date: " + date);
+            System.out.println("---------------");
+        }
+    } catch (SQLException ex) {
+        System.out.println(ex.getMessage());
+    }
+}
+
+
     
     
     public void Ajouter(Game t) {
@@ -44,13 +97,35 @@ public class SeviceGame{
     }
 
     public void Modifier(Game t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    try {
+        String sql = "UPDATE `LOB`.`Game` SET title=?, description=?, price=?, date=? WHERE game_id=?";
+        PreparedStatement ste = con.prepareStatement(sql);
+        ste.setString(1, t.getTitle());
+        ste.setString(2, t.getDescription());
+        ste.setInt(3, t.getPrice());
+        ste.setInt(4, t.getDate());
+        ste.setInt(5, t.getGame_id());
+        
+        ste.executeUpdate();
+    } catch (SQLException ex) {
+        System.out.println(ex.getMessage());
     }
+}
+
 
 
     public void Supprimer(Game t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    try {
+        String sql = "DELETE FROM `LOB`.`Game` WHERE game_id=?";
+        PreparedStatement ste = con.prepareStatement(sql);
+        ste.setInt(1, t.getGame_id());
+        
+        ste.executeUpdate();
+    } catch (SQLException ex) {
+        System.out.println(ex.getMessage());
     }
+}
+
 
 
     

@@ -11,6 +11,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import LeagueOfBoost.utils.MyDB;
+import java.util.List;
+import java.util.ArrayList;
+
+
 
 /**
  *
@@ -26,7 +30,7 @@ public class SeviceGame implements IService<Game>{
 
     }
     
-    @Override
+
     public void Afficher() {
     try {
         String sql = "SELECT * FROM `LOB`.`Game`";
@@ -53,7 +57,7 @@ public class SeviceGame implements IService<Game>{
     }
 }
     
-    @Override
+
     public void AfficherById(Game t) {
     try {
         String sql = "SELECT * FROM `LOB`.`Game` WHERE game_id=" + t.getGame_id();
@@ -79,7 +83,30 @@ public class SeviceGame implements IService<Game>{
         System.out.println(ex.getMessage());
     }
 }
+    
+    public List<Game> afficherGames() {
+    List<Game> games = new ArrayList<>();
+    try {
+        String sql = "SELECT * FROM `LOB`.`Game`";
+        Statement st = con.createStatement();
 
+        ResultSet result = st.executeQuery(sql);
+
+        while (result.next()) {
+            int game_id = result.getInt("game_id");
+            String title = result.getString("title");
+            String description = result.getString("description");
+            int price = result.getInt("price");
+            int date = result.getInt("date");
+
+            Game game = new Game(game_id, title, description, price, date);
+            games.add(game);
+        }
+    } catch (SQLException ex) {
+        System.out.println(ex.getMessage());
+    }
+    return games;
+}
 
     
     @Override

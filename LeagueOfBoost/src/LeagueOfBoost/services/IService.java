@@ -5,7 +5,9 @@
  */
 package LeagueOfBoost.services;
 
-import java.util.ArrayList;
+//import java.util.ArrayList;
+//import java.util.List;
+
 
 /**
  *
@@ -13,9 +15,10 @@ import java.util.ArrayList;
  */
 public interface IService<T> {
     public void Ajouter(T t );
-
     public void Modifier(T t);
     public void Supprimer(T t);
+    //public void Afficher();
+    //public void AfficherById(T t);
 
   
 }

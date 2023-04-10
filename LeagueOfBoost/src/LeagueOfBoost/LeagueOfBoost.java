@@ -31,7 +31,11 @@ public class LeagueOfBoost {
       sg.AfficherById(g1);
       sg.Modifier(g1);
       sg.AfficherById(g1);
-      sg.Supprimer(g1);
+      sg.afficherGames();
+      System.out.println(sg.afficherGames());
+      //sg.Supprimer(g1);
+      
+      
       //Team t1 = new Team(67,4,"Team wadhah","the best","rechpa","rechpa","rechpa","rechpa","rechpa");
       //st.AfficherById(t1);
       //st.Modifier(t1);

@@ -23,7 +23,7 @@ public class ServiceTeam implements IService<Team>{
 
     }
     
-  
+  //Les fonctions d'affichage
     public void Afficher() {
     try {
         String sql = "SELECT * FROM `LOB`.`Team`";
@@ -112,13 +112,14 @@ public class ServiceTeam implements IService<Team>{
     return teams;
 }
 
+    //Les fonctions CRUD
 
     @Override
     public void Ajouter(Team t) {
         try {
             String sql = "INSERT INTO `LOB`.`Team` (id, game_id, name, description, player1, player2, player3, player4, player5) VALUES (?,?,?,?,?,?,?,?,?);";
             PreparedStatement ste = con.prepareStatement(sql);
-            ste.setInt(1, 67);
+            ste.setInt(1, 2);
             ste.setInt(2, t.getGame_id());
             ste.setString(3, t.getName());
             ste.setString(4, t.getDescription());

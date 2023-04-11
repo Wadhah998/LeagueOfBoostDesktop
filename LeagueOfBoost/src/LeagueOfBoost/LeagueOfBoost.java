@@ -26,20 +26,21 @@ public class LeagueOfBoost {
       SeviceGame sg = new SeviceGame();
       //ServiceTeam st = new ServiceTeam();
 
-      Game g1 = new Game(5,"aaa","aaa",111,12);
+      Game g1 = new Game(4,"aaabbb","aaa",111,12);
       sg.Ajouter(g1);
       sg.AfficherById(g1);
       sg.Modifier(g1);
       sg.AfficherById(g1);
-      sg.afficherGames();
       System.out.println(sg.afficherGames());
       //sg.Supprimer(g1);
       
       
-      //Team t1 = new Team(67,4,"Team wadhah","the best","rechpa","rechpa","rechpa","rechpa","rechpa");
+      //Team t1 = new Team(2,4,"Team wadhah","the best","rechpa","rechpa","rechpa","rechpa","rechpa");
       //st.AfficherById(t1);
       //st.Modifier(t1);
       //st.AfficherById(t1);
+      //System.out.println(sg.afficherTeams());
+
 
 
       

@@ -5,6 +5,8 @@
  */
 package LeagueOfBoost.entities;
 
+import javafx.scene.control.Button;
+
 /**
  *
  * @author Mega-PC
@@ -16,6 +18,16 @@ public class Game {
     public String description;
     public int price;
     public int date;
+    public Button supprimer;
+
+    public Button getSupprimer() {
+        return supprimer;
+    }
+
+    public void setSupprimer(Button supprimer) {
+        this.supprimer = supprimer;
+    }
+    
     
     public Game(){
         

@@ -30,7 +30,7 @@ public class SeviceGame implements IService<Game>{
 
     }
     
-
+//Les fonctions d'affichage
     public void Afficher() {
     try {
         String sql = "SELECT * FROM `LOB`.`Game`";
@@ -108,13 +108,13 @@ public class SeviceGame implements IService<Game>{
     return games;
 }
 
-    
+    //Les fonctions CRUD
     @Override
     public void Ajouter(Game t) {
         try {
             String sql = "INSERT INTO `LOB`.`Game` (game_id, title, description, price, date) VALUES (?,?,?,?,?);";
             PreparedStatement ste = con.prepareStatement(sql);
-            ste.setInt(1, 5);
+            ste.setInt(1, 4);
             ste.setString(2, t.getTitle());
             ste.setString(3, t.getDescription());
             ste.setInt(4, t.getPrice());
@@ -144,17 +144,22 @@ public class SeviceGame implements IService<Game>{
 }
 
 
-    @Override
-    public void Supprimer(Game t) {
+ 
+    public void SupprimerById(int t) {
     try {
         String sql = "DELETE FROM `LOB`.`Game` WHERE game_id=?";
         PreparedStatement ste = con.prepareStatement(sql);
-        ste.setInt(1, t.getGame_id());
+        ste.setInt(1, t);
         
         ste.executeUpdate();
     } catch (SQLException ex) {
         System.out.println(ex.getMessage());
     }
 }
+
+    @Override
+    public void Supprimer(Game t) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

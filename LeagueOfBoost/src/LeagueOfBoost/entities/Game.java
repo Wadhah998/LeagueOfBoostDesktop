@@ -19,6 +19,26 @@ public class Game {
     public int price;
     public int date;
     public Button supprimer;
+    
+     public Game(){
+        
+    }
+
+
+    public Game(String title, String description, int price, int date) {
+        this.title = title;
+        this.description = description;
+        this.price = price;
+        this.date = date;
+    }
+     public Game(int game_id, String title, String description, int price, int date) {
+        this.game_id = game_id;
+        this.title = title;
+        this.description = description;
+        this.price = price;
+        this.date = date;
+    }
+     
 
     public Button getSupprimer() {
         return supprimer;
@@ -28,20 +48,7 @@ public class Game {
         this.supprimer = supprimer;
     }
     
-    
-    public Game(){
-        
-    }
-
-    public Game(int game_id, String title, String description, int price, int date) {
-        this.game_id = game_id;
-        this.title = title;
-        this.description = description;
-        this.price = price;
-        this.date = date;
-    }
-
-    
+   
 
     public int getGame_id() {
         return game_id;

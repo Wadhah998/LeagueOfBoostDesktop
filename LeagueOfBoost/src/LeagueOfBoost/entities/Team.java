@@ -5,6 +5,8 @@
  */
 package LeagueOfBoost.entities;
 
+import javafx.scene.control.Button;
+
 /**
  *
  * @author Mega-PC
@@ -12,10 +14,32 @@ package LeagueOfBoost.entities;
 public class Team {
     int id, game_id;
     String name, description, player1,player2,player3,player4,player5;
+     public Button supprimer;
+
+    public Button getSupprimer() {
+        return supprimer;
+    }
+
+    public void setSupprimer(Button supprimer) {
+        this.supprimer = supprimer;
+    }
+    
     
     public Team(){
         
     }
+
+    public Team(int game_id, String name, String description, String player1, String player2, String player3, String player4, String player5) {
+        this.game_id = game_id;
+        this.name = name;
+        this.description = description;
+        this.player1 = player1;
+        this.player2 = player2;
+        this.player3 = player3;
+        this.player4 = player4;
+        this.player5 = player5;
+    }
+    
 
     public Team(int id, int game_id, String name, String description, String player1, String player2, String player3, String player4, String player5) {
         this.id = id;

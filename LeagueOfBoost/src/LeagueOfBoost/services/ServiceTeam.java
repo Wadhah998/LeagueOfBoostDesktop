@@ -117,17 +117,16 @@ public class ServiceTeam implements IService<Team>{
     @Override
     public void Ajouter(Team t) {
         try {
-            String sql = "INSERT INTO `LOB`.`Team` (id, game_id, name, description, player1, player2, player3, player4, player5) VALUES (?,?,?,?,?,?,?,?,?);";
+            String sql = "INSERT INTO `LOB`.`Team` (game_id, name, description, player1, player2, player3, player4, player5) VALUES (?,?,?,?,?,?,?,?);";
             PreparedStatement ste = con.prepareStatement(sql);
-            ste.setInt(1, 2);
-            ste.setInt(2, t.getGame_id());
-            ste.setString(3, t.getName());
-            ste.setString(4, t.getDescription());
-            ste.setString(5, t.getPlayer1());
-            ste.setString(6, t.getPlayer2());
-            ste.setString(7, t.getPlayer3());
-            ste.setString(8, t.getPlayer4());
-            ste.setString(9, t.getPlayer5());
+            ste.setInt(1, t.getGame_id());
+            ste.setString(2, t.getName());
+            ste.setString(3, t.getDescription());
+            ste.setString(4, t.getPlayer1());
+            ste.setString(5, t.getPlayer2());
+            ste.setString(6, t.getPlayer3());
+            ste.setString(7, t.getPlayer4());
+            ste.setString(8, t.getPlayer5());
             
         
             ste.executeUpdate();
@@ -156,14 +155,12 @@ public class ServiceTeam implements IService<Team>{
          System.out.println(ex.getMessage());
         }  
     }
-
-    @Override
-    public void Supprimer(Team t) {
+    
+     public void SupprimerById(int t) {
     try {
-        String sql = "DELETE FROM `LOB`.`Team` WHERE id=? AND game_id=?";
+        String sql = "DELETE FROM `LOB`.`Team` WHERE id=?";
         PreparedStatement ste = con.prepareStatement(sql);
-        ste.setInt(1, t.getId());
-        ste.setInt(2, t.getGame_id());
+        ste.setInt(1, t);
         
         ste.executeUpdate();
     } catch (SQLException ex) {
@@ -171,9 +168,13 @@ public class ServiceTeam implements IService<Team>{
     }
 }
 
+      @Override
+    public void Supprimer(Team t) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+}
+
 
 
     
      
-    
-}

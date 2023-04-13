@@ -112,19 +112,20 @@ public class SeviceGame implements IService<Game>{
     @Override
     public void Ajouter(Game t) {
         try {
-            String sql = "INSERT INTO `LOB`.`Game` (game_id, title, description, price, date) VALUES (?,?,?,?,?);";
+            String sql = "INSERT INTO `LOB`.`Game` (title, description, price, date) VALUES (?,?,?,?);";
             PreparedStatement ste = con.prepareStatement(sql);
-            ste.setInt(1, 4);
-            ste.setString(2, t.getTitle());
-            ste.setString(3, t.getDescription());
-            ste.setInt(4, t.getPrice());
-            ste.setInt(5, t.getDate());
+            ste.setString(1, t.getTitle());
+            ste.setString(2, t.getDescription());
+            ste.setInt(3, t.getPrice());
+            ste.setInt(4, t.getDate());
         
             ste.executeUpdate();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
     }
+    
+    
 
     @Override
     public void Modifier(Game t) {
@@ -142,6 +143,7 @@ public class SeviceGame implements IService<Game>{
         System.out.println(ex.getMessage());
     }
 }
+    
 
 
  

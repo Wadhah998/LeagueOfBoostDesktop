@@ -3,11 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package LeagueOfBoost.gui.Game;
+package LeagueOfBoost.gui.Team;
 
-import LeagueOfBoost.entities.Game;
-import LeagueOfBoost.services.SeviceGame;
-import java.io.IOException;
+import LeagueOfBoost.entities.Team;
+import LeagueOfBoost.services.ServiceTeam;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -15,15 +14,11 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -36,28 +31,32 @@ import javafx.stage.Stage;
  *
  * @author Mega-PC
  */
-public class GameController implements Initializable {
+public class TeamController implements Initializable {
     Stage Stage1_1;
 
     @FXML
-    private TableView<Game> GameList;
+    private TableView<Team> TeamList;
     @FXML
-    private TableColumn<?, ?> title;
+    private TableColumn<?, ?> game_id;
+    @FXML
+    private TableColumn<?, ?> name;
     @FXML
     private TableColumn<?, ?> description;
     @FXML
-    private TableColumn<?, ?> price;
+    private TableColumn<?, ?> player1;
     @FXML
-    private TableColumn<?, ?> date;
+    private TableColumn<?, ?> player2;
     @FXML
-    private TableView<Game> table;
-    
- 
+    private TableColumn<?, ?> player3;
+    @FXML
+    private TableColumn<?, ?> player4;
+    @FXML
+    private TableColumn<?, ?> player5;
     
     Button[] supprimerb = new Button[100];
-    SeviceGame sg = new SeviceGame();
+    ServiceTeam st = new ServiceTeam();
 
-    List<Game> lt = sg.afficherGames();
+    List<Team> lt = st.afficherTeams();
     /**
      * Initializes the controller class.
      */
@@ -66,8 +65,6 @@ public class GameController implements Initializable {
     private AnchorPane main;
     @FXML
     private TableColumn<?, ?> Supprimer;
-   
-    
 private void handleButtonAction (ActionEvent event)
     {
        
@@ -83,15 +80,15 @@ private void handleButtonAction (ActionEvent event)
          }
           System.out.println(index);
           int index1 = lt.get(index).getGame_id();
-            SeviceGame sg = new SeviceGame();
+            ServiceTeam st = new ServiceTeam();
             
-             sg.SupprimerById(index1);
+             st.SupprimerById(index1);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Success");
             alert.setContentText("suppression affecté!");
             alert.show();
-             lt = sg.afficherGames();
-             GameList.getItems().clear();
+             lt = st.afficherTeams();
+             TeamList.getItems().clear();
              afficher_A(lt);
      }
     @Override
@@ -105,25 +102,29 @@ private void handleButtonAction (ActionEvent event)
            supprimerb[i].setOnAction(this::handleButtonAction);
         }
 
-       ObservableList<Game> datalist = FXCollections.observableArrayList(lt);
+       ObservableList<Team> datalist = FXCollections.observableArrayList(lt);
         System.out.println("hiiiii");
-        title.setCellValueFactory(new PropertyValueFactory<>("title"));
+        game_id.setCellValueFactory(new PropertyValueFactory<>("game_id"));
+        name.setCellValueFactory(new PropertyValueFactory<>("name"));
         description.setCellValueFactory(new PropertyValueFactory<>("description"));
-        price.setCellValueFactory(new PropertyValueFactory<>("price"));
-        date.setCellValueFactory(new PropertyValueFactory<>("date"));
+        player1.setCellValueFactory(new PropertyValueFactory<>("player1"));
+        player2.setCellValueFactory(new PropertyValueFactory<>("player2"));
+        player3.setCellValueFactory(new PropertyValueFactory<>("player3"));
+        player4.setCellValueFactory(new PropertyValueFactory<>("player4"));
+        player5.setCellValueFactory(new PropertyValueFactory<>("player5"));
+
         Supprimer.setCellValueFactory(new PropertyValueFactory<>("supprimer"));
 
         
-        GameList.setItems(datalist);
-    }
-    
+        TeamList.setItems(datalist);
+    }    
 
     @FXML
     private void AjouterButton(MouseEvent event) {
     }
     
     
-    public void afficher_A(List<Game> ltt)
+    public void afficher_A(List<Team> ltt)
     {
       
       for (int i = 0; i < lt.size(); i++) {
@@ -135,16 +136,20 @@ private void handleButtonAction (ActionEvent event)
         }
 
         
-       ObservableList<Game> datalist = FXCollections.observableArrayList(lt);
+       ObservableList<Team> datalist = FXCollections.observableArrayList(lt);
         
 
-        title.setCellValueFactory(new PropertyValueFactory<>("title"));
+        game_id.setCellValueFactory(new PropertyValueFactory<>("game_id"));
+        name.setCellValueFactory(new PropertyValueFactory<>("name"));
         description.setCellValueFactory(new PropertyValueFactory<>("description"));
-        price.setCellValueFactory(new PropertyValueFactory<>("price"));
-        date.setCellValueFactory(new PropertyValueFactory<>("date"));
+        player1.setCellValueFactory(new PropertyValueFactory<>("player1"));
+        player2.setCellValueFactory(new PropertyValueFactory<>("player2"));
+        player3.setCellValueFactory(new PropertyValueFactory<>("player3"));
+        player4.setCellValueFactory(new PropertyValueFactory<>("player4"));
+        player5.setCellValueFactory(new PropertyValueFactory<>("player5"));
         Supprimer.setCellValueFactory(new PropertyValueFactory<>("supprimer"));
 
-        GameList.setItems(datalist);
+        TeamList.setItems(datalist);
     }
 
     @FXML
@@ -154,7 +159,6 @@ private void handleButtonAction (ActionEvent event)
         System.out.println("you succesfully closed the application");
         Stage1_1.close();
     }
-
-    
     
 }
+

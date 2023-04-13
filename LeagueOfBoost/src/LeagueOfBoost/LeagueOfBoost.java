@@ -26,7 +26,7 @@ public class LeagueOfBoost {
       SeviceGame sg = new SeviceGame();
       //ServiceTeam st = new ServiceTeam();
 
-      Game g1 = new Game(4,"aaabbb","aaa",111,12);
+      Game g1 = new Game(5,"Game Three","5v5 blind pick",200,12);
       sg.Ajouter(g1);
       sg.AfficherById(g1);
       sg.Modifier(g1);

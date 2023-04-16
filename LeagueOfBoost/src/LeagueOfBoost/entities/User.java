@@ -5,6 +5,8 @@
  */
 package LeagueOfBoost.entities;
 
+import javafx.scene.control.Button;
+
 /**
  *
  * @author Andrew
@@ -12,17 +14,35 @@ package LeagueOfBoost.entities;
 public class User {
     int id,prix,solde;
     String firstname ,lastname,username,password,voie,lien_opgg,description,reset_token,email,roles;
+    public Button supprimer;
+
+    public Button getSupprimer() {
+        return supprimer;
+    }
+
+    public void setSupprimer(Button supprimer) {
+        this.supprimer = supprimer;
+    }
 
     boolean disponibility;
     public User() {
     }
 
-    public User( String firstname, String lastname, String email, String username,String password ,String roles) {
+    public User( String firstname, String lastname, String username, String email,String password ) {
 
         this.firstname = firstname;
         this.lastname = lastname;
         this.username = username;
         this.password = password;
+        this.email = email;
+
+    }
+
+    public User(int id, String firstname, String lastname, String username, String email,String roles) {
+        this.id = id;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.username = username;
         this.email = email;
         this.roles = roles;
     }
@@ -58,6 +78,25 @@ public class User {
         this.email = email;
         this.roles = roles;
         this.disponibility = disponibility;
+    }
+
+    public User( int prix, int solde, String voie, String lien_opgg, String description, boolean disponibility) {
+
+        this.prix = prix;
+        this.solde = solde;
+        this.voie = voie;
+        this.lien_opgg = lien_opgg;
+        this.description = description;
+        this.disponibility = disponibility;
+    }
+
+    public User( int prix, int solde, String voie, String lien_opgg, String description) {
+
+        this.prix = prix;
+        this.solde = solde;
+        this.voie = voie;
+        this.lien_opgg = lien_opgg;
+        this.description = description;
     }
 
     @Override

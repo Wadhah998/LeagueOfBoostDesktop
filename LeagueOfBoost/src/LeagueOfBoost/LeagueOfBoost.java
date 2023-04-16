@@ -5,8 +5,12 @@
  */
 package LeagueOfBoost;
 
+import LeagueOfBoost.entities.Game;
+import LeagueOfBoost.entities.Team;
 import LeagueOfBoost.entities.User;
 import LeagueOfBoost.services.ServicePersonne;
+import LeagueOfBoost.services.SeviceGame;
+import LeagueOfBoost.services.ServiceTeam;
 import LeagueOfBoost.utils.MyDB;
 
 import java.sql.SQLException;
@@ -21,6 +25,7 @@ public class LeagueOfBoost {
     /**
      * @param args the command line arguments
      */
+
     public static void main(String[] args) throws SQLException {
       /* A a1 = A.getInstance();
        A a2 = A.getInstance();

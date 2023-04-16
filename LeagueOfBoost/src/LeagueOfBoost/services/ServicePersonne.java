@@ -17,15 +17,11 @@ import javafx.collections.ObservableList;
  *
  * @author Andrew
  */
-public class ServicePersonne  implements IService<User>{
+public class  ServicePersonne  implements IService<User>{
     
     Connection con ; 
     Statement ste;
      
-    
-    
-    
-    
     
     public ServicePersonne() {
         

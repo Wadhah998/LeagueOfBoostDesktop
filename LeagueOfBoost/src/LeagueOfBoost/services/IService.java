@@ -23,12 +23,12 @@ public interface IService<T> {
     public void Ajouter(T t );
     public void Modifier(T t);
 
-    void Modifier(User u);
+    //void Modifier(User u);
 
     public void Supprimer(T t);
     //public void Afficher();
     //public void AfficherById(T t);
 
 
-    void Supprimer(User u);
+    //void Supprimer(User u);
 }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package test;
+package LeagueOfBoost.test;
 
 import javafx.application.Application;
 import static javafx.application.Application.launch;
@@ -19,12 +19,12 @@ import javafx.stage.StageStyle;
 
 
  
-public class FXMLMain extends Application {
+public class Team extends Application {
   private double x,y;
     @Override
     public void start(Stage primaryStage) {
         try {
-            Parent root =FXMLLoader.load(getClass().getResource("/LeagueOfBoost/gui/Game/Ajouter.fxml"));
+            Parent root =FXMLLoader.load(getClass().getResource("/LeagueOfBoost/gui/Team/Team.fxml"));
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
             primaryStage.initStyle(StageStyle.UNDECORATED);

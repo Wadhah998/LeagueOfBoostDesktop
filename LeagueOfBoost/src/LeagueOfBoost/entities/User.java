@@ -47,56 +47,19 @@ public class User {
         this.roles = roles;
     }
 
-    public User(int prix, int solde, String firstname, String lastname, String username, String password, String voie, String lien_opgg, String description, String reset_token, String email, String roles, boolean disponibility) {
-        this.prix = prix;
-        this.solde = solde;
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.username = username;
-        this.password = password;
-        this.voie = voie;
-        this.lien_opgg = lien_opgg;
-        this.description = description;
-        this.reset_token = reset_token;
-        this.email = email;
-        this.roles = roles;
-        this.disponibility = disponibility;
-    }
-
-    public User(int id, int prix, int solde, String firstname, String lastname, String username, String password, String voie, String lien_opgg, String description, String reset_token, String email, String roles, boolean disponibility) {
+    public User(int id, String firstname, String lastname, String username, String email,String roles, String voie, String lien_opgg, String description, int prix, int solde, boolean disponibility) {
         this.id = id;
-        this.prix = prix;
-        this.solde = solde;
         this.firstname = firstname;
         this.lastname = lastname;
         this.username = username;
-        this.password = password;
+        this.email=email;
+        this.roles=roles;
         this.voie = voie;
         this.lien_opgg = lien_opgg;
         this.description = description;
-        this.reset_token = reset_token;
-        this.email = email;
-        this.roles = roles;
-        this.disponibility = disponibility;
-    }
-
-    public User( int prix, int solde, String voie, String lien_opgg, String description, boolean disponibility) {
-
         this.prix = prix;
         this.solde = solde;
-        this.voie = voie;
-        this.lien_opgg = lien_opgg;
-        this.description = description;
         this.disponibility = disponibility;
-    }
-
-    public User( int prix, int solde, String voie, String lien_opgg, String description) {
-
-        this.prix = prix;
-        this.solde = solde;
-        this.voie = voie;
-        this.lien_opgg = lien_opgg;
-        this.description = description;
     }
 
     @Override

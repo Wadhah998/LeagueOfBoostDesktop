@@ -28,7 +28,7 @@ import java.io.IOException;
  * @author daoid
  */
 public class InscriptionController implements Initializable {
-    public static int userc;
+    public static User userc;
 
     Connection con ;
 
@@ -96,9 +96,9 @@ public class InscriptionController implements Initializable {
 
        {
             User u = ps.findUserByLogin(username.getText(),password.getText());
-            userc = u.getId();
+            userc = u;
            if(username.getText().equals("admin") && password.getText().equals("123456") ){
-               FXMLLoader loader = new FXMLLoader(getClass().getResource("aff.fxml"));
+               FXMLLoader loader = new FXMLLoader(getClass().getResource("ListUsers.fxml"));
                Stage stage = new Stage();
 
                stage.setScene(new Scene(loader.load()));

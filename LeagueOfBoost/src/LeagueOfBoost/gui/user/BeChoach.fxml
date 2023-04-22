@@ -6,33 +6,32 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LeagueOfBoost.gui.user.EditprofilController">
-
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LeagueOfBoost.gui.user.BeChoachController">
     <children>
-        <Label layoutX="459.0" layoutY="36.0" style="-fx-font-size: 16;" text="First name:" />
-        <TextField fx:id="firstname_update" layoutX="388.0" layoutY="79.0" prefHeight="28.0" prefWidth="220.0" styleClass="textfield-design" stylesheets="@design.css">
+        <Label layoutX="459.0" layoutY="36.0" style="-fx-font-size: 16;" text="Lien_Opgg" />
+        <TextField fx:id="Lien_Opgg" layoutX="388.0" layoutY="79.0" prefHeight="28.0" prefWidth="220.0" styleClass="textfield-design" stylesheets="@design.css">
 
             <font>
                 <Font size="15.0" />
             </font>
         </TextField>
-        <Label layoutX="453.0" layoutY="127.0" style="-fx-font-size: 16;" text="Last name:" />
-        <TextField fx:id="lastname_update" layoutX="388.0" layoutY="176.0" prefHeight="28.0" prefWidth="220.0" styleClass="textfield-design" stylesheets="@design.css">
+        <Label layoutX="476.0" layoutY="126.0" style="-fx-font-size: 16;" text="Voie" />
+        <TextField fx:id="Voie" layoutX="388.0" layoutY="176.0" prefHeight="28.0" prefWidth="220.0" styleClass="textfield-design" stylesheets="@design.css">
 
             <font>
                 <Font size="15.0" />
             </font>
         </TextField>
-        <Label layoutX="453.0" layoutY="229.0" style="-fx-font-size: 16;" text="Username:" />
-        <TextField fx:id="username_update" layoutX="388.0" layoutY="266.0" prefHeight="28.0" prefWidth="220.0" styleClass="textfield-design" stylesheets="@design.css">
+        <Label layoutX="452.0" layoutY="228.0" style="-fx-font-size: 16;" text="Description" />
+        <TextField fx:id="description" layoutX="388.0" layoutY="266.0" prefHeight="28.0" prefWidth="220.0" styleClass="textfield-design" stylesheets="@design.css">
 
             <font>
                 <Font size="15.0" />
             </font>
         </TextField>
-        <Button layoutX="331.0" layoutY="462.0" minWidth="100.0" mnemonicParsing="false" onAction="#update_button" style="-fx-background-color: #662D60; -fx-background-radius: 15;" text="Update" textFill="#FFFFFF" />
-        <Button layoutX="608.0" layoutY="462.0" minWidth="100.0" mnemonicParsing="false" onAction="#cancel_button" style="-fx-background-color: #662D60; -fx-background-radius: 15;" text="Cancel" textFill="#FFFFFF" />
-        <AnchorPane fx:id="navbar" prefHeight="439.0" prefWidth="204.0" styleClass="navbar" stylesheets="@dashboardDesign.css">
+        <Button layoutX="441.0" layoutY="455.0" minWidth="100.0" mnemonicParsing="false" onAction="#BeBoosteer" style="-fx-background-color: #662D60; -fx-background-radius: 15;" text="Coach" textFill="#FFFFFF" />
+
+        <AnchorPane fx:id="navbar" prefHeight="300.0" prefWidth="204.0" styleClass="navbar" stylesheets="@dashboardDesign.css">
             <children>
                 <Button fx:id="home" layoutX="10.0" layoutY="22.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="170.0" styleClass="navbutton" stylesheets="@dashboardDesign.css" text="Home" textFill="WHITE" AnchorPane.bottomAnchor="543.0" AnchorPane.topAnchor="22.0">
                     <font>
@@ -68,12 +67,11 @@
                 </Button>
             </children>
         </AnchorPane>
-      <Label layoutX="479.0" layoutY="326.0" style="-fx-font-size: 16;" text="Email" />
-      <TextField fx:id="email_update" layoutX="381.0" layoutY="362.0" prefHeight="28.0" prefWidth="220.0" styleClass="textfield-design" stylesheets="@design.css">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </TextField>
+        <Label layoutX="484.0" layoutY="323.0" style="-fx-font-size: 16;" text="Prix" />
+        <TextField fx:id="prix" layoutX="381.0" layoutY="362.0" prefHeight="28.0" prefWidth="220.0" styleClass="textfield-design" stylesheets="@design.css">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </TextField>
     </children>
-
 </AnchorPane>

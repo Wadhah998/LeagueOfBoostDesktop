@@ -25,7 +25,7 @@
                             </font>
                         </Label>
 
-                        <TextField fx:id="username" layoutX="90.0" layoutY="239.0" prefHeight="28.0" prefWidth="220.0" promptText="Username" styleClass="textfield-design" stylesheets="@design.css">
+                        <TextField fx:id="username" layoutX="90.0" layoutY="225.0" prefHeight="28.0" prefWidth="220.0" promptText="Username" styleClass="textfield-design" stylesheets="@design.css">
 
                             <font>
                                 <Font size="15.0" />

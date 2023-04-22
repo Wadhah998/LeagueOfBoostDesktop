@@ -6,9 +6,6 @@ package LeagueOfBoost.gui.user;
 
 import LeagueOfBoost.entities.User;
 import LeagueOfBoost.services.ServicePersonne;
-
-import java.net.URL;
-import java.util.ResourceBundle;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,12 +14,15 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.net.URL;
+import java.util.ResourceBundle;
+
 /**
  * FXML Controller class
  *
  * @author daoid
  */
-public class AffController implements Initializable {
+public class BoostersDemandsController implements Initializable {
 
     @FXML
     private TableView<User> table;
@@ -48,7 +48,7 @@ public class AffController implements Initializable {
     }    
     private void loadUsers() {
 
-        ObservableList<User> listef = sp.afficherUtilisateurs();
+        ObservableList<User> listef = sp.afficherBoostersDemands();
         fnclm.setCellValueFactory(new PropertyValueFactory<>("firstname"));
         lnclm.setCellValueFactory(new PropertyValueFactory<>("lastname"));
         unclm.setCellValueFactory(new PropertyValueFactory<>("username"));
@@ -61,9 +61,11 @@ public class AffController implements Initializable {
 
 
 
-    public void supprimer(ActionEvent actionEvent) {
+
+
+    public void accepter(ActionEvent event) {
         User u = table.getSelectionModel().getSelectedItem();
-        sp.Supprimer(u);
+        sp.changeToBooster(u);
         loadUsers();
     }
 }

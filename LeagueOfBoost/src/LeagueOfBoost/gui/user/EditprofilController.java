@@ -28,6 +28,7 @@ import javafx.stage.Stage;
  */
 public class EditprofilController implements Initializable {
 
+    public TextField email_update;
     @FXML
     private AnchorPane pane;
     @FXML
@@ -43,20 +44,21 @@ public class EditprofilController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         ServicePersonne uc = new ServicePersonne();
-        User u = uc.getByID(InscriptionController.userc);
+        User u = InscriptionController.userc;
         firstname_update.setText(u.getFirstname());
         lastname_update.setText(u.getLastname());
         username_update.setText(u.getUsername());
+        email_update.setText(u.getEmail());
     }    
 
     @FXML
     private void update_button(ActionEvent event) throws IOException {
         ServicePersonne uc = new ServicePersonne();
-        User u = uc.getByID(InscriptionController.userc);
+        User u = InscriptionController.userc;
         u.setFirstname(firstname_update.getText());
         u.setLastname(lastname_update.getText());
         u.setUsername(username_update.getText());
-        u.setEmail(u.getEmail());
+        u.setEmail(email_update.getText());
         uc.Modifier(u);
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Success");

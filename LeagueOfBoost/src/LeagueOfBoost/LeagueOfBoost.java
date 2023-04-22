@@ -45,9 +45,10 @@ public class LeagueOfBoost {
 
       // User p2=  sp.findUserByLogin("wadhah","$2y$13$1EVLfC.ZsK94yuO1Qw7kEeXpsW4ZWWCrKxVV6PSqKEOqf8OZL7L7");
        // sp.Ajouter2(p2);
-       // User p1 = new User(46,"ww","ww","hhh","nnn","kk");
-       
-        System.out.println(sp.afficherUtilisateurs());
+       //User p1 = new User(46,"ww","ww","hhh","nnn","kk");
+
+       //sp.BeBooster(p1);
+        //System.out.println(sp.afficherUtilisateurs());
         //sp.changeToCoach(p1);
     }
     

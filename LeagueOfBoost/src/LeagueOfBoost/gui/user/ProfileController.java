@@ -47,7 +47,7 @@ public class ProfileController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         ServicePersonne uc = new ServicePersonne() ;
-        User u = uc.getByID(InscriptionController.userc);
+        User u = InscriptionController.userc;
         firstname_id.setText(u.getFirstname());
         email_id.setText(u.getEmail());
         lastname_id.setText(u.getLastname());
@@ -72,5 +72,26 @@ public class ProfileController implements Initializable {
 
     public void logout(ActionEvent actionEvent) {
         btnSignout.getScene().getWindow().hide();
+    }
+
+    public void goForm(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("BeBooster.fxml"));
+        Stage stage = new Stage();
+
+        stage.setScene(new Scene(loader.load()));
+        stage.show();
+        Stage currentStage = (Stage) ((Button) event.getSource()).getScene().getWindow();
+        currentStage.hide();
+    }
+
+    public void goForm1(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("BeChoach.fxml"));
+        Stage stage = new Stage();
+
+        stage.setScene(new Scene(loader.load()));
+        stage.show();
+        Stage currentStage = (Stage) ((Button) event.getSource()).getScene().getWindow();
+        currentStage.hide();
+
     }
 }

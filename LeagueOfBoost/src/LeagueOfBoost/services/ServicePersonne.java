@@ -41,7 +41,7 @@ public class  ServicePersonne  implements IService<User>{
             pre.setString(3, t.getEmail());
             pre.setString(4,t.getUsername());
             pre.setString(5,t.getPassword());
-            pre.setString(6,"ROLE_USER");
+            pre.setString(6,"[\"ROLE_USER\"]");
             
             pre.executeUpdate();
         } catch (SQLException ex) {
@@ -110,7 +110,13 @@ public class  ServicePersonne  implements IService<User>{
                         s.getString("lastname"),
                             s.getString("username"),
                         s.getString("email"),
-                        s.getString("roles"));
+                        s.getString("roles"),
+                         s.getString("voie"),
+                        s.getString("lien_opgg"),
+                        s.getString("description"),
+                        s.getInt("prix"),
+                        s.getInt("solde"),
+                        s.getBoolean("disponibility"));
 
                 }
 
@@ -142,6 +148,58 @@ public class  ServicePersonne  implements IService<User>{
         } catch (SQLException ex) {
             
         System.out.println("listeee::"+users);
+        }
+        return users;
+    }
+    public ObservableList<User> afficherBoostersDemands() {
+
+        ObservableList<User> users = FXCollections.observableArrayList();
+
+        try {
+            String sql = "SELECT * FROM user WHERE roles = '[\"ROLE_USER\"]' AND disponibility IS NOT NULL";
+            Statement ste = con.createStatement();
+            ResultSet s = ste.executeQuery(sql);
+            while (s.next()) {
+
+                User u1 = new User(s.getInt(1),
+                        s.getString("firstname"),
+                        s.getString("lastname"),
+                        s.getString("username"),
+                        s.getString("email"),
+                        s.getString("roles"));
+
+                users.add(u1);
+
+            }
+        } catch (SQLException ex) {
+
+            System.out.println("listeee::"+users);
+        }
+        return users;
+    }
+    public ObservableList<User> afficherChoachDemands() {
+
+        ObservableList<User> users = FXCollections.observableArrayList();
+
+        try {
+            String sql = "SELECT * FROM user WHERE roles = '[\"ROLE_USER\"]' AND disponibility IS NULL AND voie IS NOT NULL";
+            Statement ste = con.createStatement();
+            ResultSet s = ste.executeQuery(sql);
+            while (s.next()) {
+
+                User u1 = new User(s.getInt(1),
+                        s.getString("firstname"),
+                        s.getString("lastname"),
+                        s.getString("username"),
+                        s.getString("email"),
+                        s.getString("roles"));
+
+                users.add(u1);
+
+            }
+        } catch (SQLException ex) {
+
+            System.out.println("listeee::"+users);
         }
         return users;
     }
@@ -182,18 +240,19 @@ public class  ServicePersonne  implements IService<User>{
 
     }
     public void BeBooster(User u) {
-        String sql="update user set prix=?, solde=?,voie=?,lien_opgg=?,description=?,disponibility? where id=? ";
+        String sql="update user set prix=?, solde=?,voie=?,lien_opgg=?,description=?,disponibility=? where id=? ";
         try {
             PreparedStatement ste=con.prepareStatement(sql);
             ste.setInt(1, u.getPrix());
-            ste.setInt(2, u.getSolde());
-            ste.setString(3, u.getLien_opgg());
-            ste.setString(4, u.getDescription());
-            ste.setBoolean(5, u.isDisponibility());
-            ste.setInt(5, u.getId());
+            ste.setInt(2, 0);
+            ste.setString(3, u.getVoie());
+            ste.setString(4, u.getLien_opgg());
+            ste.setString(5, u.getDescription());
+            ste.setBoolean(6, true );
+            ste.setInt(7, u.getId());
 
             ste.executeUpdate();
-            System.out.println("Utilisateur modifié");
+            System.out.println("demande succeded");
         } catch (SQLException ex) {
             System.out.println(ex);
 
@@ -205,10 +264,11 @@ public class  ServicePersonne  implements IService<User>{
         try {
             PreparedStatement ste = con.prepareStatement(sql);
             ste.setInt(1, u.getPrix());
-            ste.setInt(2, u.getSolde());
-            ste.setString(3, u.getLien_opgg());
-            ste.setString(4, u.getDescription());
-            ste.setInt(5, u.getId());
+            ste.setInt(2, 0);
+            ste.setString(3, u.getVoie());
+            ste.setString(4, u.getLien_opgg());
+            ste.setString(5, u.getDescription());
+            ste.setInt(6, u.getId());
 
             ste.executeUpdate();
             System.out.println("Utilisateur modifié");

@@ -3,15 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package LeagueOfBoost.services;
-
+package LeagueOfBoost.gui;
 
 /**
  *
- * @author Andrew
+ * @author wassim
  */
-public interface IService<T> {
-    public void Ajouter(T t);
-    public void Modifier(T t);
-    public void Supprimer(T t);
+class TextFiled {
+    
 }

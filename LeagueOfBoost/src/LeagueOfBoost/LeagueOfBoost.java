@@ -5,15 +5,12 @@
  */
 package LeagueOfBoost;
 
-import LeagueOfBoost.entities.Game;
-import LeagueOfBoost.entities.Team;
-import LeagueOfBoost.entities.User;
-import LeagueOfBoost.services.ServicePersonne;
-import LeagueOfBoost.services.SeviceGame;
-import LeagueOfBoost.services.ServiceTeam;
+import LeagueOfBoost.entities.Reclamation;
+import LeagueOfBoost.services.ServiceReclamation;
+import LeagueOfBoost.entities.Message;
+import LeagueOfBoost.services.ServiceMessage;
 import LeagueOfBoost.utils.MyDB;
-
-import java.sql.SQLException;
+import LeagueOfBoost.gui.leagueOfBoost;
 
 
 /**
@@ -25,30 +22,37 @@ public class LeagueOfBoost {
     /**
      * @param args the command line arguments
      */
-
-    public static void main(String[] args) throws SQLException {
-      /* A a1 = A.getInstance();
-       A a2 = A.getInstance();
-       
-       
-        System.out.println(a1.hashCode());
-        System.out.println(a2.hashCode());*/
+    public static void main(String[] args) {
       
       
-        MyDB.createorgetInstance();
-        
+       ServiceReclamation sr = new ServiceReclamation();
+       ServiceMessage sm =new ServiceMessage();
+      //ServiceTeam st = new ServiceTeam();
 
-
-        ServicePersonne sp = new ServicePersonne();
-
-
-
-      // User p2=  sp.findUserByLogin("wadhah","$2y$13$1EVLfC.ZsK94yuO1Qw7kEeXpsW4ZWWCrKxVV6PSqKEOqf8OZL7L7");
-       // sp.Ajouter2(p2);
-       // User p1 = new User(46,"ww","ww","hhh","nnn","kk");
-       
-        System.out.println(sp.afficherUtilisateurs());
-        //sp.changeToCoach(p1);
+      Reclamation t1 = new Reclamation(26,3,true, 0, "bbbb", "bbbb", "bbbbbb");
+      Message m1=new Message(4,26,3,1,"CCCCCCCCCCCCCCCC");
+      //sr.Ajouter(t1);
+      //sr.Affichertout();
+      //sr.AfficherByUser_Id(3);
+      //sr.afficherReclamation();
+      //sr.Supprimerrec(24);
+      //System.out.println(sr.afficherReclamation());
+      
+      //sr.AfficherById(t1);
+      //sr.Modifier(t1);
+      //sr.AfficherById(t1);
+      //sm.Ajouter(r1);
+      
+      //sm.AfficherMessages(t1);
+      //sm.AfficherByreclamationId(26);
+      //sm.Supprimermess(5);
+      //sm.AffichermessById(m1);
+      //sm.Modifier(m1);
+        System.out.println(sm.AffichermessById2(14));
+      
+      
+      
     }
     
 }
+    

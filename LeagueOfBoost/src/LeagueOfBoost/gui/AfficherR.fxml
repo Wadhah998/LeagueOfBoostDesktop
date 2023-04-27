@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="612.0" prefWidth="684.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LeagueOfBoost.gui.AfficherRController">
+    <children>
+        <Label layoutX="36.0" layoutY="43.0" text="ID:" />
+        <Label layoutX="36.0" layoutY="72.0" text="Date:" />
+        <Label layoutX="36.0" layoutY="101.0" text="Theme:" />
+        <Label layoutX="36.0" layoutY="130.0" text="Objet:" />
+        <Label fx:id="idLabel" layoutX="92.0" layoutY="43.0" />
+        <Label fx:id="dateLabel" layoutX="92.0" layoutY="72.0" />
+        <Label fx:id="themeLabel" layoutX="92.0" layoutY="101.0" />
+        <Label fx:id="objetLabel" layoutX="92.0" layoutY="130.0" />
+        <Label fx:id="textLabel" layoutX="92.0" layoutY="159.0" />
+        <Label layoutX="36.0" layoutY="159.0" text="Text:" />
+      <Label layoutX="22.0" layoutY="192.0" prefHeight="18.0" prefWidth="73.0" text="Messages:" />
+      <Label layoutX="68.0" layoutY="450.0" text="Add a new message" />
+      <TextArea fx:id="addmessageLabel" layoutX="75.0" layoutY="489.0" prefHeight="45.0" prefWidth="224.0" />
+      <Label layoutX="420.0" layoutY="450.0" text="Date of new message" />
+      <TextArea fx:id="datemLabel" layoutX="437.0" layoutY="492.0" prefHeight="30.0" prefWidth="150.0" />
+      <Button fx:id="ajouterm" layoutX="299.0" layoutY="563.0" mnemonicParsing="false" onAction="#ajouterMessage" text="add message" />
+      <ListView fx:id="messagelist" layoutX="150.0" layoutY="220.0" prefHeight="200.0" prefWidth="343.0" />
+    </children>
+</AnchorPane>

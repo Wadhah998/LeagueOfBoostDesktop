@@ -48,7 +48,8 @@ public class LeagueOfBoost {
       //sm.Supprimermess(5);
       //sm.AffichermessById(m1);
       //sm.Modifier(m1);
-        System.out.println(sm.AffichermessById2(14));
+      
+        System.out.println(sr.afficherReclamationbyuser());
       
       
       

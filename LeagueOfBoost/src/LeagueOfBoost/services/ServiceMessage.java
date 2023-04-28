@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -31,7 +32,7 @@ public class ServiceMessage implements IService<Message> {
             PreparedStatement ste = con.prepareStatement(sql);
             ste.setInt(1,t.getReclamation_id());
             ste.setInt(2,3);
-            ste.setInt(3, t.getDate());
+             ste.setDate(3, new java.sql.Date(t.getDate().getTime()));
             ste.setString(4, t.getMessage());
             ste.executeUpdate();
             System.out.println("message ajouté");
@@ -47,7 +48,7 @@ public class ServiceMessage implements IService<Message> {
             PreparedStatement ste = con.prepareStatement(sql);
             ste.setInt(1, t.getReclamation_id());
             ste.setInt(2, t.getUser_id());
-            ste.setInt(3, t.getDate());
+            ste.setDate(3, new java.sql.Date(t.getDate().getTime()));
             ste.setString(4, t.getMessage());
             ste.setInt(5, t.getId());
 
@@ -101,7 +102,7 @@ public class ServiceMessage implements IService<Message> {
             int user_id = result.getInt("user_id");
             int reclamation_id = result.getInt("reclamation_id");
             String message = result.getString("message");
-            int date = result.getInt("date");
+            Date date = result.getDate("date");
 
             System.out.println("message ID: " + id);
             System.out.println("user's id: " + user_id);
@@ -127,7 +128,7 @@ public class ServiceMessage implements IService<Message> {
             int user_id = result.getInt("user_id");
             int reclamation_id = result.getInt("reclamation_id");
             String message = result.getString("message");
-            int date = result.getInt("date");
+            Date date = result.getDate("date");
 
             System.out.println("message ID: " + id);
             System.out.println("user's id: " + user_id);
@@ -155,7 +156,7 @@ public class ServiceMessage implements IService<Message> {
             int user_id = result.getInt("user_id");
             int reclamation_id = result.getInt("reclamation_id");
             String message = result.getString("message");
-            int date = result.getInt("date");
+            Date date = result.getDate("date");
 
             System.out.println("message ID: " + id);
             System.out.println("user's id: " + user_id);
@@ -182,7 +183,7 @@ public class ServiceMessage implements IService<Message> {
                 int user_id = result.getInt("user_id");
                 int reclamation_id = result.getInt("reclamation_id");
                 String message2 = result.getString("message");
-                int date = result.getInt("date");
+                Date date = result.getDate("date");
 
                 Message message = new Message(id, reclamation_id, user_id, date, message2);
                 messages.add(message);
@@ -223,7 +224,7 @@ public class ServiceMessage implements IService<Message> {
                 int reclamation_id = result.getInt("reclamation_id");
                 int user_id = result.getInt("user_id");
 
-                int date = result.getInt("date");
+                Date date = result.getDate("date");
                 String message = result.getString("message");
             
                 Message reclamation = new Message(id,reclamation_id,user_id, date, message);
@@ -237,6 +238,10 @@ public class ServiceMessage implements IService<Message> {
 
     @Override
     public void Supprimer(Message t) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Object getDate() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

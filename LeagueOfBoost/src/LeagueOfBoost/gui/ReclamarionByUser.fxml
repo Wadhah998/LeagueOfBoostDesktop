@@ -6,12 +6,12 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="472.0" prefWidth="719.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LeagueOfBoost.gui.ReclamationController">
+<AnchorPane id="AnchorPane2" prefHeight="489.0" prefWidth="782.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LeagueOfBoost.gui.ReclamationByUserController">
    <children>
       <TableView fx:id="table" layoutX="38.0" layoutY="70.0" prefHeight="295.0" prefWidth="666.0">
         <columns>
-          <TableColumn fx:id="idclm" prefWidth="75.0" text="id" />
-          <TableColumn fx:id="userclm" prefWidth="75.0" text="user_id" />
+          <TableColumn fx:id="idclm" prefWidth="75.0" text="id" visible="false" />
+          <TableColumn fx:id="userclm" prefWidth="75.0" text="user_id" visible="false" />
             <TableColumn fx:id="etatclm" prefWidth="75.0" text="etat" />
             <TableColumn fx:id="dateclm" prefWidth="75.0" text="date" />
             <TableColumn fx:id="themeclm" prefWidth="75.0" text="theme" />

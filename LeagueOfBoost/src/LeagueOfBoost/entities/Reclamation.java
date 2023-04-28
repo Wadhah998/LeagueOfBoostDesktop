@@ -6,6 +6,7 @@
 package LeagueOfBoost.entities;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -16,12 +17,13 @@ public class Reclamation {
     private int id;
     private int user_id;
     private boolean etat;
-    private int date;
+    private Date date;
     private String theme ,object,text;
+
 
     
 
-    public Reclamation(int id, int user_id, boolean etat, int date, String theme, String object, String text) {
+    public Reclamation(int id, int user_id, boolean etat, Date date, String theme, String object, String text) {
         this.id = id;
         this.user_id = user_id;
         this.etat = etat;
@@ -31,7 +33,25 @@ public class Reclamation {
         this.text = text;
     }
 
-    public Reclamation( boolean etat,int date, String theme, String object, String text) {
+    public Reclamation(int id, boolean etat, Date date, String theme, String object, String text) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Reclamation(Integer id2, String Theme2, String Object2, String Text2, boolean etat2) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
+    public int getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
+    }
+
+
+    public Reclamation( boolean etat,Date date, String theme, String object, String text) {
 
         this.etat = etat;
         this.date = date;
@@ -39,12 +59,14 @@ public class Reclamation {
         this.object = object;
         this.text = text;
     }
-    public Reclamation(int id, int date, String theme, String object, String text) {
+    public Reclamation( int id, Date date, String theme, String object, String text, boolean etat ) {
+        
         this.id = id;
         this.date = date;
         this.theme = theme;
         this.object = object;
         this.text = text;
+        this.etat = etat;
     }
     public Reclamation() {
     }
@@ -65,11 +87,11 @@ public class Reclamation {
         this.etat = etat;
     }
 
-    public int getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(int date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 

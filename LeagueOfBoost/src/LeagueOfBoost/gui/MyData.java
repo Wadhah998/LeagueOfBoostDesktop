@@ -5,6 +5,8 @@
  */
 package LeagueOfBoost.gui;
 
+import java.util.Date;
+
 
 class MyData {
 
@@ -13,6 +15,18 @@ class MyData {
     private int date;
     
     private int id;
+
+    MyData(int id, int user_id, String message) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    MyData(int id, int user_id, String message, String dateString) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    MyData(int id, int user_id, String message, Date date) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
     public int getIdu() {
         return idu;

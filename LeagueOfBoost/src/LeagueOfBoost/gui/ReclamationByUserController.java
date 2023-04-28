@@ -36,7 +36,7 @@ import java.awt.Image;
  *
  * @author wassim
  */
-public class ReclamationController implements Initializable {
+public class ReclamationByUserController implements Initializable {
 
     public static int varstat ;
     

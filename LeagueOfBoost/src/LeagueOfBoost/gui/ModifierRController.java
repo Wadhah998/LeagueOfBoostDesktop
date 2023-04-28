@@ -18,6 +18,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleButton;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 /**
@@ -28,8 +30,6 @@ import javafx.stage.Stage;
 public class ModifierRController implements Initializable {
 
     @FXML
-    private TextField date;
-    @FXML
     private TextField txttheme;
     @FXML
     private TextField txtobj;
@@ -37,10 +37,15 @@ public class ModifierRController implements Initializable {
     private TextField txttxt;
     @FXML
     private TextField id;
+    
     @FXML
     private Button btnConfirmer;
 
     ServiceReclamation sr = new ServiceReclamation();
+    @FXML
+    private AnchorPane txt;
+    @FXML
+    private ToggleButton toggleetat;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -50,15 +55,15 @@ public class ModifierRController implements Initializable {
     @FXML
     private void confirmer(ActionEvent event) {
         ServiceReclamation sr = new ServiceReclamation();
-         
+          
          Integer id2=Integer.valueOf(id.getText());
          System.out.println("idd :::: "+id);
-         Integer Date2=Integer.valueOf(date.getText());
          String Theme2=txttheme.getText();
          String Object2=txtobj.getText();
          String Text2=txttxt.getText();
+         boolean etat2 = toggleetat.isSelected(); // get the state of the toggle button
          
-         Reclamation r =new Reclamation(id2, Date2, Theme2, Object2, Text2);
+         Reclamation r =new Reclamation( id2, Theme2, Object2, Text2 ,etat2 );
            sr.Modifier(r);
            System.out.println("r :: "+r);
           
@@ -84,9 +89,9 @@ public class ModifierRController implements Initializable {
     
     public void setTextFields(Reclamation r){
         id.setText(String.valueOf(r.getId()));
-        date.setText(String.valueOf(r.getDate()));
         txttheme.setText(r.getTheme());
         txtobj.setText(r.getObject()); 
         txttxt.setText(r.getText());   
+        toggleetat.setText(String.valueOf(r.isEtat()));
     }
     }

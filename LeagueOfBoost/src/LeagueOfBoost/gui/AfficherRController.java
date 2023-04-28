@@ -4,11 +4,11 @@ import LeagueOfBoost.entities.Message;
 import LeagueOfBoost.entities.Reclamation;
 import LeagueOfBoost.services.ServiceMessage;
 import java.net.URL;
-import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
-import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -80,11 +80,11 @@ public class AfficherRController implements Initializable {
             lv2.addAll(su.AffichermessById2(ReclamationController.varstat));
         
         
-
+                
         List<MyData> lmd = new ArrayList<>();
-        for (int i = 0; i < lv2.size(); i++)      
-            lmd.add(new MyData(lv2.get(i).getId(), lv2.get(i).getUser_id(),lv2.get(i).getMessage(), lv2.get(i).getDate()));
-        
+        for (int i = 0; i < lv2.size(); i++){  
+            lmd.add(new MyData(lv2.get(i).getId(), lv2.get(i).getUser_id(),lv2.get(i).getMessage(), (int) lv2.get(i).getDate().getTime()));
+        }
 
         ObservableList<MyData> data = FXCollections.observableArrayList(
                 lmd);
@@ -99,10 +99,10 @@ public class AfficherRController implements Initializable {
         
     }
     
-    @FXML
+     @FXML
     private void ajouterMessage(ActionEvent event) {
         // Vérifie que tous les champs ont été remplis
-        if (addmessageLabel.getText().isEmpty() || datemLabel.getText().isEmpty() ) {
+        if (addmessageLabel.getText().isEmpty() ) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Erreur");
             alert.setHeaderText(null);
@@ -112,9 +112,9 @@ public class AfficherRController implements Initializable {
         }
         
         int reclamation_id = Integer.parseInt(String.valueOf(selectedReclamation.getId()));
-        int Date = Integer.parseInt(datemLabel.getText());
+        Date Datenow2 = new Date();
         String message = addmessageLabel.getText();
-        Message r = new Message(reclamation_id,Date, message);
+        Message r = new Message(reclamation_id,Datenow2, message);
         sm.Ajouter(r);
         
         // Affiche un message de confirmation
@@ -125,11 +125,10 @@ public class AfficherRController implements Initializable {
         alert.showAndWait();
 
         // Réinitialise les champs de saisie
-        datemLabel.setText("");
+        
         addmessageLabel.setText("");
         
-    } 
-    
+    }
     
     
    
@@ -144,5 +143,3 @@ public class AfficherRController implements Initializable {
     
     
 }
-    
-

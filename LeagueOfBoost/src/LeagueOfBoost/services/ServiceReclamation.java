@@ -11,9 +11,8 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import LeagueOfBoost.entities.Reclamation;
 import java.sql.ResultSet;
-import java.util.List;
-import java.util.ArrayList;
 import java.sql.Statement;
+import java.util.Date;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -40,7 +39,7 @@ public class ServiceReclamation implements IService<Reclamation> {
                 int id = result.getInt("id");
                 int user_id = result.getInt("user_id");
                 boolean etat = result.getBoolean("etat");
-                int date = result.getInt("date");
+                Date date = result.getDate("date");
                 String theme = result.getString("theme");
                 String object = result.getString("object");
                 String text = result.getString("text");
@@ -71,7 +70,7 @@ public class ServiceReclamation implements IService<Reclamation> {
                 int id = result.getInt("id");
                 int user_id = result.getInt("user_id");
                 boolean etat = result.getBoolean("etat");
-                int date = result.getInt("date");
+                Date date = result.getDate("date");
                 String theme = result.getString("theme");
                 String object = result.getString("object");
                 String text = result.getString("text");
@@ -101,7 +100,7 @@ public class ServiceReclamation implements IService<Reclamation> {
                 int id = result.getInt("id");
                 int user_id = result.getInt("user_id");
                 boolean etat = result.getBoolean("etat");
-                int date = result.getInt("date");
+                Date date = result.getDate("date");
                 String theme = result.getString("theme");
                 String object = result.getString("object");
                 String text = result.getString("text");
@@ -132,7 +131,7 @@ public class ServiceReclamation implements IService<Reclamation> {
                 int id = result.getInt("id");
                 int user_id = result.getInt("user_id");
                 boolean etat = result.getBoolean("etat");
-                int date = result.getInt("date");
+                Date date = result.getDate("date");
                 String theme = result.getString("theme");
                 String object = result.getString("object");
                 String text = result.getString("text");
@@ -154,12 +153,12 @@ public class ServiceReclamation implements IService<Reclamation> {
             PreparedStatement ste = con.prepareStatement(sql);
             ste.setInt(1, 3);
             ste.setBoolean(2, false);
-            ste.setInt(3, t.getDate());
+            ste.setDate(3, new java.sql.Date(t.getDate().getTime()));
             ste.setString(4, t.getTheme());
             ste.setString(5, t.getObject());
             ste.setString(6, t.getText());
-            ste.executeUpdate();
-            System.out.println("Reclamation ajoutée");
+            ste.executeUpdate(); 
+           System.out.println("Reclamation ajoutée");
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
@@ -168,15 +167,20 @@ public class ServiceReclamation implements IService<Reclamation> {
     @Override
     public void Modifier(Reclamation t) {
         try {
-            String sql = "UPDATE `LOB`.`reclamation` SET date=?, theme=?, object=?, text=? WHERE id=?";
-            PreparedStatement ste = con.prepareStatement(sql);
-            ste.setInt(1, t.getDate());
+            
+            String sql = "UPDATE `LOB`.`reclamation` SET date=?, theme=?, object=?, text=?, etat=?  WHERE id=?";
+            PreparedStatement ste = con.prepareStatement(sql); 
+            ste.setDate(1, new java.sql.Date(t.getDate().getTime()));
             ste.setString(2, t.getTheme());
             ste.setString(3, t.getObject());
             ste.setString(4, t.getText());
-            ste.setInt(5, t.getId());
+            ste.setBoolean(5, t.isEtat());
+            ste.setInt(6, t.getId());
 
+            
             ste.executeUpdate();
+            
+            //System.out.print("utilisateur modifier");
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
@@ -221,7 +225,7 @@ public class ServiceReclamation implements IService<Reclamation> {
             int user_id = result.getInt("user_id");
             int reclamation_id = result.getInt("reclamation_id");
             String text = result.getString("text");
-            int date = result.getInt("date");
+            Date date = result.getDate("date");
 
             System.out.println("message ID: " + id);
             System.out.println("user's id: " + user_id);
@@ -234,6 +238,47 @@ public class ServiceReclamation implements IService<Reclamation> {
         System.out.println(ex.getMessage());
     }
 }
+    
+    public void rateService(int id, int rating) {
+    try {
+        String sql = "UPDATE `LOB`.`reclamation` SET `rating` = ? WHERE `id` = ?";
+        PreparedStatement ste = con.prepareStatement(sql);
+        ste.setInt(1, rating);
+        ste.setInt(2, id);
+        ste.executeUpdate();
+        System.out.println("Rating updated successfully");
+    } catch (SQLException ex) {
+        System.out.println(ex.getMessage());
+    }
+}
+
+        public ObservableList<Reclamation> afficherReclamationbyuser() {
+        ObservableList<Reclamation> reclamations = FXCollections.observableArrayList();;
+        try {
+            String sql = "SELECT * FROM `LOB`.`reclamation` WHERE `user_id` =3";
+            Statement ste = con.createStatement();
+
+            ResultSet result = ste.executeQuery(sql);
+
+            while (result.next()) {
+                int id = result.getInt("id");
+                int user_id = result.getInt("user_id");
+                boolean etat = result.getBoolean("etat");
+                Date date = result.getDate("date");
+                String theme = result.getString("theme");
+                String object = result.getString("object");
+                String text = result.getString("text");
+
+                Reclamation reclamation = new Reclamation(id,user_id,etat, date, theme, object, text);
+                reclamations.add(reclamation);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return reclamations;
+    }
+    
+    
 
     
 }

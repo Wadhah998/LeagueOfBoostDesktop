@@ -33,6 +33,7 @@ import LeagueOfBoost.entities.Reclamation;
 import LeagueOfBoost.services.ServiceReclamation;
 import LeagueOfBoost.utils.MyDB;
 import java.sql.SQLException;
+import java.util.Date;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextFormatter;
 import javafx.scene.layout.AnchorPane;
@@ -53,8 +54,8 @@ public class AjouterRController {
     private TextField textclm;
     @FXML
     private Button ajouterclm;
-    @FXML
-    private TextField date;
+    
+    
     
     ServiceReclamation sr = new ServiceReclamation();
     
@@ -63,11 +64,7 @@ public class AjouterRController {
      * Initializes the controller class.
      */
     public void initialize() {
-        date.textProperty().addListener((observable, oldValue, newValue) -> {
-            if (!newValue.matches("\\d*")) {
-                date.setText(newValue.replaceAll("[^\\d]", ""));
-            }
-        });
+
         
         themeclm.textProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue.matches("\\sa-zA-Z*")) {
@@ -91,7 +88,7 @@ public class AjouterRController {
     @FXML
     private void ajouter(ActionEvent event) {
         // Vérifie que tous les champs ont été remplis
-        if (date.getText().isEmpty() || textclm.getText().isEmpty() || objectclm.getText().isEmpty() || themeclm.getText().isEmpty() ) {
+        if (textclm.getText().isEmpty() || objectclm.getText().isEmpty() || themeclm.getText().isEmpty() ) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Erreur");
             alert.setHeaderText(null);
@@ -100,11 +97,11 @@ public class AjouterRController {
             return;
         }
 
-        int Date = Integer.parseInt(date.getText());
+        Date Datenow = new Date();
         String Object = objectclm.getText();
         String Text = textclm.getText();
         String Theme = themeclm.getText();
-        Reclamation r = new Reclamation(true, Date, Theme, Object, Text);
+        Reclamation r = new Reclamation(false, Datenow, Theme, Object, Text);
         sr.Ajouter(r);
         
         // Affiche un message de confirmation
@@ -115,7 +112,7 @@ public class AjouterRController {
         alert.showAndWait();
 
         // Réinitialise les champs de saisie
-        date.setText("");
+        
         objectclm.setText("");
         textclm.setText("");
         themeclm.setText("");

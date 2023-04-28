@@ -1,5 +1,6 @@
     package LeagueOfBoost.entities;
 
+import java.util.Date;
     import javafx.scene.control.Button;
 
     public class Message {
@@ -7,11 +8,11 @@
         private int id;
         private int reclamation_id;
         private int user_id;
-        private int date;
+        private Date date;
         private String message;
 
 
-            public Message(int reclamation_id, int date, String message) {
+            public Message(int reclamation_id, Date date, String message) {
             
             this.reclamation_id=reclamation_id;    
             this.date = date;
@@ -19,7 +20,7 @@
         }
         
         
-        public Message(int id, int reclamation_id, int user_id, int date, String message) {
+        public Message(int id, int reclamation_id, int user_id, Date date, String message) {
             this.id = id;
             this.reclamation_id = reclamation_id;
             this.user_id = user_id;
@@ -57,11 +58,11 @@
             this.user_id = user_id;
         }
 
-        public int getDate() {
+        public Date getDate() {
             return date;
         }
 
-        public void setDate(int date) {
+        public void setDate(Date date) {
             this.date = date;
         }
 

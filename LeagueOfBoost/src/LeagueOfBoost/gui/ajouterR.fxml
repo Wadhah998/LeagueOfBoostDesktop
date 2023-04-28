@@ -7,7 +7,6 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LeagueOfBoost.gui.AjouterRController">
    <children>
-      <Label layoutX="72.0" layoutY="79.0" text="Date" />
       <Label layoutX="72.0" layoutY="132.0" text="Theme" />
       <Label layoutX="72.0" layoutY="183.0" text="Object" />
       <Label layoutX="72.0" layoutY="240.0" text="Text" />
@@ -15,6 +14,5 @@
       <TextField fx:id="objectclm" layoutX="141.0" layoutY="179.0" />
       <TextField fx:id="textclm" layoutX="141.0" layoutY="236.0" />
       <Button fx:id="ajouterclm" layoutX="190.0" layoutY="298.0" mnemonicParsing="false" onAction="#ajouter" text="Ajouter" />
-      <TextField fx:id="date" layoutX="142.0" layoutY="75.0" />
    </children>
 </AnchorPane>

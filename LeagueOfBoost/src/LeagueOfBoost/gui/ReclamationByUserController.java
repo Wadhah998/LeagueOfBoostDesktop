@@ -40,32 +40,17 @@ public class ReclamationByUserController implements Initializable {
 
     public static int varstat ;
     
-    @FXML
     private TableColumn<Reclamation, Integer> idclm;
-    @FXML
     private TableColumn<Reclamation, Integer> userclm;
-    @FXML
     private TableColumn<Reclamation, Boolean> etatclm;
-    @FXML
     private TableColumn<Reclamation, Integer> dateclm;
-    @FXML
     private TableColumn<Reclamation, String> themeclm;
-    @FXML
     private TableColumn<Reclamation, String> objclm;
-    @FXML
     private TableColumn<Reclamation, String> txtclm;
-    @FXML
     private TableView<Reclamation> table;
-    @FXML
-    private Button btnSupprimer;
-    @FXML
     private Button btnmodifier;
-    @FXML
     private Button btnAfficher;
-    @FXML
-    private TextField id;
     private TextField searchField;
-    @FXML
     private TextField prixtotal;
     
     String message = "Une réclamation a été traitée.";
@@ -118,14 +103,12 @@ public class ReclamationByUserController implements Initializable {
     
     }
 
-    @FXML
     private void Supprimer(ActionEvent event) {
         Reclamation r1 = table.getSelectionModel().getSelectedItem();
         sr.Supprimer(r1);
         loadReclamations();
     }
 
-    @FXML
     private void Modifier(ActionEvent event) {
         Reclamation r = table.getSelectionModel().getSelectedItem();
         try {
@@ -148,7 +131,6 @@ public class ReclamationByUserController implements Initializable {
     
     
     
-    @FXML
 public void Afficher() {
     Reclamation selectedReclamation = table.getSelectionModel().getSelectedItem();
      varstat = selectedReclamation.getId() ; 

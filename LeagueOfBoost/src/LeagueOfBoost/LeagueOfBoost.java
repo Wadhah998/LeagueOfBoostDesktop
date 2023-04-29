@@ -29,8 +29,8 @@ public class LeagueOfBoost {
        ServiceMessage sm =new ServiceMessage();
       //ServiceTeam st = new ServiceTeam();
 
-      Reclamation t1 = new Reclamation(26,3,true, 0, "bbbb", "bbbb", "bbbbbb");
-      Message m1=new Message(4,26,3,1,"CCCCCCCCCCCCCCCC");
+      //Reclamation t1 = new Reclamation(26,3,true, 0, "bbbb", "bbbb", "bbbbbb");
+      //Message m1=new Message(4,26,3,1,"CCCCCCCCCCCCCCCC");
       //sr.Ajouter(t1);
       //sr.Affichertout();
       //sr.AfficherByUser_Id(3);

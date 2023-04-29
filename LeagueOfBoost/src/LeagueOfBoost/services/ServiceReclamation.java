@@ -168,14 +168,14 @@ public class ServiceReclamation implements IService<Reclamation> {
     public void Modifier(Reclamation t) {
         try {
             
-            String sql = "UPDATE `LOB`.`reclamation` SET date=?, theme=?, object=?, text=?, etat=?  WHERE id=?";
+            String sql = "UPDATE `LOB`.`reclamation` SET  theme=?, object=?, text=?, etat=?  WHERE id=?";
             PreparedStatement ste = con.prepareStatement(sql); 
-            ste.setDate(1, new java.sql.Date(t.getDate().getTime()));
-            ste.setString(2, t.getTheme());
-            ste.setString(3, t.getObject());
-            ste.setString(4, t.getText());
-            ste.setBoolean(5, t.isEtat());
-            ste.setInt(6, t.getId());
+            
+            ste.setString(1, t.getTheme());
+            ste.setString(2, t.getObject());
+            ste.setString(3, t.getText());
+            ste.setBoolean(4, t.isEtat());
+            ste.setInt(5, t.getId());
 
             
             ste.executeUpdate();

@@ -41,6 +41,17 @@ public class Reclamation {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    public Reclamation(String Theme2, String Object2, String Text2, boolean etat2, Integer id2) {
+        
+        this.theme = Theme2;
+        this.object = Object2;
+        this.text = Text2;
+        this.etat = etat2;
+        this.id = id2;
+   
+        
+    }
+
     
     public int getUser_id() {
         return user_id;

@@ -39,8 +39,6 @@ public class AfficherRController implements Initializable {
     @FXML
     private Label textLabel;
     
-    @FXML
-    private TextArea datemLabel;
     
     @FXML
     private TextArea addmessageLabel;
@@ -48,8 +46,8 @@ public class AfficherRController implements Initializable {
     @FXML
     private Button ajouterm;
     
-  
-    
+
+   
     private Reclamation selectedReclamation;
     
     ServiceMessage sm = new ServiceMessage();

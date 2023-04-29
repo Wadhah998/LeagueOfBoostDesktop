@@ -41,7 +41,7 @@ public class ModifierRController implements Initializable {
     @FXML
     private Button btnConfirmer;
 
-    ServiceReclamation sr = new ServiceReclamation();
+    
     @FXML
     private AnchorPane txt;
     @FXML
@@ -49,7 +49,7 @@ public class ModifierRController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+           
     }    
 
     @FXML
@@ -63,7 +63,7 @@ public class ModifierRController implements Initializable {
          String Text2=txttxt.getText();
          boolean etat2 = toggleetat.isSelected(); // get the state of the toggle button
          
-         Reclamation r =new Reclamation( id2, Theme2, Object2, Text2 ,etat2 );
+         Reclamation r =new Reclamation( Theme2, Object2, Text2 ,etat2, id2 );
            sr.Modifier(r);
            System.out.println("r :: "+r);
           

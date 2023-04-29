@@ -21,7 +21,7 @@ public class leagueOfBoost extends Application {
     public void start(Stage primaryStage) {
         try {
             //Parent root = FXMLLoader.load(getClass().getResource("PanierGraph.fxml"));
-            Parent root = FXMLLoader.load(getClass().getResource("ListUsers.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("inscription.fxml"));
             //  Parent root = FXMLLoader.load(getClass().getResource("/khademni/guiOffre/StatistiqueFXML.fxml"));
             // Parent root = FXMLLoader.load(getClass().getResource("MesFormationFXML.fxml"));
             //   Parent root = FXMLLoader.load(getClass().getResource("/khademni/guiUser/DashboardFXML.fxml"));

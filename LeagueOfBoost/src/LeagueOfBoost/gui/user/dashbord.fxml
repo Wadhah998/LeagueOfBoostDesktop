@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="622.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LeagueOfBoost.gui.user.HomeController">
-    <AnchorPane fx:id="navbar" layoutX="-4.0" prefHeight="563.0" prefWidth="240.0" styleClass="navbar" stylesheets="@dashboardDesign.css">
+<AnchorPane prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LeagueOfBoost.gui.user.dashbordController">
+    <AnchorPane fx:id="navbar" layoutX="-4.0" prefHeight="632.0" prefWidth="240.0" styleClass="navbar" stylesheets="@dashboardDesign.css">
         <children>
             <Button fx:id="home" layoutX="10.0" layoutY="22.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="170.0" styleClass="navbutton" stylesheets="@dashboardDesign.css" text="Home" textFill="WHITE" AnchorPane.bottomAnchor="570.0" AnchorPane.topAnchor="22.0">
                 <font>
@@ -41,4 +42,12 @@
             </Button>
         </children>
     </AnchorPane>
+
+    <PieChart fx:id="pieChart" layoutX="178.0" layoutY="-16.0" prefHeight="360.0" prefWidth="674.0">
+
+    </PieChart>
+
+
+
+
 </AnchorPane>

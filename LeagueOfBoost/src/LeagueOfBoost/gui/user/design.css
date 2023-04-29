@@ -19,6 +19,7 @@ and open the template in the editor.
     -fx-background-color:#c22c40;
     -fx-background-radius:5px;
     -fx-cursor:hand;
+    -fx-font-weight: bold;
 
 }
 
@@ -44,6 +45,7 @@ and open the template in the editor.
     -fx-background-radius:20px;
     -fx-cursor:hand;
 
+
 }
 
 .button-design:hover{
@@ -64,4 +66,27 @@ and open the template in the editor.
 
     -fx-underline:true;
 
+}
+.textfield-design{
+    -fx-background-color:transparent;
+    -fx-background-radius:10px;
+    -fx-border-color:linear-gradient(to bottom right,#2f466b,#662d60);
+    -fx-border-radius:10px;
+    -fx-text-inner-color:#000000;
+}
+.warning-button {
+    -fx-background-color: #b9a65a;
+    -fx-text-fill: #000000;
+    -fx-background-radius:5px;
+    -fx-cursor:hand;
+    -fx-font-weight: bold;
+
+    -fx-border-color: #b9a65a;
+
+}
+
+.warning-button:hover {
+    -fx-background-color: #beac6d;
+    -fx-text-fill: #000000;
+    -fx-border-color: #b9a65a;
 }

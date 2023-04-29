@@ -12,7 +12,7 @@
     <children>
         <AnchorPane fx:id="login_form" prefHeight="500.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-                <AnchorPane layoutX="400.0" prefHeight="500.0" prefWidth="400.0">
+                <AnchorPane fx:id="googleSignin" layoutX="400.0" prefHeight="500.0" prefWidth="400.0">
                     <children>
                         <Button layoutX="348.0" layoutY="14.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="50.0" styleClass="exit" stylesheets="@design.css" AnchorPane.leftAnchor="348.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0">
                             <graphic>
@@ -41,11 +41,14 @@
                                 <Font size="18.0" />
                             </font>
                         </Button>
-                        <Hyperlink fx:id="create_acc" layoutX="124.0" layoutY="447.0" onAction="#create" styleClass="hypertext-design" stylesheets="@design.css" text="Create new Account?">
+                        <Hyperlink fx:id="create_acc" layoutX="124.0" layoutY="462.0" onAction="#create" prefHeight="24.0" prefWidth="153.0" styleClass="hypertext-design" stylesheets="@design.css" text="Create new Account?">
                             <font>
                                 <Font name="Microsoft Sans Serif" size="15.0" />
                             </font>
                         </Hyperlink>
+                        <Button fx:id="loginButton" layoutX="143.0" layoutY="416.0" onAction="#loginGoogle" text="Login with Google" />
+
+
                     </children>
                 </AnchorPane>
                 <AnchorPane layoutX="-21.0" prefHeight="500.0" prefWidth="441.0" styleClass="login-bg" stylesheets="@design.css">

@@ -15,6 +15,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 /**
@@ -63,9 +64,11 @@ public class BoostersDemandsController implements Initializable {
 
 
 
-    public void accepter(ActionEvent event) {
+    public void accepter(ActionEvent event) throws SQLException {
         User u = table.getSelectionModel().getSelectedItem();
         sp.changeToBooster(u);
+        sp.sendMail(u,"CONGRATULATIONS! "+u.getFirstname() + " " + u.getLastname() +", we have reviwed your form and deemed you worthy of being a Booster","Application Result");
         loadUsers();
+
     }
 }

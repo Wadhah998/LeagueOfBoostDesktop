@@ -6,6 +6,7 @@ package LeagueOfBoost.gui.user;
 
 import LeagueOfBoost.entities.User;
 import LeagueOfBoost.services.ServicePersonne;
+
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,8 +15,14 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+
 import java.net.URL;
+import java.sql.SQLException;
+import java.util.Properties;
 import java.util.ResourceBundle;
+import javax.mail.*;
+import javax.mail.internet.*;
+
 
 /**
  * FXML Controller class
@@ -63,9 +70,10 @@ public class ChoachDemandsController implements Initializable {
 
 
 
-    public void accepter(ActionEvent event) {
+    public void accepter(ActionEvent event) throws SQLException {
         User u = table.getSelectionModel().getSelectedItem();
         sp.changeToCoach(u);
+        sp.sendMail(u,"CONGRATULATIONS! "+u.getFirstname() + " " + u.getLastname() +", we have reviwed your form and deemed you worthy of being a coach","Application Result");
         loadUsers();
     }
 }

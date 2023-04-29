@@ -6,12 +6,17 @@
 package LeagueOfBoost.services;
 
 import java.sql.*;
+import java.util.Properties;
 
 
 import LeagueOfBoost.entities.User;
 import LeagueOfBoost.utils.MyDB;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+
+import javax.mail.*;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
 /**
  *
@@ -301,7 +306,88 @@ public class  ServicePersonne  implements IService<User>{
 
     }
 
+    public void sendMail(User user,String message,String subject) throws SQLException {
 
+
+
+        System.out.println(user.getEmail());
+
+        if (user == null) {
+            System.out.println("User with ID " + user.getId() + " not found!");
+            return;
+        } else {
+        }
+
+        final String username = "wadhah.daoud@esprit.tn";
+        final String password = "223JMT6406";
+        String recipientEmail = user.getEmail();
+
+        Properties props = new Properties();
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true");
+        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.port", "587");
+        Session session = Session.getInstance(props, new Authenticator() {
+            @Override
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(username, password);
+            }
+        });
+        try {
+            Message msg = new MimeMessage(session);
+            msg.setFrom(new InternetAddress(username));
+            msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(recipientEmail));
+            msg.setSubject(subject);
+            msg.setText(message);
+            Transport.send(msg);
+            System.out.println("Email notification sent successfully.");
+        } catch (MessagingException ex) {
+            System.out.println(ex.getMessage());
+        }
+
+    }
+    public int countBoosters() {
+        int count = 0;
+        try {
+            String sql = "SELECT COUNT(*) FROM user WHERE roles = '[\"ROLE_BOOSTER\"]'";
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            if (rs.next()) {
+                count = rs.getInt(1);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        return count;
+    }
+    public int countCoaches() {
+        int count = 0;
+        try {
+            String sql = "SELECT COUNT(*) FROM user WHERE roles = '[\"ROLE_CHOACH\"]'";
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            if (rs.next()) {
+                count = rs.getInt(1);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        return count;
+    }
+    public int countUsers() {
+        int count = 0;
+        try {
+            String sql = "SELECT COUNT(*) FROM user WHERE roles = '[\"ROLE_USER\"]'";
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            if (rs.next()) {
+                count = rs.getInt(1);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        return count;
+    }
 
 
 

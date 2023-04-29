@@ -9,18 +9,24 @@ import LeagueOfBoost.services.ServicePersonne;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.function.Predicate;
+
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
+import javafx.scene.control.ChoiceBox;
 
 /**
  * FXML Controller class
@@ -32,6 +38,8 @@ public class ListUsersController implements Initializable {
     @FXML
     private TableView<User> table;
     @FXML
+    private TextField prixtotal;
+    @FXML
     private TableColumn<User, String> fnclm;
     @FXML
     private TableColumn<User, String> lnclm;
@@ -41,6 +49,10 @@ public class ListUsersController implements Initializable {
     private TableColumn<User, String> mailclm;
     @FXML
     private TableColumn<User, String> roleclm;
+    @FXML
+    private ChoiceBox<String> choiceBox;
+
+
 
 
     ServicePersonne sp = new ServicePersonne();
@@ -49,7 +61,44 @@ public class ListUsersController implements Initializable {
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
 
+     // bar de recherche
+        prixtotal.textProperty().addListener((observable, oldValue, newValue) -> {
+            rechercherUtilisateurs();
+        });
+
+
         loadUsers();
+        // Tri
+        ObservableList<TableColumn<?, ?>> sortedColumns = FXCollections.observableArrayList();
+        sortedColumns.add(fnclm);
+
+        sortedColumns.sort((c1, c2) -> {
+            if (c1 == fnclm) {
+                return -1;
+            } else if (c2 == fnclm) {
+                return 1;
+            } else {
+                return c1.getText().compareToIgnoreCase(c2.getText());
+            }
+        });
+
+        table.getSortOrder().clear();
+        table.getSortOrder().addAll((TableColumn<User, ?>[]) sortedColumns.toArray(new TableColumn<?, ?>[0]));
+
+        //choiceBox
+        ObservableList<String> roles = FXCollections.observableArrayList("All","User", "Booster", "Coach");
+        choiceBox.setItems(roles);
+
+        choiceBox.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            rechercherUtilisateursRoles();
+        });
+
+
+
+
+
+
+
     }    
     private void loadUsers() {
 
@@ -90,5 +139,52 @@ public class ListUsersController implements Initializable {
         stage.show();
         Stage currentStage = (Stage) ((Button) event.getSource()).getScene().getWindow();
         currentStage.hide();
+    }
+    public void rechercherUtilisateurs() {
+        String keyword = prixtotal.getText();
+        ObservableList<User> filteredList = FXCollections.observableArrayList();
+        ObservableList<TableColumn<User, ?>> columns = table.getColumns();
+        for (int i = 0; i <sp.afficherUtilisateurs().size(); i++) {
+            User user = sp.afficherUtilisateurs().get(i);
+            for (int j = 0; j < columns.size(); j++) {
+                TableColumn<User, ?> column = columns.get(j);
+                String cellValue = column.getCellData(user).toString();
+                if (cellValue.contains(keyword)) {
+                    filteredList.add(user);
+                    break;
+                }
+            }
+        }
+        table.setItems(filteredList);
+    }
+    private void rechercherUtilisateursRoles() {
+        String role = choiceBox.getValue();
+        if (role=="User"){
+            role="[\"ROLE_USER\"]";
+        } else if (role=="Booster") {
+            role="[\"ROLE_BOOSTER\"]";
+
+        } else if (role=="Coach") {
+            role="[\"ROLE_CHOACH\"]";
+
+        }
+        ObservableList<User> filteredList = FXCollections.observableArrayList();
+        for (User user : sp.afficherUtilisateurs()) {
+            if (role == null || role.equals("All") || user.getRoles().equals(role)) {
+                filteredList.add(user);
+            }
+        }
+        table.setItems(filteredList);
+    }
+
+
+    public void SendWarning(ActionEvent event) throws SQLException {
+        User u = table.getSelectionModel().getSelectedItem();
+        sp.sendMail(u,"warning","LeagueOfBoost warning");
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("LeagueOfBoost :: Confirmation Message");
+        alert.setHeaderText(null);
+        alert.setContentText("Warning envoyer !!");
+        alert.showAndWait();
     }
 }

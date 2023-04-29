@@ -1,5 +1,8 @@
 <component name="libraryTable">
   <library name="javafx-swt">
+    <ANNOTATIONS>
+      <root url="file://$PROJECT_DIR$/../../.." />
+    </ANNOTATIONS>
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/../../../../../../Program Files/Java/openjfx-20_windows-x64_bin-sdk/javafx-sdk-20/lib/javafx-swt.jar!/" />
       <root url="jar://$PROJECT_DIR$/../../../../../../Program Files/Java/openjfx-20_windows-x64_bin-sdk/javafx-sdk-20/lib/javafx.base.jar!/" />
@@ -9,8 +12,19 @@
       <root url="jar://$PROJECT_DIR$/../../../../../../Program Files/Java/openjfx-20_windows-x64_bin-sdk/javafx-sdk-20/lib/javafx.media.jar!/" />
       <root url="jar://$PROJECT_DIR$/../../../../../../Program Files/Java/openjfx-20_windows-x64_bin-sdk/javafx-sdk-20/lib/javafx.swing.jar!/" />
       <root url="jar://$PROJECT_DIR$/../../../../../../Program Files/Java/openjfx-20_windows-x64_bin-sdk/javafx-sdk-20/lib/javafx.web.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../activation-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../javax.mail-api-1.6.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../javax.mail.jar!/" />
+      <root url="file://$PROJECT_DIR$/../../.." />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/LeagueOfBoost/src" />
+      <root url="file://$PROJECT_DIR$/../league_of_boost/src" />
+      <root url="file://$PROJECT_DIR$/../pidev-gestion_formation/pidev-gestion_formation/khademni/src" />
+      <root url="file://$PROJECT_DIR$/../pidev-master/pidev-master/khademni/src" />
+      <root url="file://$PROJECT_DIR$/../test2/src" />
+      <root url="file://$PROJECT_DIR$/../test/src" />
+    </SOURCES>
   </library>
 </component>

@@ -11,6 +11,8 @@ import java.sql.Statement;
 import LeagueOfBoost.utils.MyDB;
 import java.util.List;
 import java.util.ArrayList;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 
 public class ServiceTeam implements IService<Team>{
@@ -111,6 +113,29 @@ public class ServiceTeam implements IService<Team>{
     }
     return teams;
 }
+    
+    public ObservableList<Team> afficherTeams2() {
+    ObservableList<Team> teams = FXCollections.observableArrayList();
+    try {
+        String sql = "SELECT name, wins, losses FROM `LOB`.`Team`";
+        PreparedStatement ste = con.prepareStatement(sql);
+
+        ResultSet result = ste.executeQuery();
+
+        while (result.next()) {
+            String name = result.getString("name");
+            int wins = result.getInt("wins");
+            int losses = result.getInt("losses");
+           
+
+            Team team = new Team(name, wins, losses);
+            teams.add(team);
+        }
+    } catch (SQLException ex) {
+        System.out.println(ex.getMessage());
+    }
+    return teams;
+}
 
     //Les fonctions CRUD
 
@@ -173,8 +198,6 @@ public class ServiceTeam implements IService<Team>{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
-
-
 
     
      

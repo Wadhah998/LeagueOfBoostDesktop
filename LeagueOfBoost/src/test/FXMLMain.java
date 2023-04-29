@@ -24,7 +24,7 @@ public class FXMLMain extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            Parent root =FXMLLoader.load(getClass().getResource("/LeagueOfBoost/gui/Game/Ajouter.fxml"));
+            Parent root =FXMLLoader.load(getClass().getResource("/LeagueOfBoost/gui/Game/design.fxml"));
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
             primaryStage.initStyle(StageStyle.UNDECORATED);

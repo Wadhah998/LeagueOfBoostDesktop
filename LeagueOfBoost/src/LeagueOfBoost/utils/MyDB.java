@@ -1,62 +1,38 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package LeagueOfBoost.utils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-/**
- *
- * @author Andrew
- */
 public class MyDB {
-    
-    String url= "jdbc:mysql://localhost:3306/LOB";
-    String user = "root";
-    String pwd = "";
-    
-    
-    Connection con;
-    
-    //2
+
+    final String url = "jdbc:mysql://localhost:3306/lobbb";
+    final String username = "root";
+    final String pwd = "";
+    private Connection conx;
+
     public static MyDB instance;
-    
-    
-      //1 
+
+    public static MyDB getInstance() {
+        if (instance == null)
+            instance = new MyDB();
+        return instance;
+
+    }
+
     private MyDB() {
-        
+
         try {
-            System.out.println("en cours de connexion");
-            con = DriverManager.getConnection(url, user, pwd);
-            System.out.println("conexion etablie");
+            conx = DriverManager.getConnection(url, username, pwd);
+            System.out.println("Connexion établie");
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
-    }
-    
-    
-    //3 
-    public static MyDB createorgetInstance(){
-        if(instance ==null ){
-            instance = new MyDB();
-            
-        }
-        
-        return instance;
+
     }
 
-    
-    
-    public Connection getCon() {
-        return con;
+    public Connection getConx() {
+        return conx;
     }
-    
-    
-    
-    
-    
+
 }

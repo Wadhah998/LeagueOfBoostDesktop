@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="99.0" prefWidth="1000.0" style="-fx-background-color: #282b2f;" stylesheets="@../../assets/style/rouaaStyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="NewsInterfaces.UserCommentItemController">
+   <children>
+      <HBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="700.0">
+         <children>
+            <HBox prefHeight="40.0" prefWidth="555.0">
+               <children>
+                  <Text fx:id="comment" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="comment_desc" text="comment comment comment comment  comment comment comment comment " wrappingWidth="713.5279693603516">
+                     <HBox.margin>
+                        <Insets right="170.0" />
+                     </HBox.margin>
+                  </Text>
+                  <HBox fx:id="deleteComment" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="46.0" styleClass="product__card-btns">
+                     <children>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/img/trash.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="editComment" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="46.0" styleClass="product__card-btns">
+                     <children>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/img/edit.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="8.0" />
+                     </HBox.margin>
+                  </HBox>
+               </children>
+               <HBox.margin>
+                  <Insets right="30.0" />
+               </HBox.margin>
+            </HBox>
+         </children>
+      </HBox>
+      <HBox prefHeight="50.0" prefWidth="700.0">
+         <children>
+            <HBox prefHeight="45.0" prefWidth="700.0">
+               <children>
+                  <HBox prefHeight="45.0" prefWidth="591.0">
+                     <children>
+                        <Text fx:id="date" fill="#eb1616" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="comment_dateAjout" text="10-03-2023" />
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="comment_dateAjout" text="  par  " />
+                        <Text fx:id="userName" fill="#eb1616" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="comment_dateAjout" text="Rouaa" />
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+      <Line endX="880.0" startX="-100.0" stroke="#404245" strokeWidth="2.0" translateY="-10.0" />
+   </children>
+</VBox>

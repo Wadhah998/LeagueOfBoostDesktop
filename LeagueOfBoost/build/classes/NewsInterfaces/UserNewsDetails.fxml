@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane fx:id="content_area" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="622.0" prefWidth="1236.0" styleClass="userProductsContainer" stylesheets="@../assets/style/rouaaStyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="NewsInterfaces.UserNewsDetailsController">
+   <children>
+      <ScrollPane layoutX="13.0" layoutY="12.0" prefHeight="599.0" prefWidth="1213.0" styleClass="product-card-scrollPane" stylesheets="@../assets/style/rouaaStyle.css">
+         <content>
+            <GridPane fx:id="newsDetailsContainer">
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+         </content>
+      </ScrollPane>
+      <HBox fx:id="addCommentModel" alignment="CENTER" layoutX="-256.0" layoutY="-81.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="713.0" prefWidth="1374.0" styleClass="categoriesModel" stylesheets="@../assets/style/rouaaStyle.css" translateX="140.0" translateY="-5.0">
+         <children>
+            <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="358.0" prefWidth="600.0" styleClass="productAddedToCart__card2" stylesheets="@../../assets/style/rouaaStyle.css">
+               <children>
+                  <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="75.0" prefWidth="600.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="84.0" prefWidth="312.0">
+                           <children>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="categoriesModel-card-title" text="Add New Comment" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#close_commentModel" prefHeight="30.0" prefWidth="30.0" styleClass="categoriesModel-card-exitBtn" translateX="200.0">
+                           <children>
+                              <ImageView fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/img/cross.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets left="30.0" right="30.0" />
+                     </padding>
+                  </HBox>
+                  <Line endX="540.0" stroke="#404245" strokeWidth="2.0" translateX="30.0">
+                     <VBox.margin>
+                        <Insets bottom="30.0" />
+                     </VBox.margin>
+                  </Line>
+                  <VBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="183.0" prefWidth="570.0">
+                     <padding>
+                        <Insets left="30.0" right="30.0" />
+                     </padding>
+                     <children>
+                        <HBox prefHeight="6.0" prefWidth="538.0">
+                           <children>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="product__add-input-label" text="Comment">
+                                 <HBox.margin>
+                                    <Insets right="2.0" />
+                                 </HBox.margin>
+                              </Text>
+                              <Text fill="#eb1616" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="etoile" text="*">
+                                 <font>
+                                    <Font name="Montserrat Regular" size="16.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" />
+                           </padding>
+                        </HBox>
+                        <TextArea fx:id="commentInput" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="200.0" prefWidth="200.0" promptText="Comment" styleClass="product__add-input-textArea" />
+                        <HBox fx:id="badWordDetectedHbox" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Text fill="#eb1616" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="product__add-input-label" text="Bad Word Detected" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" translateY="-10.0">
+                     <children>
+                        <HBox fx:id="submitBtn" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#addNewComment" prefHeight="51.0" prefWidth="121.0" styleClass="contenuShoppingBtn">
+                           <children>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="productDetails__price" text="Submit" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="updateBtnContainer" alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" translateX="1.0" translateY="-61.0">
+                     <children>
+                        <HBox fx:id="updateBtn" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#updateComment" prefHeight="51.0" prefWidth="121.0" styleClass="contenuShoppingBtn">
+                           <children>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="productDetails__price" text="Update" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</Pane>

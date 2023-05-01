@@ -4,18 +4,24 @@
  */
 package LeagueOfBoost.gui.user;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import LeagueOfBoost.services.ServicePersonne;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.chart.PieChart;
 import javafx.scene.chart.StackedBarChart;
 import javafx.scene.chart.XYChart;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -58,5 +64,6 @@ public class dashbordController implements Initializable {
 
     // TODO
     }
+
 
 }

@@ -82,8 +82,8 @@ public class ListUsersController implements Initializable {
             }
         });
 
-        table.getSortOrder().clear();
-        table.getSortOrder().addAll((TableColumn<User, ?>[]) sortedColumns.toArray(new TableColumn<?, ?>[0]));
+       table.getSortOrder().clear();
+       table.getSortOrder().addAll((TableColumn<User, ?>[]) sortedColumns.toArray(new TableColumn<?, ?>[0]));
 
         //choiceBox
         ObservableList<String> roles = FXCollections.observableArrayList("All","User", "Booster", "Coach");
@@ -121,25 +121,7 @@ public class ListUsersController implements Initializable {
         loadUsers();
     }
 
-    public void ToCoachers(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("ChoachDemands.fxml"));
-        Stage stage = new Stage();
 
-        stage.setScene(new Scene(loader.load()));
-        stage.show();
-        Stage currentStage = (Stage) ((Button) event.getSource()).getScene().getWindow();
-        currentStage.hide();
-    }
-
-    public void ToBoosters(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("BoostersDemands.fxml"));
-        Stage stage = new Stage();
-
-        stage.setScene(new Scene(loader.load()));
-        stage.show();
-        Stage currentStage = (Stage) ((Button) event.getSource()).getScene().getWindow();
-        currentStage.hide();
-    }
     public void rechercherUtilisateurs() {
         String keyword = prixtotal.getText();
         ObservableList<User> filteredList = FXCollections.observableArrayList();
@@ -180,11 +162,22 @@ public class ListUsersController implements Initializable {
 
     public void SendWarning(ActionEvent event) throws SQLException {
         User u = table.getSelectionModel().getSelectedItem();
-        sp.sendMail(u,"warning","LeagueOfBoost warning");
+        sp.sendMail(u," We regret to inform you that your recent actions on our platform have been deemed inappropriate and in violation of our community guidelines. As a result, we are issuing you a warning to refrain from engaging in such behavior in the future.\n" +
+                "\n" +
+                "Please note that should we receive any further reports of misconduct on your account, we will have no choice but to terminate your account permanently.\n" +
+                "\n" +
+                "We value all our users and strive to maintain a safe and respectful environment for everyone. We hope that you will take this warning seriously and make the necessary adjustments to ensure that your actions align with our community standards.\n" +
+                "\n" +
+                "Thank you for your understanding.\n" +
+                "\n" +
+                "Sincerely,\n" +
+                "\n" +
+                "LeagueOfBoost ","Warning");
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("LeagueOfBoost :: Confirmation Message");
         alert.setHeaderText(null);
         alert.setContentText("Warning envoyer !!");
         alert.showAndWait();
     }
+
 }

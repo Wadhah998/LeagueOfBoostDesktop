@@ -5,30 +5,19 @@
  */
 package LeagueOfBoost.services;
 
-
-import LeagueOfBoost.entities.User;
-
+import LeagueOfBoost.entities.ReservationC;
 import java.util.ArrayList;
-
-//import java.util.ArrayList;
-//import java.util.List;
-
-
+import javafx.collections.ObservableList;
 
 /**
  *
  * @author Andrew
  */
-public interface IService<T> {
-    public void Ajouter(T t );
-    public void Modifier(T t);
+public interface IService {
+    public void ajouterReservation(ReservationC r);
+      public void modifierReservation(ReservationC r);
+      public void supprimerReservation(ReservationC r);
+      public ObservableList<ReservationC> afficherReservation();
 
-    //void Modifier(User u);
-
-    public void Supprimer(T t);
-    //public void Afficher();
-    //public void AfficherById(T t);
-
-
-    //void Supprimer(User u);
+  
 }

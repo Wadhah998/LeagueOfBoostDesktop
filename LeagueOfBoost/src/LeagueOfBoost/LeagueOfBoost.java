@@ -5,16 +5,15 @@
  */
 package LeagueOfBoost;
 
-import LeagueOfBoost.entities.Game;
-import LeagueOfBoost.entities.Team;
-import LeagueOfBoost.entities.User;
-import LeagueOfBoost.services.ServicePersonne;
-import LeagueOfBoost.services.SeviceGame;
-import LeagueOfBoost.services.ServiceTeam;
+import LeagueOfBoost.entities.ReservationC;
+import LeagueOfBoost.entities.SessionC;
+import LeagueOfBoost.services.ServiceReservationC;
+import LeagueOfBoost.services.ServiceSessionC;
 import LeagueOfBoost.utils.MyDB;
-
-import java.sql.SQLException;
-
+import java.util.Date;
+import com.google.cloud.translate.Translate;
+import com.google.cloud.translate.TranslateOptions;
+import com.google.cloud.translate.Translation;
 
 /**
  *
@@ -25,30 +24,39 @@ public class LeagueOfBoost {
     /**
      * @param args the command line arguments
      */
-
-    public static void main(String[] args) throws SQLException {
-      /* A a1 = A.getInstance();
-       A a2 = A.getInstance();
-       
-       
-        System.out.println(a1.hashCode());
-        System.out.println(a2.hashCode());*/
+    public static void main(String[] args) {
+      ServiceReservationC sp = new ServiceReservationC();
+      ServiceSessionC sc= new ServiceSessionC();
       
-      
-        MyDB.createorgetInstance();
+    // Ajouter une nouvelle réservation
+        ReservationC r1 = new ReservationC(222, 3333, "ajoutRes");
+        sp.ajouterReservation(r1);
         
+        // Modifier une réservation existante
+        ReservationC r2 = new ReservationC(70, 50, "ModificationRes");
+        sp.modifierReservation(30, r2);
+        
+        // Supprimer une réservation existante
+        sp.supprimerReservation(31);
+        
+        // Afficher toutes les réservations
+         sp.afficherReservations();
+        
+      
+      Date date1 = new Date(99, 9, 7);
+      Date date2 = new Date(101, 11, 3);
+      Date date3 = new Date(101, 2, 25);
+      SessionC s1= new SessionC("test", "ajoutSes", 500, date1);
+        sc.ajouterSessionCoaching(s1);
+        SessionC s2= new SessionC("test","modificationSes",100, date2);
+        sc.modifierSessionCoaching(26,s2);
+        SessionC s3= new SessionC("test","modificationSes",100, date3);
+        sc.modifierSessionCoaching(27,s3);
+        sc.supprimerSessionCoaching(28);
+        sc.afficherSessionCoach();
 
 
-        ServicePersonne sp = new ServicePersonne();
-
-
-
-      // User p2=  sp.findUserByLogin("wadhah","$2y$13$1EVLfC.ZsK94yuO1Qw7kEeXpsW4ZWWCrKxVV6PSqKEOqf8OZL7L7");
-       // sp.Ajouter2(p2);
-       // User p1 = new User(46,"ww","ww","hhh","nnn","kk");
-       
-        System.out.println(sp.afficherUtilisateurs());
-        //sp.changeToCoach(p1);
+    
     }
     
 }

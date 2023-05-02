@@ -125,7 +125,7 @@ public class InscriptionController implements Initializable {
                 Stage currentStage = (Stage) ((Button) actionEven.getSource()).getScene().getWindow();
                 currentStage.hide();
             } else if (u != null) {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("profile.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("../SessionC/ajoutSession.fxml"));
                 Stage stage = new Stage();
 
                 stage.setScene(new Scene(loader.load()));

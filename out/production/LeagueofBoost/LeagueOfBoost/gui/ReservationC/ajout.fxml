@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" fx:id="main"  prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="LeagueOfBoost.gui.ReservationC.AjoutController">
+   <children>
+      <Button fx:id="btnajout" layoutX="274.0" layoutY="297.0" mnemonicParsing="false" onAction="#Ajouter" prefHeight="37.0" prefWidth="97.0" text="Ajouter" />
+      <Button fx:id="btnretour" layoutX="400.0" layoutY="297.0" mnemonicParsing="false" onAction="#Retour" prefHeight="37.0" prefWidth="97.0" text="Retour" />
+
+      <Label layoutX="58.0" layoutY="77.0" text="Nbr Heures" />
+      <Label layoutX="58.0" layoutY="152.0" text="Prix" />
+      <Label layoutX="58.0" layoutY="229.0" text="Langue" />
+      <TextField fx:id="txtnbr" layoutX="180.0" layoutY="65.0" />
+      <TextField fx:id="txtprx" layoutX="180.0" layoutY="148.0" />
+      <TextField fx:id="txtlng" layoutX="180.0" layoutY="234.0" />
+   </children>
+</AnchorPane>

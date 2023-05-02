@@ -71,5 +71,14 @@ public class HomeController implements Initializable {
 
 
     }
-    
+
+    public void ToReclamation(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../reclamation/reclamation.fxml"));
+        Stage stage = new Stage();
+
+        stage.setScene(new Scene(loader.load()));
+        stage.show();
+        Stage currentStage = (Stage) ((Button) event.getSource()).getScene().getWindow();
+        currentStage.hide();
+    }
 }

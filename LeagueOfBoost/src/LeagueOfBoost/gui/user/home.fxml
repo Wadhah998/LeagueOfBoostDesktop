@@ -39,6 +39,14 @@
 
                 </graphic>
             </Button>
+            <Button fx:id="reclamation" layoutX="10.0" layoutY="384.0" mnemonicParsing="false" onAction="#ToReclamation" prefHeight="34.0" prefWidth="170.0" styleClass="navbutton" stylesheets="@dashboardDesign.css" text="Reclamation" textFill="WHITE" AnchorPane.topAnchor="384.0">
+                <font>
+                    <Font size="16.0" />
+                </font>
+                <graphic>
+
+                </graphic>
+            </Button>
         </children>
     </AnchorPane>
 </AnchorPane>

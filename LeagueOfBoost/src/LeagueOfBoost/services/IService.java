@@ -1,34 +1,19 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
 package LeagueOfBoost.services;
 
-
-import LeagueOfBoost.entities.User;
-
-import java.util.ArrayList;
-
-//import java.util.ArrayList;
-//import java.util.List;
-
-
+import LeagueOfBoost.entities.Reservationb;
+import javafx.collections.ObservableList;
 
 /**
  *
- * @author Andrew
+ * @author ASUS
  */
-public interface IService<T> {
-    public void Ajouter(T t );
-    public void Modifier(T t);
-
-    //void Modifier(User u);
-
-    public void Supprimer(T t);
-    //public void Afficher();
-    //public void AfficherById(T t);
-
-
-    //void Supprimer(User u);
+public interface IService {
+    public void ajouterReservation(Reservationb r);
+      public void modifierReservation(Reservationb r);
+      public void supprimerReservation(Reservationb r);
+      public ObservableList<Reservationb> afficherReservation();
 }

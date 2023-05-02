@@ -3,37 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/daoid/Desktop/1Esprit/PIDEV/LeagueOfBoost/LeagueOfBoost/src/LeagueOfBoost/gui/login.fxml</file>
-            <file>file:/C:/Users/daoid/Desktop/1Esprit/PIDEV/LeagueOfBoost/LeagueOfBoost/src/LeagueOfBoost/gui/ProfileController.java</file>
-            <file>file:/C:/Users/daoid/Desktop/1Esprit/PIDEV/LeagueOfBoost/LeagueOfBoost/src/LeagueOfBoost/gui/LoginController.java</file>
-            <file>file:/C:/Users/daoid/Desktop/1Esprit/PIDEV/LeagueOfBoost/LeagueOfBoost/src/LeagueOfBoost/gui/AffController.java</file>
-            <file>file:/C:/Users/daoid/Desktop/1Esprit/PIDEV/LeagueOfBoost/LeagueOfBoost/src/LeagueOfBoost/gui/EditprofileController.java</file>
-            <file>file:/C:/Users/daoid/Desktop/1Esprit/PIDEV/LeagueOfBoost/LeagueOfBoost/src/users/gui/editprofil/EditprofilController.java</file>
-            <file>file:/C:/Users/daoid/Desktop/1Esprit/PIDEV/LeagueOfBoost/LeagueOfBoost/src/LeagueOfBoost/LeagueOfBoost.java</file>
-            <file>file:/C:/Users/daoid/Desktop/1Esprit/PIDEV/LeagueOfBoost/LeagueOfBoost/src/LeagueOfBoost/gui/ListUsersController.java</file>
-            <file>file:/C:/Users/daoid/Desktop/1Esprit/PIDEV/LeagueOfBoost/LeagueOfBoost/src/LeagueOfBoost/utils/MyDB.java</file>
-            <file>file:/C:/Users/daoid/Desktop/1Esprit/PIDEV/LeagueOfBoost/LeagueOfBoost/src/LeagueOfBoost/gui/aff.fxml</file>
-            <file>file:/C:/Users/daoid/Desktop/1Esprit/PIDEV/LeagueOfBoost/LeagueOfBoost/src/LeagueOfBoost/gui/ListUsers.fxml</file>
-            <file>file:/C:/Users/daoid/Desktop/1Esprit/PIDEV/LeagueOfBoost/LeagueOfBoost/src/LeagueOfBoost/gui/profile.fxml</file>
-            <file>file:/C:/Users/daoid/Desktop/1Esprit/PIDEV/LeagueOfBoost/LeagueOfBoost/src/LeagueOfBoost/services/ServicePersonne.java</file>
-            <file>file:/C:/Users/daoid/Desktop/1Esprit/PIDEV/LeagueOfBoost/LeagueOfBoost/src/LeagueOfBoost/gui/inscription.fxml</file>
-            <file>file:/C:/Users/daoid/Desktop/1Esprit/PIDEV/LeagueOfBoost/LeagueOfBoost/src/LeagueOfBoost/gui/leagueOfBoost.java</file>
-            <file>file:/C:/Users/daoid/Desktop/1Esprit/PIDEV/LeagueOfBoost/LeagueOfBoost/src/LeagueOfBoost/services/IService.java</file>
-            <file>file:/C:/Users/daoid/Desktop/1Esprit/PIDEV/LeagueOfBoost/LeagueOfBoost/src/LeagueOfBoost/gui/editprofile.fxml</file>
-=======
-            <file>file:/C:/Users/Mega-PC/Documents/GitHub/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/entities/Team.java</file>
-            <file>file:/C:/Users/Mega-PC/Documents/GitHub/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/gui/Game/GameController.java</file>
-            <file>file:/C:/Users/Mega-PC/Documents/GitHub/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/services/ServiceTeam.java</file>
-            <file>file:/C:/Users/Mega-PC/Documents/GitHub/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/gui/Game/Game.fxml</file>
-            <file>file:/C:/Users/Mega-PC/Documents/GitHub/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/gui/Game/ModifierController.java</file>
-            <file>file:/C:/Users/Mega-PC/Documents/GitHub/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/gui/Game/Modifier.fxml</file>
-            <file>file:/C:/Users/Mega-PC/Documents/GitHub/LeagueOfBoostDesktop/LeagueOfBoost/src/test/FXMLMain.java</file>
-            <file>file:/C:/Users/Mega-PC/Documents/GitHub/LeagueOfBoostDesktop/LeagueOfBoost/src/test2/Team.java</file>
-            <file>file:/C:/Users/Mega-PC/Documents/GitHub/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/services/SeviceGame.java</file>
-            <file>file:/C:/Users/Mega-PC/Documents/GitHub/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/entities/Game.java</file>
-            <file>file:/C:/Users/Mega-PC/Documents/GitHub/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/gui/Game/AjouterController.java</file>
->>>>>>> origin/Gestion_Tournois
+            <file>file:/C:/Users/ASUS/OneDrive/Bureau/LeagueOfBoostDesktop-main/LeagueOfBoost/src/LeagueOfBoost/services/ServiceReservationB.java</file>
+            <file>file:/C:/Users/ASUS/OneDrive/Bureau/LeagueOfBoostDesktop-main/LeagueOfBoost/src/LeagueOfBoost/gui/ReservationB/ReservationBController.java</file>
+            <file>file:/C:/Users/ASUS/OneDrive/Bureau/LeagueOfBoostDesktop-main/LeagueOfBoost/src/LeagueOfBoost/gui/ReservationB/Test.java</file>
+            <file>file:/C:/Users/ASUS/OneDrive/Bureau/LeagueOfBoostDesktop-main/LeagueOfBoost/src/LeagueOfBoost/LeagueOfBoost.java</file>
+            <file>file:/C:/Users/ASUS/OneDrive/Bureau/LeagueOfBoostDesktop-main/LeagueOfBoost/src/LeagueOfBoost/entities/Reservationb.java</file>
         </group>
     </open-files>
 </project-private>

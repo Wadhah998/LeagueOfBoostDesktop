@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Text?>
+
+<VBox fx:id="content_area" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1250.0" prefWidth="1170.0" styleClass="userProductsContainer" stylesheets="@../assets/style/rouaaStyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LeagueOfBoost.gui.NewsInterfaces.UserNewsDetailsCardController">
+   <children>
+      <HBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="364.0" prefWidth="1121.0" styleClass="productDetails__Container" stylesheets="@../../assets/style/rouaaStyle.css">
+         <children>
+            <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="342.0" prefWidth="480.0">
+               <children>
+                  <ImageView fx:id="img" fitHeight="181.0" fitWidth="324.0" pickOnBounds="true" preserveRatio="true" scaleX="1.3" scaleY="1.733" translateX="4.0" translateY="12.0">
+                     <image>
+                        <Image url="@../../assets/img/lol.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <VBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="641.0">
+               <children>
+                  <HBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="87.0" prefWidth="611.0">
+                     <children>
+                        <HBox alignment="TOP_CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="74.0" prefWidth="544.0">
+                           <children>
+                              <Text fx:id="title" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="productDetails__Name" text="The League of Legends The League of Legends" wrappingWidth="539.4300231933594" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#addToFavoriteList" prefHeight="40.0" prefWidth="40.0" styleClass="productDetails__favBtn">
+                                       <children>
+                                          <ImageView fx:id="favBtn" fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../assets/img/addFav.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets top="5.0" />
+                                 </HBox.margin>
+                              </HBox>
+                           </children></HBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="57.0" prefWidth="611.0">
+                     <children>
+                        <Text fx:id="shortDesc" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="productDetails__categ" text="short description short description short description short description short description" wrappingWidth="600.5199966430664" />
+                     </children>
+                  </HBox>
+                  <HBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="28.0" prefWidth="630.0" styleClass="productDetails__categ">
+                     <children>
+                        <Text fill="#7453fc" strokeType="OUTSIDE" strokeWidth="0.0" text="(" translateY="2.0">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </Text>
+                        <Text fx:id="total_views" fill="#7453fc" strokeType="OUTSIDE" strokeWidth="0.0" text="20" translateY="2.0" />
+                        <Text fill="#7453fc" strokeType="OUTSIDE" strokeWidth="0.0" text=" views)" translateY="2.0" />
+                     </children>
+                  </HBox>
+                  <Line endX="490.0" startX="-100.0" stroke="#defee6" strokeWidth="2.0">
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="3.0" />
+                     </VBox.margin>
+                  </Line>
+                  <HBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="24.0" prefWidth="630.0">
+                     <children>
+                        <Text fill="#eb1616" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="productDetails__descTitle" text="Description: " />
+                     </children>
+                  </HBox>
+                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="67.0" prefWidth="615.0">
+                     <children>
+                        <Text fx:id="description" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="productDetails__descText" text="Cool enviorement friendly bag Cool enviorement friendly bag Cool enviorement friendly bag Cool enviorement friendly bag Cool enviorement friendly bag  ol enviorement friendly bag Cool enviorement friendly bag " wrappingWidth="601.699951171875" />
+                     </children>
+                  </HBox>
+                  <Line endX="490.0" startX="-100.0" stroke="#defee6" strokeWidth="2.0" />
+                  <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="200.0">
+                     <children>
+                        <Text fill="#eb1616" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="productDetails__descTitle" text="Share this Article" />
+                        <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#partageFacebook" prefHeight="35.0" prefWidth="35.0" styleClass="productDetails__fbBtnContainer">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                           <children>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/img/facebook-app-symbol.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <padding>
+                  <Insets left="10.0" right="20.0" />
+               </padding>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="150.0" prefWidth="1110.0">
+         <children>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="productDetails__verifiedText" text="Comments" />
+         </children>
+      </HBox>
+      <HBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="600.0" prefWidth="1112.0" styleClass="productDetails__Container">
+         <children>
+            <VBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1109.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1080.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="880.0">
+                           <children>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="paymentMethodTitle" text="COMMENTS (" />
+                              <Text fx:id="totalComment" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="paymentMethodTitle" text="14" />
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="paymentMethodTitle" text=")" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="308.0">
+                           <children>
+                              <HBox fx:id="addNewReviewBtn" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#open_add_new_comment_model" prefHeight="45.0" prefWidth="218.0" styleClass="addReview__btn">
+                                 <children>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="addReview__btnText" text="Add New Comment" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="30.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="456.0" prefWidth="1062.0" styleClass="comment-card-scrollPane">
+                     <content>
+                        <GridPane fx:id="commentsListContainer">
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                        </GridPane>
+                     </content>
+                     <VBox.margin>
+                        <Insets left="30.0" />
+                     </VBox.margin>
+                  </ScrollPane>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets left="30.0" right="30.0" top="20.0" />
+   </padding>
+</VBox>

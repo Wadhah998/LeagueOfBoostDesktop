@@ -3,7 +3,25 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/daoid/Desktop/1Esprit/PIDEV/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/LeagueOfBoostMain.java</file>
+            <file>file:/C:/Users/daoid/Desktop/1Esprit/PIDEV/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/gui/NewsInterfaces/UserNewsFavorisController.java</file>
+            <file>file:/C:/Users/daoid/Desktop/1Esprit/PIDEV/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/gui/NewsInterfaces/UserNewsDetailsCard.fxml</file>
+            <file>file:/C:/Users/daoid/Desktop/1Esprit/PIDEV/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/gui/NewsInterfaces/UserNewsListController.java</file>
+            <file>file:/C:/Users/daoid/Desktop/1Esprit/PIDEV/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/gui/NewsInterfaces/AdminAddNewsCardController.java</file>
+            <file>file:/C:/Users/daoid/Desktop/1Esprit/PIDEV/LeagueOfBoostDesktop/LeagueOfBoost/src/AdminDashboard/AdminDashboardController.java</file>
+            <file>file:/C:/Users/daoid/Desktop/1Esprit/PIDEV/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/gui/NewsInterfaces/UserNewsDetailsCardController.java</file>
+            <file>file:/C:/Users/daoid/Desktop/1Esprit/PIDEV/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/gui/NewsInterfaces/UserNewsDetailsController.java</file>
+            <file>file:/C:/Users/daoid/Desktop/1Esprit/PIDEV/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/gui/user/ListUsers.fxml</file>
+            <file>file:/C:/Users/daoid/Desktop/1Esprit/PIDEV/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/gui/user/InscriptionController.java</file>
+            <file>file:/C:/Users/daoid/Desktop/1Esprit/PIDEV/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/gui/user/LoginController.java</file>
+            <file>file:/C:/Users/daoid/Desktop/1Esprit/PIDEV/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/gui/NewsInterfaces/UserCommentItemController.java</file>
+            <file>file:/C:/Users/daoid/Desktop/1Esprit/PIDEV/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/gui/user/leagueOfBoost.java</file>
+            <file>file:/C:/Users/daoid/Desktop/1Esprit/PIDEV/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/services/NewsService.java</file>
+            <file>file:/C:/Users/daoid/Desktop/1Esprit/PIDEV/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/services/ServicePersonne.java</file>
+            <file>file:/C:/Users/daoid/Desktop/1Esprit/PIDEV/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/gui/NewsInterfaces/UserNewsCard.fxml</file>
             <file>file:/C:/Users/daoid/Desktop/1Esprit/PIDEV/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/gui/user/ChoachDemandsController.java</file>
+            <file>file:/C:/Users/daoid/Desktop/1Esprit/PIDEV/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/gui/NewsInterfaces/UserNewsDetails.fxml</file>
+            <file>file:/C:/Users/daoid/Desktop/1Esprit/PIDEV/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/gui/NewsInterfaces/UserNewsCardController.java</file>
         </group>
     </open-files>
 </project-private>

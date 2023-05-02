@@ -204,8 +204,8 @@ public class InscriptionController implements Initializable {
                             String username = firstName + lastName;
 
                             // Save the user's Google account information to the database
-                            User u = new User(firstName, lastName, username, email, "123456789");
-                            ps.Ajouter(u);
+                           // User u = new User(firstName, lastName, username, email, "123456789");
+                            //ps.Ajouter(u);
 
                             // Close the login window
                             ((Stage) webView.getScene().getWindow()).close();

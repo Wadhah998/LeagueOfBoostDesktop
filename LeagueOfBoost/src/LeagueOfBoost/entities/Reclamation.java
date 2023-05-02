@@ -52,6 +52,12 @@ public class Reclamation {
         
     }
 
+    public Reclamation(String Theme2, String Object2, String Text2, Integer id2) {
+this.theme = Theme2;
+        this.object = Object2;
+        this.text = Text2;
+        this.id = id2;    }
+
     
     public int getUser_id() {
         return user_id;

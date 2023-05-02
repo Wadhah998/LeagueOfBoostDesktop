@@ -108,9 +108,7 @@ public class ReclamationController implements Initializable {
         objclm.setCellValueFactory(new PropertyValueFactory<>("object"));
         txtclm.setCellValueFactory(new PropertyValueFactory<>("text"));
         
-              listef.stream().filter((r) -> (r.isEtat())).forEachOrdered((_item) -> {
-            notifyUser(message);
-        });
+       
       
         table.setItems(listef);
         

@@ -7,17 +7,18 @@
             <file>file:/Z:/AAAKRAYA/3EME/SEM2/pijava/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/gui/AjouterRController.java</file>
             <file>file:/Z:/AAAKRAYA/3EME/SEM2/pijava/LeagueOfBoostDesktop/LeagueOfBoost/nbproject/build-impl.xml</file>
             <file>file:/Z:/AAAKRAYA/3EME/SEM2/pijava/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/gui/reclamationUser.fxml</file>
+            <file>file:/Z:/AAAKRAYA/3EME/SEM2/pijava/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/gui/ModifierRuserController.java</file>
             <file>file:/Z:/AAAKRAYA/3EME/SEM2/pijava/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/gui/ReclamationController.java</file>
             <file>file:/Z:/AAAKRAYA/3EME/SEM2/pijava/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/gui/ModifierRController.java</file>
             <file>file:/Z:/AAAKRAYA/3EME/SEM2/pijava/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/LeagueOfBoost.java</file>
-            <file>file:/Z:/AAAKRAYA/3EME/SEM2/pijava/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/gui/ReclamarionByUser.fxml</file>
             <file>file:/Z:/AAAKRAYA/3EME/SEM2/pijava/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/gui/ReclamationUserController.java</file>
             <file>file:/Z:/AAAKRAYA/3EME/SEM2/pijava/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/gui/AfficherR.fxml</file>
             <file>file:/Z:/AAAKRAYA/3EME/SEM2/pijava/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/services/ServiceReclamation.java</file>
-            <file>file:/Z:/AAAKRAYA/3EME/SEM2/pijava/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/gui/ReclamationByUserController.java</file>
+            <file>file:/Z:/AAAKRAYA/3EME/SEM2/pijava/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/utils/MyDB.java</file>
             <file>file:/Z:/AAAKRAYA/3EME/SEM2/pijava/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/gui/leagueOfBoost.java</file>
             <file>file:/Z:/AAAKRAYA/3EME/SEM2/pijava/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/gui/user/leagueOfBoost.java</file>
             <file>file:/Z:/AAAKRAYA/3EME/SEM2/pijava/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/entities/Reclamation.java</file>
+            <file>file:/Z:/AAAKRAYA/3EME/SEM2/pijava/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/gui/modifierRuser.fxml</file>
             <file>file:/Z:/AAAKRAYA/3EME/SEM2/pijava/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/gui/AfficherRController.java</file>
             <file>file:/Z:/AAAKRAYA/3EME/SEM2/pijava/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/gui/reclamation.fxml</file>
         </group>

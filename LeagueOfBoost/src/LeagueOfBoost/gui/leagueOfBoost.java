@@ -24,8 +24,8 @@ public class leagueOfBoost extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("reclamation.fxml"));
-            //Parent root = FXMLLoader.load(getClass().getResource("reclamationUser.fxml"));
+            //Parent root = FXMLLoader.load(getClass().getResource("reclamation.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("reclamationUser.fxml"));
             //Parent root = FXMLLoader.load(getClass().getResource("ajouterR.fxml"));
             Scene scene = new Scene(root);
 

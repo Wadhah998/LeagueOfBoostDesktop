@@ -28,96 +28,10 @@ public class ServiceReclamation implements IService<Reclamation> {
 
     }
 
-    public void Affichertout() {
-        try {
-            String sql = "SELECT * FROM `LOB`.`reclamation`";
-            PreparedStatement ste = con.prepareStatement(sql);
-
-            ResultSet result = ste.executeQuery();
-
-            while (result.next()) {
-                int id = result.getInt("id");
-                int user_id = result.getInt("user_id");
-                boolean etat = result.getBoolean("etat");
-                Date date = result.getDate("date");
-                String theme = result.getString("theme");
-                String object = result.getString("object");
-                String text = result.getString("text");
 
 
-                System.out.println("reclamation ID: " + id);
-                System.out.println("user's id: " + user_id);
-                System.out.println("etat: " + etat);
-                System.out.println("date: " + date);
-                System.out.println("theme: " + theme);
-                System.out.println("object: " + object);
-                System.out.println("text: " + text);
-                System.out.println("---------------");
-            }
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
-        }
-    }
 
-    public void AfficherByUser_Id(int t) {
-        try {
-            String sql = "SELECT * FROM `LOB`.`reclamation` WHERE user_id=" + t;
-            PreparedStatement ste = con.prepareStatement(sql);
-
-            ResultSet result = ste.executeQuery();
-
-            while (result.next()) {
-                int id = result.getInt("id");
-                int user_id = result.getInt("user_id");
-                boolean etat = result.getBoolean("etat");
-                Date date = result.getDate("date");
-                String theme = result.getString("theme");
-                String object = result.getString("object");
-                String text = result.getString("text");
-
-                System.out.println("reclamation ID: " + id);
-                System.out.println("user's id: " + user_id);
-                System.out.println("etat: " + etat);
-                System.out.println("date: " + date);
-                System.out.println("theme: " + theme);
-                System.out.println("object: " + object);
-                System.out.println("text: " + text);
-                System.out.println("---------------");
-            }
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
-        }
-    }
-
-    public void AfficherById(Reclamation t) {
-        try {
-            String sql = "SELECT * FROM `LOB`.`reclamation` WHERE id=" + t.getId();
-            PreparedStatement ste = con.prepareStatement(sql);
-
-            ResultSet result = ste.executeQuery();
-
-            while (result.next()) {
-                int id = result.getInt("id");
-                int user_id = result.getInt("user_id");
-                boolean etat = result.getBoolean("etat");
-                Date date = result.getDate("date");
-                String theme = result.getString("theme");
-                String object = result.getString("object");
-                String text = result.getString("text");
-
-                System.out.println("reclamation ID: " + id);
-                System.out.println("user's id: " + user_id);
-                System.out.println("etat: " + etat);
-                System.out.println("date: " + date);
-                System.out.println("theme: " + theme);
-                System.out.println("object: " + object);
-                System.out.println("text: " + text);
-                System.out.println("---------------");
-            }
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
-        }
-    }
+ 
 
     public ObservableList<Reclamation> afficherReclamation() {
         ObservableList<Reclamation> reclamations = FXCollections.observableArrayList();;
@@ -239,18 +153,7 @@ public class ServiceReclamation implements IService<Reclamation> {
     }
 }
     
-    public void rateService(int id, int rating) {
-    try {
-        String sql = "UPDATE `LOB`.`reclamation` SET `rating` = ? WHERE `id` = ?";
-        PreparedStatement ste = con.prepareStatement(sql);
-        ste.setInt(1, rating);
-        ste.setInt(2, id);
-        ste.executeUpdate();
-        System.out.println("Rating updated successfully");
-    } catch (SQLException ex) {
-        System.out.println(ex.getMessage());
-    }
-}
+
 
         public ObservableList<Reclamation> afficherReclamationbyuser() {
         ObservableList<Reclamation> reclamations = FXCollections.observableArrayList();;
@@ -280,5 +183,26 @@ public class ServiceReclamation implements IService<Reclamation> {
     
     
 
-    
+        
+    public void ModifierRuser(Reclamation t) {
+        try {
+            
+            String sql = "UPDATE `LOB`.`reclamation` SET  theme=?, object=?, text=?  WHERE id=?";
+            PreparedStatement ste = con.prepareStatement(sql); 
+            
+            ste.setString(1, t.getTheme());
+            ste.setString(2, t.getObject());
+            ste.setString(3, t.getText());
+            ste.setInt(4, t.getId());
+
+            
+            ste.executeUpdate();
+            
+            //System.out.print("utilisateur modifier");
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+        
+        
 }

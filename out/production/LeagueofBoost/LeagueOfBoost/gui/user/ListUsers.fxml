@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="800.0" style="-fx-background-color: #F4F4F4;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LeagueOfBoost.gui.user.ListUsersController">
+    <children>
+        <fx:include source="home.fxml" />
+        <TextField fx:id="prixtotal" layoutX="214.0" layoutY="42.0" prefHeight="27.0" prefWidth="334.0" promptText="Recherche..." styleClass="textfield-design" stylesheets="@design.css">
+
+        </TextField>
+
+        <TableView fx:id="table" layoutX="200.0" layoutY="96.0" prefHeight="314.0" prefWidth="598.0" styleClass="table-view" stylesheets="@dashboardDesign.css">
+            <columns>
+                <TableColumn fx:id="fnclm" prefWidth="110.0" styleClass="column-header" text="First Name" />
+                <TableColumn fx:id="lnclm" prefWidth="110.0" styleClass="column-header" text="Last Name" />
+                <TableColumn fx:id="unclm" prefWidth="110.0" styleClass="column-header" text="Username" />
+                <TableColumn fx:id="mailclm" prefWidth="155.20001220703125" styleClass="column-header" text="Email" />
+                <TableColumn fx:id="roleclm" prefWidth="126.39990234375" styleClass="column-header" text="Role" />
+            </columns>
+        </TableView>
+
+        <Button fx:id="btnSupprimer" layoutX="627.0" layoutY="427.0" minHeight="40.0" minWidth="100.0" onAction="#supprimer" styleClass="exit" stylesheets="@design.css" text="Supprimer" />
+
+        <ChoiceBox fx:id="choiceBox" layoutX="592.0" layoutY="42.0" prefHeight="26.0" prefWidth="170.0">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="All" />
+                <String fx:value="User" />
+                <String fx:value="Booster" />
+                <String fx:value="Coach" />
+            </FXCollections>
+        </items>
+    </ChoiceBox>
+        <Button fx:id="warningButton" layoutX="331.0" layoutY="427.0" mnemonicParsing="false" onAction="#SendWarning" prefHeight="40.0" prefWidth="100.0" styleClass="warning-button" stylesheets="@design.css" text="Warning" />
+
+
+
+    </children>
+</AnchorPane>

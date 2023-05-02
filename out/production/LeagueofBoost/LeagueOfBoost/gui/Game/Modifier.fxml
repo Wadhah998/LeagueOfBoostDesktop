@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LeagueOfBoost.gui.Game.ModifierController">
+   <children>
+      <TextField fx:id="txttitle" layoutX="219.0" layoutY="58.0" />
+      <TextField fx:id="txtdes" layoutX="220.0" layoutY="124.0" />
+      <TextField fx:id="txtprice" layoutX="219.0" layoutY="200.0" />
+      <TextField fx:id="txtdate" layoutX="219.0" layoutY="267.0" />
+      <TextField fx:id="id" layoutX="398.0" layoutY="58.0" visible="false" />
+      <Label layoutX="53.0" layoutY="62.0" text="Title" />
+      <Label layoutX="53.0" layoutY="128.0" text="Description" />
+      <Label layoutX="53.0" layoutY="204.0" text="Price" />
+      <Label layoutX="53.0" layoutY="271.0" text="Date" />
+      <Button fx:id="btnConfirmer" layoutX="268.0" layoutY="312.0" mnemonicParsing="false" onAction="#confirmer" text="Confirmer" />
+   </children>
+</AnchorPane>

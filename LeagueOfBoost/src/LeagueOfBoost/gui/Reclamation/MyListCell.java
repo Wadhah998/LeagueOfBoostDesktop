@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package LeagueOfBoost.gui;
+package LeagueOfBoost.gui.Reclamation;
 
+import LeagueOfBoost.gui.Reclamation.MyData;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.image.ImageView;

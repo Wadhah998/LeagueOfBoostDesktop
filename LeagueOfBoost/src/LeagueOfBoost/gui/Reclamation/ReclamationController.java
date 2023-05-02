@@ -3,22 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package LeagueOfBoost.gui;
+package LeagueOfBoost.gui.Reclamation;
 
 import LeagueOfBoost.entities.Reclamation;
-import static LeagueOfBoost.gui.ReclamationController.varstat;
 import LeagueOfBoost.services.ServiceReclamation;
-import static com.sun.xml.internal.fastinfoset.alphabet.BuiltInRestrictedAlphabets.table;
-import java.awt.AWTException;
-import java.awt.Image;
-import java.awt.SystemTray;
-import java.awt.Toolkit;
-import java.awt.TrayIcon;
 import java.io.IOException;
 import java.net.URL;
-import java.util.Date;
 import java.util.ResourceBundle;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -32,14 +23,23 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import javafx.collections.FXCollections;
+import java.awt.AWTException;
+import java.awt.SystemTray;
+import java.awt.Toolkit;
+import java.awt.TrayIcon;
+import java.awt.Image;
+
 
 /**
  * FXML Controller class
  *
  * @author wassim
  */
-public class ReclamationUserController implements Initializable {
+public class ReclamationController implements Initializable {
 
+    public static int varstat ;
+    
     @FXML
     private TableColumn<Reclamation, Integer> idclm;
     @FXML
@@ -47,7 +47,7 @@ public class ReclamationUserController implements Initializable {
     @FXML
     private TableColumn<Reclamation, Boolean> etatclm;
     @FXML
-    private TableColumn<Reclamation, Date> dateclm;
+    private TableColumn<Reclamation, Integer> dateclm;
     @FXML
     private TableColumn<Reclamation, String> themeclm;
     @FXML
@@ -55,34 +55,31 @@ public class ReclamationUserController implements Initializable {
     @FXML
     private TableColumn<Reclamation, String> txtclm;
     @FXML
-    private TextField prixtotal;
-    @FXML
-    private TextField id;
+    private TableView<Reclamation> table;
     @FXML
     private Button btnSupprimer;
     @FXML
-    private Button btnAfficher;
-    @FXML
     private Button btnmodifier;
     @FXML
-    private TableView<Reclamation> table;
+    private Button btnAfficher;
+    @FXML
+    private TextField id;
+    private TextField searchField;
+    @FXML
+    private TextField prixtotal;
     
-    
-        String message = "Une réclamation a été traitée.";
+    String message = "Une réclamation a été traitée.";
+        
 
     
-
-    /**
-     * Initializes the controller class.
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-       prixtotal.textProperty().addListener((observable, oldValue, newValue) -> {
+        prixtotal.textProperty().addListener((observable, oldValue, newValue) -> {
             rechercherReclamation();
         });
         
        
-        loadReclamationsuser();
+        loadReclamations();
         
         
         table.setOnMouseClicked(event -> {
@@ -98,9 +95,10 @@ public class ReclamationUserController implements Initializable {
     
     btnAfficher.setDisable(true);
     }    
-        ServiceReclamation sr = new ServiceReclamation();
-        private void loadReclamationsuser() {
-        ObservableList<Reclamation> listef = sr.afficherReclamationbyuser();
+    ServiceReclamation sr = new ServiceReclamation();
+    
+    private void loadReclamations() {
+        ObservableList<Reclamation> listef = sr.afficherReclamation();
         table.setItems(listef);
         idclm.setCellValueFactory(new PropertyValueFactory<>("id"));
         userclm.setCellValueFactory(new PropertyValueFactory<>("user_id"));
@@ -110,28 +108,29 @@ public class ReclamationUserController implements Initializable {
         objclm.setCellValueFactory(new PropertyValueFactory<>("object"));
         txtclm.setCellValueFactory(new PropertyValueFactory<>("text"));
         
-              listef.stream().filter((r) -> (r.isEtat())).forEachOrdered((_item) -> {
-            notifyUser(message);
-        });
+       
       
         table.setItems(listef);
-    }
         
-            @FXML
+  
+    
+    }
+
+    @FXML
     private void Supprimer(ActionEvent event) {
         Reclamation r1 = table.getSelectionModel().getSelectedItem();
         sr.Supprimer(r1);
-        loadReclamationsuser();
+        loadReclamations();
     }
-    
-        @FXML
-    private void ModifierRuser(ActionEvent event) {
+
+    @FXML
+    private void Modifier(ActionEvent event) {
         Reclamation r = table.getSelectionModel().getSelectedItem();
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("modifierRuser.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("modifierR.fxml"));
             Parent root = loader.load();
             
-            ModifierRuserController controleur = loader.getController();
+            ModifierRController controleur = loader.getController();
             
             controleur.setTextFields(r);
             
@@ -139,14 +138,16 @@ public class ReclamationUserController implements Initializable {
             Stage stage = (Stage) btnmodifier.getScene().getWindow();
             stage.setScene(scene);
             stage.show();
-            loadReclamationsuser();
+            loadReclamations();
         } catch (IOException e) {
             System.out.println(e.getCause().getMessage());
         }
     }
     
-        @FXML
-    public void Afficher() {
+    
+    
+    @FXML
+public void Afficher() {
     Reclamation selectedReclamation = table.getSelectionModel().getSelectedItem();
      varstat = selectedReclamation.getId() ; 
     if (selectedReclamation != null) {
@@ -166,13 +167,12 @@ public class ReclamationUserController implements Initializable {
         }
     }
 }
-    
-    public void rechercherReclamation() {
+public void rechercherReclamation() {
         String keyword = prixtotal.getText();
        ObservableList<Reclamation> filteredList = FXCollections.observableArrayList();
         ObservableList<TableColumn<Reclamation, ?>> columns = table.getColumns();
-        for (int i = 0; i <sr.afficherReclamationbyuser().size(); i++) {
-            Reclamation Rec = sr.afficherReclamationbyuser().get(i);
+        for (int i = 0; i <sr.afficherReclamation().size(); i++) {
+            Reclamation Rec = sr.afficherReclamation().get(i);
             for (int j = 0; j < columns.size(); j++) {
                 TableColumn<Reclamation, ?> column = columns.get(j);
                 String cellValue = column.getCellData(Rec).toString();
@@ -184,8 +184,9 @@ public class ReclamationUserController implements Initializable {
         }
         table.setItems(filteredList);
     }
-    
-        private void notifyUser(String message) {
+
+
+    private void notifyUser(String message) {
          if (SystemTray.isSupported()) {
              try {
                  // Initialiser SystemTray
@@ -207,9 +208,12 @@ public class ReclamationUserController implements Initializable {
              System.out.println("SystemTray n'est pas pris en charge");
          }
      }
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
 }

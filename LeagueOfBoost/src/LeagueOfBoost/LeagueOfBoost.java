@@ -10,7 +10,7 @@ import LeagueOfBoost.services.ServiceReclamation;
 import LeagueOfBoost.entities.Message;
 import LeagueOfBoost.services.ServiceMessage;
 import LeagueOfBoost.utils.MyDB;
-import LeagueOfBoost.gui.leagueOfBoost;
+import LeagueOfBoost.gui.Reclamation.leagueOfBoost;
 
 
 /**

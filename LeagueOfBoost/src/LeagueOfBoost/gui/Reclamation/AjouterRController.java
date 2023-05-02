@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package LeagueOfBoost.gui;
+package LeagueOfBoost.gui.Reclamation;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -34,6 +34,7 @@ import LeagueOfBoost.services.ServiceReclamation;
 import LeagueOfBoost.utils.MyDB;
 import java.sql.SQLException;
 import java.util.Date;
+import javafx.scene.Node;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextFormatter;
 import javafx.scene.layout.AnchorPane;
@@ -58,6 +59,8 @@ public class AjouterRController {
     
     
     ServiceReclamation sr = new ServiceReclamation();
+    @FXML
+    private Button Retour;
     
 
     /**
@@ -117,4 +120,18 @@ public class AjouterRController {
         textclm.setText("");
         themeclm.setText("");
     } 
+
+    @FXML
+    private void retour(ActionEvent event) throws IOException {
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/LeagueOfBoost/gui/Reclamation/reclamationUser.fxml"));
+    Parent root = loader.load();
+    ReclamationUserController ajouterController = loader.getController();
+
+    Scene scene = new Scene(root);
+    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    stage.setScene(scene);
+    stage.show();
+    }
+    
+    
 }

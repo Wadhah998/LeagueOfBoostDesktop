@@ -6,7 +6,7 @@
 <?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" fx:id="txt" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LeagueOfBoost.gui.ModifierRController">
+<AnchorPane id="AnchorPane" fx:id="txt" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LeagueOfBoost.gui.Reclamation.ModifierRController">
    <children>
       <TextField fx:id="txttheme" layoutX="220.0" layoutY="124.0" />
       <TextField fx:id="txtobj" layoutX="226.0" layoutY="200.0" />

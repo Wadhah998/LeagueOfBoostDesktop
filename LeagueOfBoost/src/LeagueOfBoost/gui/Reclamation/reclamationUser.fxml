@@ -6,7 +6,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="548.0" prefWidth="770.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LeagueOfBoost.gui.ReclamationUserController">
+<AnchorPane id="AnchorPane" prefHeight="548.0" prefWidth="770.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LeagueOfBoost.gui.Reclamation.ReclamationUserController">
    <children>
       <TableView fx:id="table" layoutX="97.0" layoutY="106.0" prefHeight="276.0" prefWidth="598.0">
         <columns>
@@ -24,5 +24,6 @@
       <Button fx:id="btnSupprimer" layoutX="283.0" layoutY="448.0" mnemonicParsing="false" onAction="#Supprimer" text="Supprimer" />
       <Button fx:id="btnAfficher" layoutX="468.0" layoutY="448.0" mnemonicParsing="false" onAction="#Afficher" text="Afficher" />
       <Button fx:id="btnmodifier" layoutX="129.0" layoutY="448.0" mnemonicParsing="false" onAction="#ModifierRuser" text="modifier" />
+      <Button fx:id="AjouterR" layoutX="592.0" layoutY="448.0" mnemonicParsing="false" onAction="#AjouterR" text="Ajouter Reclamation" />
    </children>
 </AnchorPane>

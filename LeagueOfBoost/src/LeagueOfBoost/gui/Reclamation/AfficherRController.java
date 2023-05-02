@@ -1,5 +1,7 @@
-package LeagueOfBoost.gui;
+package LeagueOfBoost.gui.Reclamation;
 
+import LeagueOfBoost.gui.Reclamation.MyData;
+import LeagueOfBoost.gui.Reclamation.ReclamationController;
 import LeagueOfBoost.entities.Message;
 import LeagueOfBoost.entities.Reclamation;
 import LeagueOfBoost.services.ServiceMessage;

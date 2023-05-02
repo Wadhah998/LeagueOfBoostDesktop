@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package LeagueOfBoost.gui;
+package LeagueOfBoost.gui.Reclamation;
 
 import LeagueOfBoost.entities.Reclamation;
 import LeagueOfBoost.services.ServiceReclamation;

@@ -9,7 +9,7 @@
 
 <AnchorPane id="AnchorPane" fx:id="main" onMouseClicked="#AjouterButton" prefHeight="675.0" prefWidth="1504.0" styleClass="bodybg" stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LeagueOfBoost.gui.Team.TeamController">
    <children>
-      <Button layoutX="745.0" layoutY="520.0" mnemonicParsing="false" onAction="#ajouterGame" text="Add New Team" />
+      <Button layoutX="745.0" layoutY="520.0" mnemonicParsing="false" text="Add New Team" />
       <TableView fx:id="TeamList" layoutY="85.0" prefHeight="378.0" prefWidth="1588.0">
         <columns>
           <TableColumn fx:id="game_id" prefWidth="112.80000227689743" text="Game Id" />

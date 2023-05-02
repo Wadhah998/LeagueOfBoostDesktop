@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LeagueOfBoost.gui.sessionb.SBController">
+   <children>
+      <Button fx:id="btnrr" layoutX="220.0" layoutY="293.0" mnemonicParsing="false" onAction="#ajouter" text="Réserver" />
+      <Label layoutX="110.0" layoutY="66.0" text="Description" />
+      <Label layoutX="108.0" layoutY="169.0" text="Titre" />
+      <Label layoutX="103.0" layoutY="235.0" text="nbr-heure" />
+      <Label layoutX="110.0" layoutY="111.0" text="Prix" />
+      <TextField fx:id="txtdes" layoutX="198.0" layoutY="62.0" />
+      <TextField fx:id="txtprix" layoutX="198.0" layoutY="107.0" />
+      <TextField fx:id="txttit" layoutX="198.0" layoutY="165.0" />
+      <TextField fx:id="txtnbr" layoutX="198.0" layoutY="223.0" />
+   </children>
+</AnchorPane>

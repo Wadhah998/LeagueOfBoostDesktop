@@ -5,6 +5,8 @@
  */
 package LeagueOfBoost.entities;
 
+import java.time.LocalDate;
+import java.util.Date;
 import javafx.scene.control.Button;
 
 /**
@@ -17,7 +19,7 @@ public class Game {
     public String title;
     public String description;
     public int price;
-    public int date;
+    public Date date;
     public Button supprimer;
     
      public Game(){
@@ -25,20 +27,24 @@ public class Game {
     }
 
 
-    public Game(String title, String description, int price, int date) {
+    public Game(String title, String description, int price, Date date) {
         this.title = title;
         this.description = description;
         this.price = price;
         this.date = date;
     }
-     public Game(int game_id, String title, String description, int price, int date) {
+     public Game(int game_id, String title, String description, int price, Date date) {
         this.game_id = game_id;
         this.title = title;
         this.description = description;
         this.price = price;
         this.date = date;
     }
-     
+
+    public Game(String title, String description, int price) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 
     public Button getSupprimer() {
         return supprimer;
@@ -82,11 +88,11 @@ public class Game {
         this.price = price;
     }
 
-    public int getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(int date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 

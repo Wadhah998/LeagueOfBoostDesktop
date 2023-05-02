@@ -49,8 +49,6 @@ public class GameController implements Initializable {
     private TableColumn<?, ?> price;
     @FXML
     private TableColumn<?, ?> date;
-    @FXML
-    private TableView<Game> table;
     
  
     
@@ -120,7 +118,6 @@ private void handleButtonAction (ActionEvent event)
 
     @FXML
     private void AjouterButton(MouseEvent event) {
-
     }
     
     

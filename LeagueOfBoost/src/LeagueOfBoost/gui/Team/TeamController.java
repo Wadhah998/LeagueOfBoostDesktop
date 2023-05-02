@@ -7,8 +7,6 @@ package LeagueOfBoost.gui.Team;
 
 import LeagueOfBoost.entities.Team;
 import LeagueOfBoost.services.ServiceTeam;
-
-import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -16,9 +14,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -163,15 +159,6 @@ private void handleButtonAction (ActionEvent event)
         System.out.println("you succesfully closed the application");
         Stage1_1.close();
     }
-
-    public void ajouterGame(ActionEvent actionEvent) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Ajouter.fxml"));
-        Stage stage = new Stage();
-
-        stage.setScene(new Scene(loader.load()));
-        stage.show();
-        Stage currentStage = (Stage) ((Button) actionEvent.getSource()).getScene().getWindow();
-        currentStage.hide();
-    }
+    
 }
 

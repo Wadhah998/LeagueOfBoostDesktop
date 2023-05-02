@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -12,7 +13,7 @@ import javafx.scene.control.Button;
  * @author Mega-PC
  */
 public class Team {
-    int id, game_id;
+    int id, game_id, wins, losses;
     String name, description, player1,player2,player3,player4,player5;
      public Button supprimer;
 
@@ -27,6 +28,13 @@ public class Team {
     
     public Team(){
         
+    }
+
+    public Team(String name, int wins, int losses) {
+       
+        this.name = name;
+        this.wins = wins;
+        this.losses = losses;
     }
 
     public Team(int game_id, String name, String description, String player1, String player2, String player3, String player4, String player5) {
@@ -128,6 +136,22 @@ public class Team {
 
     public void setPlayer5(String player5) {
         this.player5 = player5;
+    }
+
+    public int getWins() {
+        return wins;
+    }
+
+    public void setWins(int wins) {
+        this.wins = wins;
+    }
+
+    public int getLosses() {
+        return losses;
+    }
+
+    public void setLosses(int losses) {
+        this.losses = losses;
     }
     
     

@@ -1,3 +1,16 @@
-.bodybg{
-    -fx-background-image: url("C:\Users\Mega-PC\Documents\GitHub\LeagueOfBoost\public\assets\images\main-bg.jpg")
+.table-view {
+    -fx-text-fill: white;
+}
+
+.table-column {
+    -fx-background-color: #172333;
+    -fx-text-fill: white;
+
+}
+.table-label {
+    -fx-text-fill: white;
+
+}
+.table-view .table-cell {
+    -fx-text-fill: white;
 }

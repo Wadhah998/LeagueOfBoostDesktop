@@ -120,9 +120,7 @@
             <TableColumn fx:id="losses" prefWidth="57.60003662109375" text="Losses" />
             <TableColumn fx:id="wr" minWidth="0.0" prefWidth="155.20001220703125" text="Winrate %" />
         </columns>
-         <cursor>
-            <Cursor fx:constant="SW_RESIZE" />
-         </cursor>
+       
       </TableView>
       
 

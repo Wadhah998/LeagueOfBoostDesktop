@@ -2,16 +2,19 @@ package LeagueOfBoost.gui.Game;
 
 import LeagueOfBoost.entities.Game;
 import LeagueOfBoost.services.SeviceGame;
-import java.net.URL;
-import java.util.ResourceBundle;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
-public class AjouterController{ 
+public class AjouterController { 
 
     @FXML
     private Button btnres;
@@ -26,9 +29,8 @@ public class AjouterController{
     private TextField txtprice;
     
     @FXML
-    private TextField txtdate;
+    private DatePicker txtdate;
   
-
     SeviceGame sp = new SeviceGame();
     
     public void initialize() {
@@ -47,47 +49,42 @@ public class AjouterController{
                 txtprice.setText(newValue.replaceAll("[^\\d]", ""));
             }
         });
-        txtdate.textProperty().addListener((observable, oldValue, newValue) -> {
-            if (!newValue.matches("\\d*")) {
-                txtdate.setText(newValue.replaceAll("[^\\d]", ""));
-            }
-        });
     }    
 
-    @FXML
-    void reserver(ActionEvent event) {
-        // Vérifie que tous les champs ont été remplis
-        if (txttitle.getText().isEmpty() || txtdes.getText().isEmpty() || txtprice.getText().isEmpty() || txtdate.getText().isEmpty()) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Erreur");
+        @FXML
+        void reserver(ActionEvent event) {
+            // Vérifie que tous les champs ont été remplis
+            if (txttitle.getText().isEmpty() || txtdes.getText().isEmpty() || txtprice.getText().isEmpty() || txtdate.getValue() == null) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Erreur");
+                alert.setHeaderText(null);
+                alert.setContentText("Tous les champs doivent être remplis !");
+                alert.showAndWait();
+                return;
+            }
+
+            String title = txttitle.getText();
+            String description = txtdes.getText();
+            int price = Integer.parseInt(txtprice.getText());
+            LocalDate localDate = txtdate.getValue();
+            Instant instant = localDate.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant();
+            Date date = Date.from(instant);
+            Game r = new Game(title, description, price, date);
+            sp.Ajouter(r);
+
+
+            // Affiche un message de confirmation
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Confirmation");
             alert.setHeaderText(null);
-            alert.setContentText("Tous les champs doivent être remplis !");
+            alert.setContentText("Game ajoutée avec succès !");
             alert.showAndWait();
-            return;
+
+            // Réinitialise les champs de saisie
+            txttitle.setText("");
+            txtdes.setText("");
+            txtprice.setText("");
+            txtdate.setValue(null); // Reset the DatePicker
         }
 
-      //  int game_id = Integer.parseInt(txtid.getText());
-        String title = txttitle.getText();
-        String description = txtdes.getText();
-        int price = Integer.parseInt(txtprice.getText());
-        int date = Integer.parseInt(txtdate.getText());
-
-        Game r = new Game(title, description, price,date);
-        sp.Ajouter(r);
-        
-        // Affiche un message de confirmation
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Confirmation");
-        alert.setHeaderText(null);
-        alert.setContentText("Game ajoutée avec succès !");
-        alert.showAndWait();
-
-        // Réinitialise les champs de saisie
-        txttitle.setText("");
-        txtdes.setText("");
-        txtprice.setText("");
-        txtdate.setText("");
-
-    }   
-
-    }
+}

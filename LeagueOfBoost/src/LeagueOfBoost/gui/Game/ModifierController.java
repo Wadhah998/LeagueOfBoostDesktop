@@ -9,6 +9,10 @@ package LeagueOfBoost.gui.Game;
 import LeagueOfBoost.entities.Game;
 import LeagueOfBoost.services.SeviceGame;
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -59,7 +63,14 @@ public class ModifierController implements Initializable {
 
          String description2=txtdes.getText();
          Integer price2=Integer.valueOf(txtprice.getText());
-         Integer date2=Integer.valueOf(txtdate.getText());
+         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd"); // Create a date format object
+        Date date2 = null;
+        try {
+            date2 = dateFormat.parse(txtdate.getText()); // Parse the date string to a Date object
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        
          
          Game r =new Game(id2, title2, description2, price2, date2);
            sr.Modifier(r);

@@ -43,6 +43,10 @@ import nl.captcha.Captcha;
 
 public class AjouterController{ 
 
+    public static void setGame_id(int game_id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     @FXML
     private Button btnres;
     

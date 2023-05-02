@@ -150,8 +150,8 @@ public class DesignController implements Initializable {
     
 });
     }
-    @FXML
-    public void handleGameClick(MouseEvent event) throws IOException {
+   @FXML
+public void handleGameClick(MouseEvent event) throws IOException {
     FXMLLoader loader = new FXMLLoader(getClass().getResource("/LeagueOfBoost/gui/Team/Ajouter.fxml"));
     Parent root = loader.load();
     AjouterController ajouterController = loader.getController();
@@ -161,6 +161,8 @@ public class DesignController implements Initializable {
     stage.setScene(scene);
     stage.show();
 }
+
+
   public void rechercherUtilisateurs() {
     String keyword = "";
     if (prixtotal != null) {

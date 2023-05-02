@@ -11,9 +11,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import LeagueOfBoost.utils.MyDB;
+import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
+import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
 import java.util.List;
 import java.util.ArrayList;
-
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.Date;
 
 
 /**
@@ -97,8 +101,7 @@ public class SeviceGame implements IService<Game>{
             String title = result.getString("title");
             String description = result.getString("description");
             int price = result.getInt("price");
-            int date = result.getInt("date");
-
+            Date date = result.getDate("date");
             Game game = new Game(game_id, title, description, price, date);
             games.add(game);
         }
@@ -117,8 +120,8 @@ public class SeviceGame implements IService<Game>{
             ste.setString(1, t.getTitle());
             ste.setString(2, t.getDescription());
             ste.setInt(3, t.getPrice());
-            ste.setInt(4, t.getDate());
-        
+            ste.setDate(4, new java.sql.Date(t.getDate().getTime()));
+
             ste.executeUpdate();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -135,7 +138,7 @@ public class SeviceGame implements IService<Game>{
         ste.setString(1, t.getTitle());
         ste.setString(2, t.getDescription());
         ste.setInt(3, t.getPrice());
-        ste.setInt(4, t.getDate());
+        ste.setDate(4, new java.sql.Date(t.getDate().getTime()));
         ste.setInt(5, t.getGame_id());
         
         ste.executeUpdate();

@@ -6,7 +6,7 @@ package LeagueOfBoost.gui.ReservationB;
 
 import LeagueOfBoost.entities.Reservationb;
 import LeagueOfBoost.entities.SessionBoosting;
-import LeagueOfBoost.gui.ModifiersController;
+import LeagueOfBoost.gui.sessionb.ModifiersController;
 import LeagueOfBoost.gui.ReservationB.ReservationBController;
 import LeagueOfBoost.services.ServiceReservationB;
 import LeagueOfBoost.services.ServiceSessionBoosting;

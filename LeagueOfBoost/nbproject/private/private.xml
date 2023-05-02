@@ -3,11 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/ASUS/OneDrive/Bureau/LeagueOfBoostDesktop-main/LeagueOfBoost/src/LeagueOfBoost/services/ServiceReservationB.java</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Bureau/LeagueOfBoostDesktop-main/LeagueOfBoost/src/LeagueOfBoost/gui/ReservationB/ReservationBController.java</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Bureau/LeagueOfBoostDesktop-main/LeagueOfBoost/src/LeagueOfBoost/gui/ReservationB/Test.java</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Bureau/LeagueOfBoostDesktop-main/LeagueOfBoost/src/LeagueOfBoost/LeagueOfBoost.java</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Bureau/LeagueOfBoostDesktop-main/LeagueOfBoost/src/LeagueOfBoost/entities/Reservationb.java</file>
+            <file>file:/C:/Users/ASUS/OneDrive/Bureau/aaaa/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/gui/sessionb/as.fxml</file>
+            <file>file:/C:/Users/ASUS/OneDrive/Bureau/aaaa/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/gui/sessionb/leagueOfBoost.java</file>
+            <file>file:/C:/Users/ASUS/OneDrive/Bureau/aaaa/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/gui/sessionb/RB.fxml</file>
+            <file>file:/C:/Users/ASUS/OneDrive/Bureau/aaaa/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/gui/sessionb/affichersession.fxml</file>
+            <file>file:/C:/Users/ASUS/OneDrive/Bureau/aaaa/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/gui/sessionb/AsController.java</file>
+            <file>file:/C:/Users/ASUS/OneDrive/Bureau/aaaa/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/gui/sessionb/modifiers.fxml</file>
+            <file>file:/C:/Users/ASUS/OneDrive/Bureau/aaaa/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/gui/sessionb/SB.fxml</file>
+            <file>file:/C:/Users/ASUS/OneDrive/Bureau/aaaa/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/services/ServiceSessionBoosting.java</file>
+            <file>file:/C:/Users/ASUS/OneDrive/Bureau/aaaa/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/gui/sessionb/ModifiersController.java</file>
+            <file>file:/C:/Users/ASUS/OneDrive/Bureau/aaaa/LeagueOfBoostDesktop/LeagueOfBoost/src/LeagueOfBoost/gui/sessionb/AffichersessionController.java</file>
         </group>
     </open-files>
 </project-private>

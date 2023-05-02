@@ -1,4 +1,4 @@
-package LeagueOfBoost.gui;
+package LeagueOfBoost.gui.sessionb;
 
 import LeagueOfBoost.entities.Reservationb;
 import LeagueOfBoost.services.ServiceReservationB;

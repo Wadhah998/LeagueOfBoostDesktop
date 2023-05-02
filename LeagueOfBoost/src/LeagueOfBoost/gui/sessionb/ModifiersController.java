@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
-package LeagueOfBoost.gui;
+package LeagueOfBoost.gui.sessionb;
 
 import LeagueOfBoost.entities.SessionBoosting;
 import LeagueOfBoost.services.ServiceSessionBoosting;
@@ -67,7 +67,7 @@ public class ModifiersController implements Initializable {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("as.fxml"));
             Parent root = loader.load();
             
-            ModifiersController controleur = loader.getController();
+            //ModifiersController controleur = loader.getController();
             
            // controleur.setTextFields(s);
             

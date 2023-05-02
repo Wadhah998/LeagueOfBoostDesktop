@@ -1,6 +1,5 @@
 package LeagueOfBoost.gui.ReservationB;
 
-import LeagueOfBoost.gui.*;
 import LeagueOfBoost.entities.Reservationb;
 import LeagueOfBoost.services.ServiceReservationB;
 import java.io.IOException;

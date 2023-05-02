@@ -1,4 +1,4 @@
-package LeagueOfBoost.gui;
+package LeagueOfBoost.gui.sessionb;
 
 import LeagueOfBoost.entities.Reservationb;
 import LeagueOfBoost.entities.SessionBoosting;
@@ -57,7 +57,7 @@ public class AffichersessionController implements Initializable {
         sb.supprimerSessionBoosting(index1);
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Success");
-        alert.setContentText("suppression affecté!");
+        alert.setContentText("suppression effectuée!");
         alert.show();
         lt = sb.afficherS();
         SBList.getItems().clear();

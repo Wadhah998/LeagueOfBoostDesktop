@@ -52,11 +52,13 @@ public class ServiceSessionBoosting implements IService {
 // Fonction pour modifier une session de boosting existante
 public void modifierSessionBoosting(int id, SessionBoosting sb) {
     try {
-        String sql = "update session_boosting set description=?, nbr_heure=? where id=?";
+        String sql = "update session_boosting set description=?, titre=?, nbr_heure=?, prix=? where id=?";
         PreparedStatement ste = con.prepareStatement(sql);
         ste.setString(1, sb.getDescription());
-        ste.setInt(2, sb.getNbr_heure());
-        ste.setInt(3, sb.getId());
+        ste.setString(2, sb.getTitre());
+        ste.setInt(3, sb.getNbr_heure());
+        ste.setInt(4, sb.getPrix());
+        ste.setInt(5, sb.getId());
         
         ste.executeUpdate();
         System.out.println("Session de boosting modifiée !");

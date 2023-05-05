@@ -1,24 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LeagueOfBoost.gui.Game.AjouterController">
+<AnchorPane id="AnchorPane" prefHeight="623.0" prefWidth="871.0" stylesheets="@../../../assets/style/rouaaStyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LeagueOfBoost.gui.Game.AjouterController">
    <children>
-      <Button fx:id="btnres" layoutX="242.0" layoutY="322.0" mnemonicParsing="false" onAction="#reserver" text="Ajouter" />
-      <Label layoutX="81.0" layoutY="103.0" text="Title" />
-      <Label layoutX="69.0" layoutY="150.0" text="Description" />
-      <Label layoutX="86.0" layoutY="200.0" text="Price" />
-      <Label layoutX="86.0" layoutY="258.0" text="Date" />
+      <Button fx:id="btnres" layoutX="307.0" layoutY="511.0" mnemonicParsing="false" onAction="#reserver" prefHeight="46.0" prefWidth="109.0" styleClass="exit" stylesheets="@design.css" text="Add">
+         <stylesheets>
+            <URL value="@../../../assets/style/rouaaStyle.css" />
+            <URL value="@../user/design.css" />
+         </stylesheets></Button>
+      <Label layoutX="202.0" layoutY="95.0" styleClass="product__add-input-label" text="Title">
+         <font>
+            <Font size="23.0" />
+         </font></Label>
+      <Label layoutX="201.0" layoutY="196.0" styleClass="product__add-input-label" text="Description">
+         <font>
+            <Font size="23.0" />
+         </font></Label>
+      <Label layoutX="200.0" layoutY="320.0" styleClass="product__add-input-label" text="Price">
+         <font>
+            <Font size="23.0" />
+         </font></Label>
+      <Label layoutX="201.0" layoutY="424.0" styleClass="product__add-input-label" text="Date">
+         <font>
+            <Font size="23.0" />
+         </font></Label>
 
-      <TextField fx:id="txttitle" layoutX="198.0" layoutY="99.0" />
-      <TextField fx:id="txtdes" layoutX="198.0" layoutY="146.0" />
-      <TextField fx:id="txtprice" layoutX="198.0" layoutY="196.0" />
-      <DatePicker fx:id="txtdate" layoutX="198.0" layoutY="254.0" />
+      <TextField fx:id="txttitle" layoutX="202.0" layoutY="121.0" prefHeight="26.0" prefWidth="320.0" styleClass="product__add-input" stylesheets="@../../../assets/style/rouaaStyle.css" />
+      <TextField fx:id="txtdes" layoutX="202.0" layoutY="232.0" prefHeight="26.0" prefWidth="320.0" styleClass="product__add-input" />
+      <TextField fx:id="txtprice" layoutX="202.0" layoutY="354.0" prefHeight="26.0" prefWidth="320.0" styleClass="product__add-input" />
+      <DatePicker fx:id="txtdate" layoutX="292.0" layoutY="424.0" />
 
-      <Label layoutX="236.0" layoutY="35.0" text="Ajouter Game" />
+      <Label layoutX="297.0" layoutY="30.0" text="Add a new game " textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="31.0" />
+         </font></Label>
    </children>
 </AnchorPane>

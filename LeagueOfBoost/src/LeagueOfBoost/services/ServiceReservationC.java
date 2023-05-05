@@ -6,6 +6,8 @@
 package LeagueOfBoost.services;
 
 import LeagueOfBoost.entities.ReservationC;
+import LeagueOfBoost.gui.ReservationC.CoachListeController;
+import LeagueOfBoost.gui.ReservationC.ReservationCController;
 import LeagueOfBoost.gui.user.InscriptionController;
 import LeagueOfBoost.utils.MyDB;
 import java.sql.Connection;
@@ -29,7 +31,7 @@ try {
             String sql = "insert into reservation_c(coach_id,user_id,nbr_heures,prix,langue)"
                     + "values (?,?,?,?,?)";
             PreparedStatement ste = con.prepareStatement(sql);
-            ste.setInt(1,4);
+            ste.setInt(1, CoachListeController.Coach.getId());
             ste.setInt(2, InscriptionController.userc.getId());
             ste.setInt(3, r.getNbr_heures());
             ste.setInt(4,r.getPrix());

@@ -49,7 +49,7 @@ public class BoostersDemandsController implements Initializable {
     
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-
+        System.out.println("hello");
         loadUsers();
     }    
     private void loadUsers() {

@@ -142,7 +142,7 @@ public class AdminNewsListController implements Initializable {
     // Initialisation de la bibliothèque Twilio avec les informations de votre
     // compte
     String ACCOUNT_SID = "ACa7de4c1ee1041b6c06ab8ad216849813";
-    String AUTH_TOKEN = "2630c9d29ebda4a679e821d4e0f1e538";
+    String AUTH_TOKEN = "682fbcece200e229dddb7bd29859e52f";
 
     Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
 

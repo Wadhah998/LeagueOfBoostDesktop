@@ -7,6 +7,8 @@ package LeagueOfBoost.gui.Reclamation;
 
 import LeagueOfBoost.entities.Reclamation;
 import static LeagueOfBoost.gui.Reclamation.ReclamationController.varstat;
+
+import LeagueOfBoost.gui.ReservationC.ReservationCController;
 import LeagueOfBoost.services.ServiceReclamation;
 import java.awt.AWTException;
 import java.awt.Image;
@@ -17,6 +19,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Date;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -31,6 +36,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 /**
@@ -66,6 +72,9 @@ public class ReclamationUserController implements Initializable {
     private Button btnmodifier;
     @FXML
     private TableView<Reclamation> table;
+
+    @FXML
+    private AnchorPane main;
     
     
         String message = "Une réclamation a été traitée.";
@@ -128,45 +137,37 @@ public class ReclamationUserController implements Initializable {
     
         @FXML
     private void ModifierRuser(ActionEvent event) {
-        Reclamation r = table.getSelectionModel().getSelectedItem();
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("modifierRuser.fxml"));
-            Parent root = loader.load();
-            
-            ModifierRuserController controleur = loader.getController();
-            
-            controleur.setTextFields(r);
-            
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) btnmodifier.getScene().getWindow();
-            stage.setScene(scene);
-            stage.show();
-            loadReclamationsuser();
-        } catch (IOException e) {
-            System.out.println(e.getCause().getMessage());
-        }
+            Reclamation r = table.getSelectionModel().getSelectedItem();
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("ModifierRuser.fxml"));
+                Parent sv = loader.load();
+                ModifierRuserController controleur = loader.getController();
+                controleur.setTextFields(r);
+                main.getChildren().removeAll();
+                main.getChildren().setAll(sv);
+            } catch (IOException ex) {
+                Logger.getLogger(ReservationCController.class.getName()).log(Level.SEVERE, null, ex);
+            }
     }
     
         @FXML
     public void Afficher() {
-    Reclamation selectedReclamation = table.getSelectionModel().getSelectedItem();
-     varstat = selectedReclamation.getId() ; 
-    if (selectedReclamation != null) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("AfficherR.fxml"));
-            Parent root = loader.load();
-            
-            AfficherRController controller = loader.getController();
-            controller.setSelectedReclamation(selectedReclamation);
-            
-            Scene scene = new Scene(root);
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            System.out.println(e.getCause().getMessage());
-        }
-    }
+            Reclamation selectedReclamation = table.getSelectionModel().getSelectedItem();
+            varstat = selectedReclamation.getId() ;
+            if (selectedReclamation != null) {
+                try {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("AfficherR.fxml"));
+                    Parent root = loader.load();
+
+                    AfficherRController controller = loader.getController();
+                    controller.setSelectedReclamation(selectedReclamation);
+
+                    main.getChildren().removeAll();
+                    main.getChildren().setAll(root);
+                } catch (IOException e) {
+                    System.out.println(e.getCause().getMessage());
+                }
+            }
 }
     
     public void rechercherReclamation() {

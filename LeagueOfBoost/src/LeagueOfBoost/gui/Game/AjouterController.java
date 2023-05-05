@@ -77,7 +77,7 @@ public class AjouterController {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Confirmation");
             alert.setHeaderText(null);
-            alert.setContentText("Game ajoutée avec succès !");
+            alert.setContentText("Game added successfully !");
             alert.showAndWait();
 
             // Réinitialise les champs de saisie

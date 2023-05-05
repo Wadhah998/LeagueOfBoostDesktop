@@ -52,10 +52,8 @@ public class AdminNewsCardController {
 
     public void setNewsData(News news) {
 
-        Image image = new Image(
-                getClass().getResource("/assets/actualiteUploads/" +
-                        news.getImg()).toExternalForm());
-        img.setImage(image);
+
+
 
         title.setText(news.getTitre());
 

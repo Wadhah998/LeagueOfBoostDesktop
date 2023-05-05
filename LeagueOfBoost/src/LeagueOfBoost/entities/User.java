@@ -61,6 +61,13 @@ public class User {
         this.solde = solde;
         this.disponibility = disponibility;
     }
+    public User (int id,String firstname, String lastname, String voie, int prix){
+        this.id= id ;
+        this.firstname = firstname ;
+        this.lastname = lastname ;
+        this.voie = voie ;
+        this.prix = prix ;
+    }
 
     @Override
     public String toString() {

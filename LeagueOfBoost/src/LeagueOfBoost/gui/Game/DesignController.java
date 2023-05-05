@@ -63,6 +63,9 @@ public class DesignController implements Initializable {
     private TableColumn<?, ?> wins;
     @FXML
     private TableColumn<?, ?> losses;
+
+    @FXML
+    private AnchorPane main1;
     @FXML
     private TableColumn<Team, Integer> wr;
     
@@ -152,14 +155,9 @@ public class DesignController implements Initializable {
     }
    @FXML
 public void handleGameClick(MouseEvent event) throws IOException {
-    FXMLLoader loader = new FXMLLoader(getClass().getResource("/LeagueOfBoost/gui/Team/Ajouter.fxml"));
-    Parent root = loader.load();
-    AjouterController ajouterController = loader.getController();
-
-    Scene scene = new Scene(root);
-    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-    stage.setScene(scene);
-    stage.show();
+       Parent fxml = FXMLLoader.load(getClass().getResource("/LeagueOfBoost/gui/Team/Ajouter.fxml"));
+       main1.getChildren().removeAll();
+       main1.getChildren().setAll(fxml);
 }
 
 

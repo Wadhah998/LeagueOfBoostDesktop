@@ -117,7 +117,7 @@ public class InscriptionController implements Initializable {
             User u = ps.findUserByLogin(username.getText(), password.getText());
             userc = u;
             if (username.getText().equals("admin") && password.getText().equals("123456")) {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("ListUsers.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/AdminDashboard/AdminDashboard.fxml"));
                 Stage stage = new Stage();
 
                 stage.setScene(new Scene(loader.load()));
@@ -125,7 +125,7 @@ public class InscriptionController implements Initializable {
                 Stage currentStage = (Stage) ((Button) actionEven.getSource()).getScene().getWindow();
                 currentStage.hide();
             } else if (u != null) {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("../ReservationB/rb.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/UserDashboard/UserDashboard.fxml"));
                 Stage stage = new Stage();
 
                 stage.setScene(new Scene(loader.load()));

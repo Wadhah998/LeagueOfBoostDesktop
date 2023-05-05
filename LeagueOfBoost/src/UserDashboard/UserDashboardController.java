@@ -6,6 +6,8 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -64,6 +66,27 @@ public class UserDashboardController implements Initializable {
 
     @FXML
     private ImageView newsIcon;
+    @FXML
+    private HBox Coaching;
+    @FXML
+    private ImageView favIcon1;
+    @FXML
+    private HBox Boosting;
+    @FXML
+    private ImageView favIcon2;
+    @FXML
+    private HBox Games;
+    @FXML
+    private ImageView favIcon3;
+    @FXML
+    private HBox Reclamation;
+    @FXML
+    private ImageView favIcon31;
+    @FXML
+    private Text totalNotif;
+
+
+    private StringProperty fullname = new SimpleStringProperty();
 
     /**
      * Initializes the controller class.
@@ -73,6 +96,11 @@ public class UserDashboardController implements Initializable {
 
         Image img = new Image("assets/img/rouaa.jpg");
         circle.setFill(new ImagePattern(img));
+        navFullname.textProperty().bind(fullname);
+
+
+
+
 
     }
 
@@ -81,6 +109,7 @@ public class UserDashboardController implements Initializable {
         Parent root = FXMLLoader.load(getClass().getResource("UserDashboard.fxml"));
         LeagueOfBoostMain.stage.getScene().setRoot(root);
     }
+
 
     @FXML
     void open_actualiteList(MouseEvent event) throws IOException {
@@ -141,4 +170,59 @@ public class UserDashboardController implements Initializable {
 
     }
 
+    public void open_Reservation(MouseEvent mouseEvent) throws IOException {
+        Parent fxml = FXMLLoader.load(getClass().getResource("../LeagueOfBoost/gui/ReservationB/rb.fxml"));
+        content_area.getChildren().removeAll();
+        content_area.getChildren().setAll(fxml);
+
+    }
+
+    public void open_ReservationC(MouseEvent mouseEvent) throws IOException {
+        Parent fxml = FXMLLoader.load(getClass().getResource("../LeagueOfBoost/gui/ReservationC/CoachListe.fxml"));
+        content_area.getChildren().removeAll();
+        content_area.getChildren().setAll(fxml);
+
+    }
+
+    public void open_Games(MouseEvent mouseEvent) throws IOException {
+        Parent fxml = FXMLLoader.load(getClass().getResource("../LeagueOfBoost/gui/Game/design.fxml"));
+        content_area.getChildren().removeAll();
+        content_area.getChildren().setAll(fxml);
+    }
+
+    public void open_reclamation(MouseEvent mouseEvent) throws IOException {
+        Parent fxml = FXMLLoader.load(getClass().getResource("../LeagueOfBoost/gui/Reclamation/ajouterR.fxml"));
+        content_area.getChildren().removeAll();
+        content_area.getChildren().setAll(fxml);
+    }
+
+    public void open_Profile(MouseEvent mouseEvent) throws IOException {
+        Parent fxml = FXMLLoader.load(getClass().getResource("../LeagueOfBoost/gui/User/profile.fxml"));
+        content_area.getChildren().removeAll();
+        content_area.getChildren().setAll(fxml);
+    }
+
+    public void open_Goam(MouseEvent mouseEvent) throws IOException {
+        Parent fxml = FXMLLoader.load(getClass().getResource("../LeagueOfBoost/gui/Game/design.fxml"));
+        content_area.getChildren().removeAll();
+        content_area.getChildren().setAll(fxml);
+    }
+
+    public void open_boster(MouseEvent mouseEvent) throws IOException {
+        Parent fxml = FXMLLoader.load(getClass().getResource("../LeagueOfBoost/gui/ReservationB/rb.fxml"));
+        content_area.getChildren().removeAll();
+        content_area.getChildren().setAll(fxml);
+    }
+
+    public void open_Rec(MouseEvent mouseEvent) throws IOException {
+        Parent fxml = FXMLLoader.load(getClass().getResource("../LeagueOfBoost/gui/Reclamation/reclamationuser.fxml"));
+        content_area.getChildren().removeAll();
+        content_area.getChildren().setAll(fxml);
+    }
+
+    public void open_Coach(MouseEvent mouseEvent) throws IOException {
+        Parent fxml = FXMLLoader.load(getClass().getResource("../LeagueOfBoost/gui/ReservationC/CoachListe.fxml"));
+        content_area.getChildren().removeAll();
+        content_area.getChildren().setAll(fxml);
+    }
 }

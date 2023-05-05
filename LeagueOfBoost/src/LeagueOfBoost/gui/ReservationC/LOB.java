@@ -21,7 +21,7 @@ public class LOB extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("ajout.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("CoachListe.fxml"));
             //Parent root = FXMLLoader.load(getClass().getResource("ajout.fxml"));
             Scene scene = new Scene(root);
 

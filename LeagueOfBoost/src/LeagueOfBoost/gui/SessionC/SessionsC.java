@@ -22,7 +22,7 @@ public class SessionsC extends Application {
     public void start(Stage primaryStage) {
         try {
             System.out.println("FXML file loaded successfully") ;
-            Parent root = FXMLLoader.load(getClass().getResource("ajoutsession.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("SessionCUser.fxml"));
             System.out.println("FXML file loaded successfully") ;
             Scene scene = new Scene(root);
             primaryStage.setTitle("SessionsCoach !");

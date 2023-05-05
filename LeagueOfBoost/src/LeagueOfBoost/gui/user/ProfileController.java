@@ -14,6 +14,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -40,6 +41,8 @@ public class ProfileController implements Initializable {
     private Label username_id;
     @FXML
 
+    private AnchorPane main;
+
 
     /**
      * Initializes the controller class.
@@ -60,13 +63,9 @@ public class ProfileController implements Initializable {
 
     @FXML
     private void editprofil_id(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("editprofile.fxml"));
-        Stage stage = new Stage();
-
-        stage.setScene(new Scene(loader.load()));
-        stage.show();
-        Stage currentStage = (Stage) ((Button) event.getSource()).getScene().getWindow();
-        currentStage.hide();
+        Parent fxml = FXMLLoader.load(getClass().getResource("/LeagueOfBoost/gui/user/editprofile.fxml"));
+        main.getChildren().removeAll();
+        main.getChildren().setAll(fxml);
     }
 
 
@@ -75,23 +74,15 @@ public class ProfileController implements Initializable {
     }
 
     public void goForm(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("BeBooster.fxml"));
-        Stage stage = new Stage();
-
-        stage.setScene(new Scene(loader.load()));
-        stage.show();
-        Stage currentStage = (Stage) ((Button) event.getSource()).getScene().getWindow();
-        currentStage.hide();
+        Parent fxml = FXMLLoader.load(getClass().getResource("/LeagueOfBoost/gui/user/bebooster.fxml"));
+       main.getChildren().removeAll();
+        main.getChildren().setAll(fxml);
     }
 
     public void goForm1(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("BeChoach.fxml"));
-        Stage stage = new Stage();
-
-        stage.setScene(new Scene(loader.load()));
-        stage.show();
-        Stage currentStage = (Stage) ((Button) event.getSource()).getScene().getWindow();
-        currentStage.hide();
+        Parent fxml = FXMLLoader.load(getClass().getResource("/LeagueOfBoost/gui/user/beChoach.fxml"));
+        main.getChildren().removeAll();
+        main.getChildren().setAll(fxml);
 
     }
 }

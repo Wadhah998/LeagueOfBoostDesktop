@@ -31,42 +31,7 @@
         </TextField>
         <Button layoutX="441.0" layoutY="455.0" minWidth="100.0" mnemonicParsing="false" onAction="#BeBoosteer" style="-fx-background-color: #662D60; -fx-background-radius: 15;" text="Coach" textFill="#FFFFFF" />
 
-        <AnchorPane fx:id="navbar" prefHeight="300.0" prefWidth="204.0" styleClass="navbar" stylesheets="@dashboardDesign.css">
-            <children>
-                <Button fx:id="home" layoutX="10.0" layoutY="22.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="170.0" styleClass="navbutton" stylesheets="@dashboardDesign.css" text="Home" textFill="WHITE" AnchorPane.bottomAnchor="543.0" AnchorPane.topAnchor="22.0">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                    <graphic>
 
-                    </graphic>
-                </Button>
-                <Button fx:id="student" layoutX="10.0" layoutY="114.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="170.0" styleClass="navbutton" stylesheets="@dashboardDesign.css" text="Coaching" textFill="WHITE" AnchorPane.topAnchor="114.0">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                    <graphic>
-
-                    </graphic>
-                </Button>
-                <Button fx:id="record" layoutX="10.0" layoutY="199.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="170.0" styleClass="navbutton" stylesheets="@dashboardDesign.css" text="Boosting" textFill="WHITE" AnchorPane.topAnchor="199.0">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                    <graphic>
-
-                    </graphic>
-                </Button>
-                <Button fx:id="data" layoutX="10.0" layoutY="294.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="170.0" styleClass="navbutton" stylesheets="@dashboardDesign.css" text="Reclamation" textFill="WHITE" AnchorPane.topAnchor="294.0">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                    <graphic>
-
-                    </graphic>
-                </Button>
-            </children>
-        </AnchorPane>
         <Label layoutX="484.0" layoutY="323.0" style="-fx-font-size: 16;" text="Prix" />
         <TextField fx:id="prix" layoutX="381.0" layoutY="362.0" prefHeight="28.0" prefWidth="220.0" styleClass="textfield-design" stylesheets="@design.css">
             <font>

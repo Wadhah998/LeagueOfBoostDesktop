@@ -55,6 +55,8 @@ public class AjouterRController {
     private TextField textclm;
     @FXML
     private Button ajouterclm;
+    @FXML
+    private AnchorPane main;
     
     
     
@@ -132,6 +134,14 @@ public class AjouterRController {
     stage.setScene(scene);
     stage.show();
     }
-    
-    
+
+
+
+    public void mesreclamations(ActionEvent event) throws IOException {
+        Parent fxml = FXMLLoader.load(getClass().getResource("/LeagueOfBoost/gui/Reclamation/reclamationUser.fxml"));
+        main.getChildren().removeAll();
+        main.getChildren().setAll(fxml);
+
+
+    }
 }

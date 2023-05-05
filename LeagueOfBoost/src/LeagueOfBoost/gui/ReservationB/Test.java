@@ -26,7 +26,7 @@ public class Test extends Application {
     public void start(Stage primaryStage) {
 
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("ReservationB.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("BoosterListe.fxml"));
             //Parent root = FXMLLoader.load(getClass().getResource("UsersListFXML.fxml"));
             Scene scene = new Scene(root);
                

@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="main" onMouseClicked="#AjouterButton" prefHeight="564.0" prefWidth="831.0" styleClass="bodybg" stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LeagueOfBoost.gui.ReservationC.ReservationCController">
+<AnchorPane id="AnchorPane" fx:id="main" onMouseClicked="#AjouterButton" prefHeight="678.0" prefWidth="974.0" style="-fx-background-color: #1e1e1e;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LeagueOfBoost.gui.ReservationC.ReservationCController">
    <children>
-      <Button layoutX="425.0" layoutY="481.0" mnemonicParsing="false" onAction="#reserv" text="Add New Reservation" />
-      <Button layoutX="218.0" layoutY="481.0" mnemonicParsing="false" onAction="#modif" text="Modifier Reservation" />
-      <TableView fx:id="ResList" layoutY="85.0" prefHeight="378.0" prefWidth="831.0">
+      <Button layoutX="685.0" layoutY="533.0" minHeight="40.0" minWidth="100.0"  styleClass="exit" stylesheets="@design.css"  onAction="#reserv" text="Add New Reservation">
+         <stylesheets>
+            <URL value="@../../../assets/style/rouaaStyle.css" />
+            <URL value="@../user/design.css" />
+         </stylesheets></Button>
+      <Button layoutX="264.0" layoutY="533.0" minHeight="40.0" minWidth="100.0"  styleClass="exit" stylesheets="@design.css" onAction="#modif" text="Modifier Reservation" />
+      <TableView fx:id="ResList" layoutX="76.0" layoutY="102.0" prefHeight="409.0" prefWidth="890.0" styleClass="table-view">
         <columns>
           <TableColumn fx:id="coach_id" prefWidth="146.0" text="Coach Id" />
           <TableColumn fx:id="user_id" minWidth="7.20001220703125" prefWidth="154.0" text="User Id" />
@@ -22,11 +26,14 @@
             <TableColumn fx:id="Supprimer" prefWidth="124.0" text="Supprimer" />
         </columns>
       </TableView>
-      <Label layoutX="281.0" prefHeight="100.0" prefWidth="302.0" text="List of Reservations">
-         <font>
-            <Font size="24.0" />
-         </font></Label>
-      <Label layoutX="793.0" layoutY="5.0" onMouseClicked="#quit" prefHeight="26.0" prefWidth="23.0" text="X" />
-      <TextField fx:id="txtrech" layoutX="24.0" layoutY="50.0" prefHeight="25.0" prefWidth="201.0" promptText="Search" />
+      <TextField fx:id="txtrech" layoutX="354.0" layoutY="53.0" prefHeight="27.0" prefWidth="334.0" promptText="Recherche..." styleClass="textfield-design" />
    </children>
+   <stylesheets>
+      <URL value="@../../../assets/style/rouaaStyle.css" />
+      <URL value="@../user/design.css" />
+   </stylesheets>
+   <styleClass>
+      <String fx:value="button-design" />
+      <String fx:value="exit" />
+   </styleClass>
 </AnchorPane>

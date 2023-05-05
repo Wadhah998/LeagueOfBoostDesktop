@@ -11,6 +11,7 @@ import java.util.ResourceBundle;
 
 import LeagueOfBoost.entities.Comment;
 import LeagueOfBoost.entities.News;
+import LeagueOfBoost.gui.user.InscriptionController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -108,13 +109,13 @@ public class UserNewsDetailsCardController implements Initializable {
     total_views.setText("" + news.getNb_vues());
 
     try {
-      found = newsService.newsInFavList(news.getId(), 1);
+      found = newsService.newsInFavList(news.getId(), InscriptionController.userc.getId());
     } catch (SQLException e) {
       e.printStackTrace();
     }
 
     if (found == 1) {
-      Image fullFavImage = new Image("../../../assets/img/fav.png");
+      Image fullFavImage = new Image("/assets/img/fav.png");
       favBtn.setImage(fullFavImage);
     }
 
@@ -166,7 +167,7 @@ public class UserNewsDetailsCardController implements Initializable {
 
     String appId = "605544598295425";
     String appSecret = "bb9b574fee9809b487204083d1d98a45";
-    String accessTokenString = "EAAImvVatU4EBANhCaSS6Ukg3ZC1JRauWbBvO37e8tSNZBrdR5favtW3ZCcK4V5zsd6aFZBtYLaiftU5ZCoeoNL5mUbsSA1EkOOJbfQx1oVbPBHACOhc6kOSOCUKKDpvfyHLNNeoVHzqIhqZAcjhYgRNiiduom9EILMchSOJbzm0cm1HzfY3M4ZCbTVnjl5M0cgbquyZCZBKQ0okYJaLWbnu1JJII8uYovZBIAZD";
+    String accessTokenString = "EAAImvVatU4EBAEaH3cKkKfY6VI21ihZAmFebeqUZBFwgq6yhWSWbam14Y1DzEs4DfPnDhI6ejUkOBlzEzYXFUJR4MXdnkFfyRfLjs8fg4MaiQZCRaoRrRUG7PEeTY5NzpKk2yzqFRjyjDtJaFVd946HPr3nSSPbzZBzMTWka5erbVZAlVArqzBmDtvu6zqmWT30yVzy343CHvu26IdApEXnMOPbqr0uUZD";
 
     Facebook facebook = new FacebookFactory().getInstance();
     facebook.setOAuthAppId(appId, appSecret);
@@ -208,7 +209,7 @@ public class UserNewsDetailsCardController implements Initializable {
     if (found == 0) {
       newsService.addNewsToFavoriteList(News.getNewsId(), 1);
 
-      Image fullFavImage = new Image("../../../assets/img/fav.png");
+      Image fullFavImage = new Image("/assets/img/fav.png");
       favBtn.setImage(fullFavImage);
 
     }
@@ -216,7 +217,7 @@ public class UserNewsDetailsCardController implements Initializable {
 
       newsService.removeNewsFromFavoriteList(News.getNewsId(), 1);
 
-      Image FavImage = new Image("../../../assets/img/addFav.png");
+      Image FavImage = new Image("/assets/img/addFav.png");
       favBtn.setImage(FavImage);
 
     }

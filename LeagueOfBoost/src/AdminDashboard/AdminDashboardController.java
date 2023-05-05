@@ -67,6 +67,36 @@ public class AdminDashboardController implements Initializable {
 
   @FXML
   private HBox sideBarLogout;
+    @FXML
+    private HBox userBtn;
+    @FXML
+    private ImageView newsIcon1;
+    @FXML
+    private Label UsersText;
+    @FXML
+    private HBox bossterBtn;
+    @FXML
+    private ImageView newsIcon2;
+    @FXML
+    private Label BoostersText;
+    @FXML
+    private HBox coachsBtn;
+    @FXML
+    private ImageView newsIcon3;
+    @FXML
+    private Label coachsText;
+    @FXML
+    private HBox reclamationsBtn;
+    @FXML
+    private ImageView newsIcon4;
+    @FXML
+    private Label reclamationsText;
+    @FXML
+    private HBox gamessBtn;
+    @FXML
+    private ImageView newsIcon5;
+    @FXML
+    private Label gamesText;
 
   /**
    * Initializes the controller class.
@@ -107,4 +137,38 @@ public class AdminDashboardController implements Initializable {
     }
   }
 
+  public void open_userList(MouseEvent mouseEvent) throws IOException {
+    Parent fxml = FXMLLoader.load(getClass().getResource("/LeagueOfBoost/gui/User/ListUsers.fxml"));
+    content_area.getChildren().removeAll();
+    content_area.getChildren().setAll(fxml);
+  }
+
+  public void open_ReservationBList(MouseEvent mouseEvent) throws IOException {
+    Parent fxml = FXMLLoader.load(getClass().getResource("/LeagueOfBoost/gui/ReservationB/ReservationB.fxml"));
+    content_area.getChildren().removeAll();
+    content_area.getChildren().setAll(fxml);
+  }
+  public void open_ReservationCList(MouseEvent mouseEvent) throws IOException {
+    Parent fxml = FXMLLoader.load(getClass().getResource("/LeagueOfBoost/gui/ReservationC/ReservationC.fxml"));
+    content_area.getChildren().removeAll();
+    content_area.getChildren().setAll(fxml);
+  }
+
+  public void open_ReclamationList(MouseEvent mouseEvent) throws IOException {
+    Parent fxml = FXMLLoader.load(getClass().getResource("/LeagueOfBoost/gui/Reclamation/Reclamation.fxml"));
+    content_area.getChildren().removeAll();
+    content_area.getChildren().setAll(fxml);
+  }
+
+  public void open_GameAdd(MouseEvent mouseEvent) throws IOException {
+    Parent fxml = FXMLLoader.load(getClass().getResource("/LeagueOfBoost/gui/Game/Ajouter.fxml"));
+    content_area.getChildren().removeAll();
+    content_area.getChildren().setAll(fxml);
+  }
+
+    public void open_ToStat(MouseEvent mouseEvent) throws IOException {
+      Parent fxml = FXMLLoader.load(getClass().getResource("/LeagueOfBoost/gui/User/Dashbord.fxml"));
+      content_area.getChildren().removeAll();
+      content_area.getChildren().setAll(fxml);
+    }
 }

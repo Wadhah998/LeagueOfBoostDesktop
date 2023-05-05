@@ -1,6 +1,8 @@
 package LeagueOfBoost.gui.ReservationB;
 
+import LeagueOfBoost.entities.News;
 import LeagueOfBoost.entities.Reservationb;
+import LeagueOfBoost.gui.ReservationC.ReservationCController;
 import LeagueOfBoost.services.ServiceReservationB;
 import LeagueOfBoost.utils.MyDB;
 import com.google.zxing.BarcodeFormat;
@@ -19,6 +21,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.embed.swing.SwingFXUtils;
@@ -181,26 +186,13 @@ private void handleButtonAction (ActionEvent event)
     }
 
     @FXML
-    private void modifier(ActionEvent event) {
+    private void modifier(ActionEvent event) throws IOException {
         Reservationb b = RBList.getSelectionModel().getSelectedItem();
-         rb=b;
-        
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("modifierB.fxml"));
-            Parent root = loader.load();
-            
-            ModifierBController controleur = loader.getController();
-            
-           // controleur.setTextFields(s);
-            
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) btnmod.getScene().getWindow();
-            stage.setScene(scene);
-            stage.show();
-            System.out.println(b);
-        } catch (IOException e) {
-            System.out.println(e.getCause().getMessage());
-        }
+        rb=b;
+        Parent fxml = FXMLLoader.load(getClass().getResource("modifierB.fxml"));
+        main.getChildren().removeAll();
+        main.getChildren().setAll(fxml);
+        System.out.println("test");
     }
 
     @FXML
@@ -286,20 +278,18 @@ private void recherche() {
 
     @FXML
     private void ajouterR(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("RB.fxml"));
-            Parent root = loader.load();
-            
-          //  ModifierBController controleur = loader.getController();
-            
-           // controleur.setTextFields(s);
-            
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) btnmod.getScene().getWindow();
-            stage.setScene(scene);
-            stage.show();
+        try
+        {
+            Parent sv ;
+            sv = (AnchorPane)FXMLLoader.load(getClass().getResource("rb.fxml"));
+            main.getChildren().removeAll() ;
+            main.getChildren().setAll(sv) ;
+        } catch (IOException ex) {
+            Logger.getLogger(ReservationCController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     }
 
 
     
     
-}

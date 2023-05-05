@@ -10,6 +10,7 @@ import java.util.Map;
 import java.util.ResourceBundle;
 
 import LeagueOfBoost.entities.News;
+import LeagueOfBoost.gui.user.InscriptionController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -48,10 +49,11 @@ public class UserNewsFavorisController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
+
         NewsService newsService = new NewsService();
         List<News> news = new ArrayList<>();
 
-        news = newsService.getNewsFavList(1);
+     news = newsService.getNewsFavList(InscriptionController.userc.getId());
         int column = 0;
         int row = 1;
         try {

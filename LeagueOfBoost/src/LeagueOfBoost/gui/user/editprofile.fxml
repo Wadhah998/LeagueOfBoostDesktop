@@ -32,42 +32,7 @@
         </TextField>
         <Button layoutX="331.0" layoutY="462.0" minWidth="100.0" mnemonicParsing="false" onAction="#update_button" style="-fx-background-color: #662D60; -fx-background-radius: 15;" text="Update" textFill="#FFFFFF" />
         <Button layoutX="608.0" layoutY="462.0" minWidth="100.0" mnemonicParsing="false" onAction="#cancel_button" style="-fx-background-color: #662D60; -fx-background-radius: 15;" text="Cancel" textFill="#FFFFFF" />
-        <AnchorPane fx:id="navbar" prefHeight="439.0" prefWidth="204.0" styleClass="navbar" stylesheets="@dashboardDesign.css">
-            <children>
-                <Button fx:id="home" layoutX="10.0" layoutY="22.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="170.0" styleClass="navbutton" stylesheets="@dashboardDesign.css" text="Home" textFill="WHITE" AnchorPane.bottomAnchor="543.0" AnchorPane.topAnchor="22.0">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                    <graphic>
 
-                    </graphic>
-                </Button>
-                <Button fx:id="student" layoutX="10.0" layoutY="114.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="170.0" styleClass="navbutton" stylesheets="@dashboardDesign.css" text="Coaching" textFill="WHITE" AnchorPane.topAnchor="114.0">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                    <graphic>
-
-                    </graphic>
-                </Button>
-                <Button fx:id="record" layoutX="10.0" layoutY="199.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="170.0" styleClass="navbutton" stylesheets="@dashboardDesign.css" text="Boosting" textFill="WHITE" AnchorPane.topAnchor="199.0">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                    <graphic>
-
-                    </graphic>
-                </Button>
-                <Button fx:id="data" layoutX="10.0" layoutY="294.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="170.0" styleClass="navbutton" stylesheets="@dashboardDesign.css" text="Reclamation" textFill="WHITE" AnchorPane.topAnchor="294.0">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                    <graphic>
-
-                    </graphic>
-                </Button>
-            </children>
-        </AnchorPane>
       <Label layoutX="479.0" layoutY="326.0" style="-fx-font-size: 16;" text="Email" />
       <TextField fx:id="email_update" layoutX="381.0" layoutY="362.0" prefHeight="28.0" prefWidth="220.0" styleClass="textfield-design" stylesheets="@design.css">
          <font>

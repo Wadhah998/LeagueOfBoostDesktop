@@ -8,11 +8,15 @@ import LeagueOfBoost.entities.Reservationb;
 import LeagueOfBoost.entities.SessionBoosting;
 
 import LeagueOfBoost.gui.ReservationB.ReservationBController;
+import LeagueOfBoost.gui.ReservationC.ReservationCController;
 import LeagueOfBoost.services.ServiceReservationB;
 import LeagueOfBoost.services.ServiceSessionBoosting;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,6 +25,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 /**
@@ -32,7 +37,8 @@ public class ModifierBController implements Initializable {
 
    @FXML
     private Button btnconf;
-
+    @FXML
+    private AnchorPane main;
     @FXML
     private TextField id;
 
@@ -92,17 +98,15 @@ public class ModifierBController implements Initializable {
 
     @FXML
     private void retour(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("ReservationB.fxml"));
-            Parent root = loader.load();
-            
-          //  ModifierBController controleur = loader.getController();
-            
-           // controleur.setTextFields(s);
-            
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) btnretour.getScene().getWindow();
-            stage.setScene(scene);
-            stage.show();
+        try
+        {
+            Parent sv ;
+            sv = (AnchorPane)FXMLLoader.load(getClass().getResource("reservationB.fxml"));
+            main.getChildren().removeAll() ;
+            main.getChildren().setAll(sv) ;
+        } catch (IOException ex) {
+            Logger.getLogger(ReservationCController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
 }

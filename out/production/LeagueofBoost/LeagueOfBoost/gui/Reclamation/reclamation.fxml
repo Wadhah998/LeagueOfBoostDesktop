@@ -1,32 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="472.0" prefWidth="719.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LeagueOfBoost.gui.Reclamation.ReclamationController">
+<AnchorPane id="AnchorPane" fx:id="main" prefHeight="472.0" prefWidth="719.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LeagueOfBoost.gui.Reclamation.ReclamationController">
    <children>
-      <TableView fx:id="table" layoutX="38.0" layoutY="70.0" prefHeight="295.0" prefWidth="666.0">
+      <TableView fx:id="table" layoutX="76.0" layoutY="102.0" prefHeight="409.0" prefWidth="890.0" styleClass="table-view">
         <columns>
           <TableColumn fx:id="idclm" prefWidth="75.0" text="id" />
           <TableColumn fx:id="userclm" prefWidth="75.0" text="user_id" visible="false" />
-            <TableColumn fx:id="etatclm" prefWidth="75.0" text="etat" />
-            <TableColumn fx:id="dateclm" prefWidth="75.0" text="date" />
-            <TableColumn fx:id="themeclm" prefWidth="75.0" text="theme" />
-            <TableColumn fx:id="objclm" prefWidth="75.0" text="objet" />
-            <TableColumn fx:id="txtclm" prefWidth="214.39999999999998" text="text" />
+            <TableColumn fx:id="etatclm" prefWidth="90.39999389648438" text="etat" />
+            <TableColumn fx:id="dateclm" prefWidth="124.80001831054688" text="date" />
+            <TableColumn fx:id="themeclm" prefWidth="158.39996337890625" text="theme" />
+            <TableColumn fx:id="objclm" prefWidth="206.4000244140625" text="objet" />
+            <TableColumn fx:id="txtclm" prefWidth="236.800048828125" text="text" />
         </columns>
    
       
       </TableView>
-      <Button fx:id="btnSupprimer" layoutX="306.0" layoutY="393.0" mnemonicParsing="false" onAction="#Supprimer" prefHeight="32.0" prefWidth="130.0" text="Supprimer" />
-      <Button fx:id="btnmodifier" layoutX="67.0" layoutY="393.0" mnemonicParsing="false" onAction="#Modifier" prefHeight="32.0" prefWidth="130.0" text="Modifier" />
-      <Button fx:id="btnAfficher" layoutX="556.0" layoutY="393.0" mnemonicParsing="false" onAction="#Afficher" prefHeight="32.0" prefWidth="100.0" text="Afficher" />
+      <Button fx:id="btnSupprimer" layoutX="495.0" layoutY="533.0" minHeight="40.0" minWidth="100.0" onAction="#Supprimer" styleClass="exit" stylesheets="@design.css" text="Supprimer" />
+      <Button fx:id="btnmodifier" layoutX="354.0" layoutY="533.0" minHeight="40.0" minWidth="100.0" onAction="#Modifier" styleClass="exit" stylesheets="@design.css" text="Modifier" />
+      <Button fx:id="btnAfficher" layoutX="638.0" layoutY="533.0" minHeight="40.0" minWidth="100.0" onAction="#Afficher" styleClass="exit" stylesheets="@design.css" text="Afficher" />
       <TextField fx:id="id" layoutX="58.0" layoutY="28.0" visible="false" />
-      <TextField fx:id="prixtotal" layoutX="40.0" layoutY="21.0" prefHeight="27.0" prefWidth="334.0" promptText="Recherche...">
+      <TextField fx:id="prixtotal" layoutX="354.0" layoutY="53.0" prefHeight="27.0" prefWidth="334.0" promptText="Recherche..." styleClass="textfield-design">
       </TextField>
 
    </children>
+   <stylesheets>
+      <URL value="@../../../assets/style/rouaaStyle.css" />
+      <URL value="@../user/design.css" />
+   </stylesheets>
 </AnchorPane>

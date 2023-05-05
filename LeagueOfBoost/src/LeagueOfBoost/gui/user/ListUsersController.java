@@ -5,6 +5,7 @@
 package LeagueOfBoost.gui.user;
 
 import LeagueOfBoost.entities.User;
+import LeagueOfBoost.gui.ReservationC.ReservationCController;
 import LeagueOfBoost.services.ServicePersonne;
 
 import java.io.IOException;
@@ -12,6 +13,8 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.function.Predicate;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -19,9 +22,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -51,6 +56,9 @@ public class ListUsersController implements Initializable {
     private TableColumn<User, String> roleclm;
     @FXML
     private ChoiceBox<String> choiceBox;
+
+    @FXML
+    private AnchorPane main;
 
 
 
@@ -180,4 +188,31 @@ public class ListUsersController implements Initializable {
         alert.showAndWait();
     }
 
-}
+    public void ToCoachs(ActionEvent event) {
+        try
+        {
+            Parent sv ;
+            sv = (AnchorPane)FXMLLoader.load(getClass().getResource("ChoachDemands.fxml"));
+            main.getChildren().removeAll() ;
+            main.getChildren().setAll(sv) ;
+        } catch (IOException ex) {
+            Logger.getLogger(ReservationCController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+
+
+    public void toBoosters(ActionEvent event) {
+        try
+        {
+            Parent sv ;
+            sv = (AnchorPane)FXMLLoader.load(getClass().getResource("BoostersDemands.fxml"));
+            main.getChildren().removeAll() ;
+            main.getChildren().setAll(sv) ;
+        } catch (IOException ex) {
+            Logger.getLogger(ReservationCController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    }
+

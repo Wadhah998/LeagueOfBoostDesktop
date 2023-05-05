@@ -41,7 +41,7 @@
             </TextField>
             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" translateX="-240.0">
                <image>
-                  <Image url="@../../assets/img/magnifier.png" />
+                  <Image url="@/assets/img/magnifier.png" />
                </image>
             </ImageView>
             <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="76.0" styleClass="sort-text" stylesheets="@../../assets/style/aliStyle.css">
@@ -64,7 +64,7 @@
                <children>
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../assets/img/add-list.png" />
+                        <Image url="@/assets/img/add-list.png" />
                      </image>
                   </ImageView>
                </children>
@@ -131,7 +131,7 @@
                            <children>
                               <ImageView fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../assets/img/cross.png" />
+                                    <Image url="@/assets/img/cross.png" />
                                  </image>
                               </ImageView>
                            </children>

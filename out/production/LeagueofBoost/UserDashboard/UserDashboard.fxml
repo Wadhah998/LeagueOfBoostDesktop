@@ -24,7 +24,7 @@
                   <Image url="@../assets/img/logo.png" />
                </image>
             </ImageView>
-            <VBox maxWidth="-Infinity" minHeight="-Infinity" prefHeight="470.0" prefWidth="65.0" translateY="20.0">
+            <VBox maxWidth="-Infinity" minHeight="-Infinity" prefHeight="533.0" prefWidth="63.0" translateY="20.0">
                <children>
                   <HBox fx:id="dashboardBtn" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#open_dashboard" prefHeight="50.0" prefWidth="60.0">
                      <children>
@@ -80,6 +80,81 @@
                      <VBox.margin>
                         <Insets top="10.0" />
                      </VBox.margin>
+                  </HBox>
+                  <HBox fx:id="profile" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#open_Profile" prefHeight="50.0" prefWidth="60.0" styleClass="nav-links">
+                     <children>
+                        <ImageView fx:id="favIcon311" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/img/fav.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets right="25.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </HBox>
+                  <HBox fx:id="game" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#open_Goam" prefHeight="50.0" prefWidth="60.0" styleClass="nav-links">
+                     <children>
+                        <ImageView fx:id="favIcon3111" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/img/fav.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets right="25.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </HBox>
+                  <HBox fx:id="booster" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#open_boster" prefHeight="50.0" prefWidth="60.0" styleClass="nav-links">
+                     <children>
+                        <ImageView fx:id="favIcon31111" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/img/fav.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets right="25.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </HBox>
+                  <HBox fx:id="reclamations" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#open_Rec" prefHeight="50.0" prefWidth="60.0" styleClass="nav-links">
+                     <children>
+                        <ImageView fx:id="favIcon311111" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/img/fav.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets right="25.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </HBox>
+                  <HBox fx:id="choach" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#open_Coach" prefHeight="50.0" prefWidth="60.0" styleClass="nav-links">
+                     <children>
+                        <ImageView fx:id="favIcon3111111" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/img/fav.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets right="25.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
                   </HBox>
                </children>
             </VBox>
@@ -145,7 +220,7 @@
       </HBox>
       <Pane fx:id="content_area" layoutX="115.0" layoutY="78.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="622.0" prefWidth="1236.0" styleClass="dash__container-card">
          <children>
-            <HBox alignment="CENTER_LEFT" layoutX="18.0" layoutY="27.0" stylesheets="@../assets/style/nabilStyle.css">
+            <HBox alignment="CENTER_LEFT" layoutX="18.0" layoutY="27.0">
                <children>
                   <Text fill="#7453fc" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="searchText" text="Home |">
                      <HBox.margin>

@@ -78,6 +78,126 @@
                         <Insets top="10.0" />
                      </VBox.margin>
                   </HBox>
+                  <HBox fx:id="userBtn" alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" onMouseClicked="#open_userList" prefHeight="50.0" prefWidth="200.0" styleClass="nav-links">
+                     <children>
+                        <ImageView fx:id="newsIcon1" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/img/news.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets right="25.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label fx:id="UsersText" styleClass="text" text="Users" textFill="#eb1616">
+                           <font>
+                              <Font name="Montserrat Regular" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </HBox>
+                  <HBox fx:id="bossterBtn" alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" onMouseClicked="#open_ReservationBList" prefHeight="50.0" prefWidth="200.0" styleClass="nav-links">
+                     <children>
+                        <ImageView fx:id="newsIcon2" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/img/news.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets right="25.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label fx:id="BoostersText" styleClass="text" text="Boosters" textFill="#eb1616">
+                           <font>
+                              <Font name="Montserrat Regular" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </HBox>
+                  <HBox fx:id="coachsBtn" alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" onMouseClicked="#open_ReservationCList" prefHeight="50.0" prefWidth="200.0" styleClass="nav-links">
+                     <children>
+                        <ImageView fx:id="newsIcon3" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/img/news.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets right="25.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label fx:id="coachsText" styleClass="text" text="Coachs" textFill="#eb1616">
+                           <font>
+                              <Font name="Montserrat Regular" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </HBox>
+                  <HBox fx:id="reclamationsBtn" alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" onMouseClicked="#open_ReclamationList" prefHeight="50.0" prefWidth="200.0" styleClass="nav-links">
+                     <children>
+                        <ImageView fx:id="newsIcon4" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/img/news.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets right="25.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label fx:id="reclamationsText" styleClass="text" text="Reclamations" textFill="#eb1616">
+                           <font>
+                              <Font name="Montserrat Regular" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </HBox>
+                  <HBox fx:id="gamessBtn" alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" onMouseClicked="#open_GameAdd" prefHeight="50.0" prefWidth="200.0" styleClass="nav-links">
+                     <children>
+                        <ImageView fx:id="newsIcon5" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/img/news.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets right="25.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label fx:id="gamesText" styleClass="text" text="Games Add" textFill="#eb1616">
+                           <font>
+                              <Font name="Montserrat Regular" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </HBox>
+                  <HBox fx:id="statsBtn" alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" onMouseClicked="#open_ToStat" prefHeight="50.0" prefWidth="200.0" styleClass="nav-links">
+                     <children>
+                        <ImageView fx:id="newsIcon51" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/img/news.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets right="25.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label fx:id="gamesText1" styleClass="text" text="Stats" textFill="#eb1616">
+                           <font>
+                              <Font name="Montserrat Regular" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </HBox>
                </children>
             </VBox>
             <HBox fx:id="sideBarLogout" alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" prefWidth="200.0" styleClass="nav-links" translateY="72.0">
@@ -107,7 +227,7 @@
       </VBox>
       <HBox alignment="CENTER_RIGHT" layoutX="250.0" prefHeight="78.0" prefWidth="1115.0" style="-fx-background-color: #0d0d0d;">
          <children>
-            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="nav-user-fullname" text="Dashboard" translateX="-650.0">
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="nav-user-fullname" text="Admin Dashboard" translateX="-650.0" wrappingWidth="147.13849639892578">
                <font>
                   <Font name="Montserrat ExtraBold" size="18.0" />
                </font>
@@ -172,7 +292,7 @@
                         <Insets right="8.0" />
                      </HBox.margin>
                   </Text>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="searchText" text="Hello Rouaa" />
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="searchText" text="Hello" />
                </children>
             </HBox>
          </children>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -8,15 +9,19 @@
 
 <AnchorPane id="AnchorPane" fx:id="txt" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LeagueOfBoost.gui.Reclamation.ModifierRController">
    <children>
-      <TextField fx:id="txttheme" layoutX="220.0" layoutY="124.0" />
-      <TextField fx:id="txtobj" layoutX="226.0" layoutY="200.0" />
-      <TextField fx:id="txttxt" layoutX="226.0" layoutY="267.0" />
-      <Label layoutX="53.0" layoutY="128.0" text="Theme" />
-      <Label layoutX="53.0" layoutY="204.0" text="Object" />
-      <Label layoutX="53.0" layoutY="271.0" text="Text" />
+      <TextField fx:id="txttheme" layoutX="71.0" layoutY="80.0" prefHeight="26.0" prefWidth="454.0" styleClass="product__add-input" />
+      <TextField fx:id="txtobj" layoutX="71.0" layoutY="149.0" prefHeight="26.0" prefWidth="454.0" styleClass="product__add-input" />
+      <TextField fx:id="txttxt" layoutX="71.0" layoutY="228.0" prefHeight="26.0" prefWidth="454.0" styleClass="product__add-input" />
+      <Label layoutX="69.0" layoutY="54.0" styleClass="product__add-input-label" text="Theme" />
+      <Label layoutX="70.0" layoutY="125.0" styleClass="product__add-input-label" text="Object" />
+      <Label layoutX="76.0" layoutY="202.0" styleClass="product__add-input-label" text="Text" />
       <TextField fx:id="id" layoutX="411.0" layoutY="67.0" visible="false" />
-      <Button fx:id="btnConfirmer" layoutX="268.0" layoutY="312.0" mnemonicParsing="false" onAction="#confirmer" text="Confirmer" />
-      <Label layoutX="426.0" layoutY="159.0" text="Etat" />
-      <ToggleButton fx:id="toggleetat" layoutX="417.0" layoutY="185.0" mnemonicParsing="false" text="Appuyer pour le rendre fini" />
+      <Button fx:id="btnConfirmer" layoutX="388.0" layoutY="307.0" mnemonicParsing="false" onAction="#confirmer" styleClass="exit" text="Confirmer" />
+      <Label layoutX="77.0" layoutY="275.0" styleClass="product__add-input-label" text="Etat" />
+      <ToggleButton fx:id="toggleetat" layoutX="71.0" layoutY="307.0" mnemonicParsing="false" styleClass="exit" text="Appuyer pour le rendre fini" />
    </children>
+   <stylesheets>
+      <URL value="@../../../assets/style/rouaaStyle.css" />
+      <URL value="@../user/design.css" />
+   </stylesheets>
 </AnchorPane>

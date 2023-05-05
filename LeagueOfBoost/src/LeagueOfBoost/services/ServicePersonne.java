@@ -390,5 +390,47 @@ public class  ServicePersonne  implements IService<User>{
     }
 
 
+    public ObservableList<User> afficherCoach() {
+
+        ObservableList<User> users = FXCollections.observableArrayList();
+
+        try {
+            String sql = "select * from user where roles = '[\"ROLE_CHOACH\"]' ";
+            Statement ste = con.createStatement();
+            ResultSet s = ste.executeQuery(sql);
+            while (s.next()) {
+
+                User u1 = new User(s.getInt("id"),s.getString("firstname"), s.getString("lastname"), s.getString("voie"), s.getInt("prix"));
+
+                users.add(u1);
+
+            }
+        } catch (SQLException ex) {
+            
+        System.out.println("listeee::"+users);
+        }
+        return users;
+    }
+    public ObservableList<User> afficherBooster() {
+
+        ObservableList<User> users = FXCollections.observableArrayList();
+
+        try {
+            String sql = "select * from user where roles = '[\"ROLE_BOOSTER\"]' ";
+            Statement ste = con.createStatement();
+            ResultSet s = ste.executeQuery(sql);
+            while (s.next()) {
+
+                User u1 = new User(s.getInt("id"),s.getString("firstname"), s.getString("lastname"), s.getString("voie"), s.getInt("prix"));
+
+                users.add(u1);
+
+            }
+        } catch (SQLException ex) {
+
+            System.out.println("listeee::"+users);
+        }
+        return users;
+    }
 
 }

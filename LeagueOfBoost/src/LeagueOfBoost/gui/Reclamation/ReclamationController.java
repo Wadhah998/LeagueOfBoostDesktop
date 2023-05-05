@@ -6,6 +6,7 @@
 package LeagueOfBoost.gui.Reclamation;
 
 import LeagueOfBoost.entities.Reclamation;
+import LeagueOfBoost.gui.ReservationC.ReservationCController;
 import LeagueOfBoost.services.ServiceReclamation;
 import java.io.IOException;
 import java.net.URL;
@@ -22,6 +23,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.collections.FXCollections;
 import java.awt.AWTException;
@@ -29,6 +31,8 @@ import java.awt.SystemTray;
 import java.awt.Toolkit;
 import java.awt.TrayIcon;
 import java.awt.Image;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /**
@@ -38,8 +42,8 @@ import java.awt.Image;
  */
 public class ReclamationController implements Initializable {
 
-    public static int varstat ;
-    
+    public static int varstat;
+
     @FXML
     private TableColumn<Reclamation, Integer> idclm;
     @FXML
@@ -62,41 +66,45 @@ public class ReclamationController implements Initializable {
     private Button btnmodifier;
     @FXML
     private Button btnAfficher;
+
+
+    @FXML
+    private AnchorPane main;
     @FXML
     private TextField id;
     private TextField searchField;
     @FXML
     private TextField prixtotal;
-    
-    String message = "Une réclamation a été traitée.";
-        
 
-    
+    String message = "Une réclamation a été traitée.";
+
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         prixtotal.textProperty().addListener((observable, oldValue, newValue) -> {
             rechercherReclamation();
         });
-        
-       
+
+
         loadReclamations();
-        
-        
+
+
         table.setOnMouseClicked(event -> {
-        if (event.getClickCount() == 1) {
-            Reclamation selectedReclamation = table.getSelectionModel().getSelectedItem();
-            if (selectedReclamation != null) {
-                btnAfficher.setDisable(false);
-            } else {
-                btnAfficher.setDisable(true);
+            if (event.getClickCount() == 1) {
+                Reclamation selectedReclamation = table.getSelectionModel().getSelectedItem();
+                if (selectedReclamation != null) {
+                    btnAfficher.setDisable(false);
+                } else {
+                    btnAfficher.setDisable(true);
+                }
             }
-        }
-    });
-    
-    btnAfficher.setDisable(true);
-    }    
+        });
+
+        btnAfficher.setDisable(true);
+    }
+
     ServiceReclamation sr = new ServiceReclamation();
-    
+
     private void loadReclamations() {
         ObservableList<Reclamation> listef = sr.afficherReclamation();
         table.setItems(listef);
@@ -107,13 +115,11 @@ public class ReclamationController implements Initializable {
         themeclm.setCellValueFactory(new PropertyValueFactory<>("theme"));
         objclm.setCellValueFactory(new PropertyValueFactory<>("object"));
         txtclm.setCellValueFactory(new PropertyValueFactory<>("text"));
-        
-       
-      
+
+
         table.setItems(listef);
-        
-  
-    
+
+
     }
 
     @FXML
@@ -127,22 +133,18 @@ public class ReclamationController implements Initializable {
     private void Modifier(ActionEvent event) {
         Reclamation r = table.getSelectionModel().getSelectedItem();
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("modifierR.fxml"));
-            Parent root = loader.load();
-            
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ModifierR.fxml"));
+            Parent sv = loader.load();
             ModifierRController controleur = loader.getController();
-            
             controleur.setTextFields(r);
-            
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) btnmodifier.getScene().getWindow();
-            stage.setScene(scene);
-            stage.show();
-            loadReclamations();
-        } catch (IOException e) {
-            System.out.println(e.getCause().getMessage());
+            main.getChildren().removeAll();
+            main.getChildren().setAll(sv);
+        } catch (IOException ex) {
+            Logger.getLogger(ReservationCController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+
     
     
     
@@ -157,11 +159,9 @@ public void Afficher() {
             
             AfficherRController controller = loader.getController();
             controller.setSelectedReclamation(selectedReclamation);
-            
-            Scene scene = new Scene(root);
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.show();
+
+            main.getChildren().removeAll();
+            main.getChildren().setAll(root);
         } catch (IOException e) {
             System.out.println(e.getCause().getMessage());
         }

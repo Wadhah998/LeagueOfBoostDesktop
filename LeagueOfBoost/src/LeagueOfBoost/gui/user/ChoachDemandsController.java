@@ -57,6 +57,7 @@ public class ChoachDemandsController implements Initializable {
     public void initialize(URL arg0, ResourceBundle arg1) {
 
         loadUsers();
+
     }    
     private void loadUsers() {
 
@@ -80,6 +81,7 @@ public class ChoachDemandsController implements Initializable {
         sp.changeToCoach(u);
         sp.sendMail(u,"CONGRATULATIONS! "+u.getFirstname() + " " + u.getLastname() +", we have reviwed your form and deemed you worthy of being a coach","Application Result");
         loadUsers();
+
     }
 
 }

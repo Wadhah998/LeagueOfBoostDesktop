@@ -17,7 +17,7 @@ public class LeagueOfBoostMain extends Application {
         Parent root;
         try {
 
-           root = FXMLLoader.load(getClass().getResource(  "/UserDashboard/UserDashboard.fxml"));
+           root = FXMLLoader.load(getClass().getResource(  "/LeagueOfBoost/gui/User/Inscription.fxml"));
             //root = FXMLLoader.load(getClass().getResource("/AdminDashboard/AdminDashboard.fxml"));
             Scene scene = new Scene(root);
 

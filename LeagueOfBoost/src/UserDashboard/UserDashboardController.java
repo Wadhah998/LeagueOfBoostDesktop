@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import LeagueOfBoost.gui.user.InscriptionController;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.fxml.FXML;
@@ -86,7 +87,7 @@ public class UserDashboardController implements Initializable {
     private Text totalNotif;
 
 
-    private StringProperty fullname = new SimpleStringProperty();
+
 
     /**
      * Initializes the controller class.
@@ -95,8 +96,7 @@ public class UserDashboardController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
 
         Image img = new Image("assets/img/rouaa.jpg");
-        circle.setFill(new ImagePattern(img));
-        navFullname.textProperty().bind(fullname);
+        navFullname.setText(InscriptionController.userc.getFirstname()+" "+InscriptionController.userc.getLastname());
 
 
 

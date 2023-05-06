@@ -203,7 +203,7 @@
                   <Insets right="16.0" />
                </HBox.margin>
             </HBox>
-            <Text fx:id="navFullname" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="nav-user-fullname" >
+            <Text fx:id="navFullname" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="nav-user-fullname"  >
                <font>
                   <Font name="Montserrat Bold" size="18.0" />
                </font>

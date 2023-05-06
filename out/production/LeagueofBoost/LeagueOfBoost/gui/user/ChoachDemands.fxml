@@ -18,7 +18,7 @@
                 <TableColumn fx:id="roleclm" prefWidth="193.5999755859375" styleClass="column-header" text="Role" />
             </columns>
         </TableView>
-        <Button fx:id="btnAccepter" layoutX="441.0" layoutY="487.0" minHeight="40.0" minWidth="100.0" onAction="#accepter" styleClass="exit" stylesheets="@design.css" text="Accepter" textFill="WHITE" />
+        <Button fx:id="btnAccepter" layoutX="471.0" layoutY="536.0" minHeight="40.0" minWidth="100.0" onAction="#accepter" styleClass="exit" stylesheets="@design.css" text="Accepter" textFill="WHITE" />
 
     </children>
    <stylesheets>

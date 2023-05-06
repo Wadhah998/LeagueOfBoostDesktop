@@ -5,6 +5,7 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
+import LeagueOfBoost.gui.user.InscriptionController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -103,6 +104,7 @@ public class AdminDashboardController implements Initializable {
    */
   @Override
   public void initialize(URL url, ResourceBundle rb) {
+    navFullname.setText(InscriptionController.userc.getFirstname()+" "+InscriptionController.userc.getLastname());
 
   }
 

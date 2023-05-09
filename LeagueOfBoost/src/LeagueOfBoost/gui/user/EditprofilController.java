@@ -14,6 +14,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -37,6 +38,8 @@ public class EditprofilController implements Initializable {
     private TextField lastname_update;
     @FXML
     private TextField username_update;
+    @FXML
+    private AnchorPane content_area;
 
     /**
      * Initializes the controller class.
@@ -65,24 +68,16 @@ public class EditprofilController implements Initializable {
         alert.setHeaderText(null);
         alert.setContentText("Profil updated !");
         alert.showAndWait();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("profile.fxml"));
-        Stage stage = new Stage();
-
-        stage.setScene(new Scene(loader.load()));
-        stage.show();
-        Stage currentStage = (Stage) ((Button) event.getSource()).getScene().getWindow();
-        currentStage.hide();
+        Parent fxml = FXMLLoader.load(getClass().getResource("/LeagueOfBoost/gui/User/Profile.fxml"));
+        content_area.getChildren().removeAll();
+        content_area.getChildren().setAll(fxml);
     }
 
     @FXML
     private void cancel_button(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("profile.fxml"));
-        Stage stage = new Stage();
-
-        stage.setScene(new Scene(loader.load()));
-        stage.show();
-        Stage currentStage = (Stage) ((Button) event.getSource()).getScene().getWindow();
-        currentStage.hide();
+        Parent fxml = FXMLLoader.load(getClass().getResource("/LeagueOfBoost/gui/User/Profile.fxml"));
+        content_area.getChildren().removeAll();
+        content_area.getChildren().setAll(fxml);
     }
     
 }

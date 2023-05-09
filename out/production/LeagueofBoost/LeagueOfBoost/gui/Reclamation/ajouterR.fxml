@@ -4,19 +4,26 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane id="AnchorPane" fx:id="main" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LeagueOfBoost.gui.Reclamation.AjouterRController">
    <children>
-      <Label layoutX="72.0" layoutY="59.0" styleClass="product__add-input-label" text="Theme" />
-      <Label layoutX="76.0" layoutY="131.0" styleClass="product__add-input-label" text="Object" />
-      <Label layoutX="79.0" layoutY="208.0" styleClass="product__add-input-label" text="Text" />
-      <TextField fx:id="themeclm" layoutX="72.0" layoutY="85.0" prefHeight="26.0" prefWidth="424.0" styleClass="product__add-input" />
-      <TextField fx:id="objectclm" layoutX="72.0" layoutY="157.0" prefHeight="26.0" prefWidth="424.0" styleClass="product__add-input" />
-      <TextField fx:id="textclm" layoutX="72.0" layoutY="234.0" prefHeight="26.0" prefWidth="424.0" styleClass="product__add-input" />
-      <Button fx:id="ajouterclm" layoutX="84.0" layoutY="298.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="37.0" prefWidth="116.0" styleClass="exit" text="Ajouter" />
-      <Button fx:id="Retour" layoutX="235.0" layoutY="298.0" mnemonicParsing="false" onAction="#retour" prefHeight="37.0" prefWidth="116.0" styleClass="exit" text="Retour" />
-      <Button fx:id="mesreclamations" layoutX="394.0" layoutY="298.0" mnemonicParsing="false" onAction="#mesreclamations" styleClass="exit" text="Mes réclamations" />
+      <ImageView fitHeight="797.0" fitWidth="1471.0" layoutX="13.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../assets/img/toto.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="373.0" layoutY="153.0" styleClass="product__add-input-label" text="Theme" textFill="WHITE" />
+      <Label layoutX="374.0" layoutY="274.0" styleClass="product__add-input-label" text="Object" textFill="WHITE" />
+      <Label layoutX="374.0" layoutY="412.0" styleClass="product__add-input-label" text="Text" textFill="WHITE" />
+      <TextField fx:id="themeclm" layoutX="374.0" layoutY="212.0" prefHeight="26.0" prefWidth="424.0" styleClass="product__add-input" />
+      <TextField fx:id="objectclm" layoutX="374.0" layoutY="344.0" prefHeight="26.0" prefWidth="424.0" styleClass="product__add-input" />
+      <TextField fx:id="textclm" layoutX="374.0" layoutY="469.0" prefHeight="26.0" prefWidth="424.0" styleClass="product__add-input" />
+      <Button fx:id="ajouterclm" layoutX="282.0" layoutY="557.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="38.0" prefWidth="141.0" styleClass="exit" text="Ajouter" />
+      <Button fx:id="mesreclamations" layoutX="722.0" layoutY="558.0" mnemonicParsing="false" onAction="#mesreclamations" styleClass="exit" text="Mes réclamations" />
+      <Label layoutX="529.0" layoutY="43.0" prefHeight="40.0" prefWidth="294.0" text="Add Your Report !" textFill="#ffdcdc" />
    </children>
    <stylesheets>
       <URL value="@../../../assets/style/rouaaStyle.css" />

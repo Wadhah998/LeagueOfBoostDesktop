@@ -123,17 +123,6 @@ public class AjouterRController {
         themeclm.setText("");
     } 
 
-    @FXML
-    private void retour(ActionEvent event) throws IOException {
-    FXMLLoader loader = new FXMLLoader(getClass().getResource("/LeagueOfBoost/gui/Reclamation/reclamationUser.fxml"));
-    Parent root = loader.load();
-    ReclamationUserController ajouterController = loader.getController();
-
-    Scene scene = new Scene(root);
-    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-    stage.setScene(scene);
-    stage.show();
-    }
 
 
 

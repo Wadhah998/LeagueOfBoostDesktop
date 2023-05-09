@@ -38,6 +38,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import java.util.prefs.Preferences;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 
 /**
  * FXML Controller class
@@ -75,42 +78,45 @@ public class ReclamationUserController implements Initializable {
 
     @FXML
     private AnchorPane main;
-    
-    
-        String message = "Une réclamation a été traitée.";
+
+
     @FXML
     private Button AjouterR;
 
-    
+
+    private static boolean isNotificationDisplayed = false; // initialiser à false lors du lancement de l'application
+
+
+
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-       prixtotal.textProperty().addListener((observable, oldValue, newValue) -> {
+        prixtotal.textProperty().addListener((observable, oldValue, newValue) -> {
             rechercherReclamation();
         });
-        
-       
+
+
         loadReclamationsuser();
-        
-        
+
+
         table.setOnMouseClicked(event -> {
-        if (event.getClickCount() == 1) {
-            Reclamation selectedReclamation = table.getSelectionModel().getSelectedItem();
-            if (selectedReclamation != null) {
-                btnAfficher.setDisable(false);
-            } else {
-                btnAfficher.setDisable(true);
+            if (event.getClickCount() == 1) {
+                Reclamation selectedReclamation = table.getSelectionModel().getSelectedItem();
+                if (selectedReclamation != null) {
+                    btnAfficher.setDisable(false);
+                } else {
+                    btnAfficher.setDisable(true);
+                }
             }
-        }
-    });
-    
-    btnAfficher.setDisable(true);
-    }    
-        ServiceReclamation sr = new ServiceReclamation();
-        private void loadReclamationsuser() {
+        });
+
+        btnAfficher.setDisable(true);
+    }
+    ServiceReclamation sr = new ServiceReclamation();
+    private void loadReclamationsuser() {
         ObservableList<Reclamation> listef = sr.afficherReclamationbyuser();
         table.setItems(listef);
         idclm.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -120,59 +126,70 @@ public class ReclamationUserController implements Initializable {
         themeclm.setCellValueFactory(new PropertyValueFactory<>("theme"));
         objclm.setCellValueFactory(new PropertyValueFactory<>("object"));
         txtclm.setCellValueFactory(new PropertyValueFactory<>("text"));
-        
-              listef.stream().filter((r) -> (r.isEtat())).forEachOrdered((_item) -> {
+
+
+        boolean hasTreatedReclamation = listef.stream().anyMatch(r -> r.isEtat());
+
+        if (hasTreatedReclamation && !isNotificationDisplayed) {
+            // Afficher la notification
+            String message = "Une réclamation a été traitée.";
             notifyUser(message);
-        });
-      
+
+            // Marquer la notification comme affichée
+            isNotificationDisplayed = true;
+        }
+
+
+
+
         table.setItems(listef);
     }
-        
-            @FXML
+
+    @FXML
     private void Supprimer(ActionEvent event) {
         Reclamation r1 = table.getSelectionModel().getSelectedItem();
         sr.Supprimer(r1);
         loadReclamationsuser();
     }
-    
-        @FXML
+
+    @FXML
     private void ModifierRuser(ActionEvent event) {
-            Reclamation r = table.getSelectionModel().getSelectedItem();
-            try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("ModifierRuser.fxml"));
-                Parent sv = loader.load();
-                ModifierRuserController controleur = loader.getController();
-                controleur.setTextFields(r);
-                main.getChildren().removeAll();
-                main.getChildren().setAll(sv);
-            } catch (IOException ex) {
-                Logger.getLogger(ReservationCController.class.getName()).log(Level.SEVERE, null, ex);
-            }
+        Reclamation r = table.getSelectionModel().getSelectedItem();
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ModifierRuser.fxml"));
+            Parent sv = loader.load();
+            ModifierRuserController controleur = loader.getController();
+            controleur.setTextFields(r);
+            main.getChildren().removeAll();
+            main.getChildren().setAll(sv);
+        } catch (IOException ex) {
+            Logger.getLogger(ReservationCController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
-    
-        @FXML
+
+    @FXML
     public void Afficher() {
-            Reclamation selectedReclamation = table.getSelectionModel().getSelectedItem();
-            varstat = selectedReclamation.getId() ;
-            if (selectedReclamation != null) {
-                try {
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("AfficherR.fxml"));
-                    Parent root = loader.load();
+        Reclamation selectedReclamation = table.getSelectionModel().getSelectedItem();
+        varstat = selectedReclamation.getId() ;
+        if (selectedReclamation != null) {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("AfficherR.fxml"));
+                Parent root = loader.load();
 
-                    AfficherRController controller = loader.getController();
-                    controller.setSelectedReclamation(selectedReclamation);
+                AfficherRController controller = loader.getController();
+                controller.setSelectedReclamation(selectedReclamation);
 
-                    main.getChildren().removeAll();
-                    main.getChildren().setAll(root);
-                } catch (IOException e) {
-                    System.out.println(e.getCause().getMessage());
-                }
+                main.getChildren().removeAll();
+                main.getChildren().setAll(root);
+            } catch (IOException e) {
+                System.out.println(e.getCause().getMessage());
             }
-}
-    
+        }
+    }
+
     public void rechercherReclamation() {
         String keyword = prixtotal.getText();
-       ObservableList<Reclamation> filteredList = FXCollections.observableArrayList();
+        ObservableList<Reclamation> filteredList = FXCollections.observableArrayList();
         ObservableList<TableColumn<Reclamation, ?>> columns = table.getColumns();
         for (int i = 0; i <sr.afficherReclamationbyuser().size(); i++) {
             Reclamation Rec = sr.afficherReclamationbyuser().get(i);
@@ -187,45 +204,46 @@ public class ReclamationUserController implements Initializable {
         }
         table.setItems(filteredList);
     }
-    
-        private void notifyUser(String message) {
-         if (SystemTray.isSupported()) {
-             try {
-                 // Initialiser SystemTray
-                 SystemTray tray = SystemTray.getSystemTray();
 
-                 // Créer une icône pour la notification
-                 Image image = Toolkit.getDefaultToolkit().createImage("icon.png");
-                 TrayIcon trayIcon = new TrayIcon(image, "Notification");
+    private void notifyUser(String message) {
 
-                 // Ajouter l'icône au SystemTray
-                 tray.add(trayIcon);
+        if (SystemTray.isSupported() ) {
+            try {
+                // Initialize SystemTray
+                SystemTray tray = SystemTray.getSystemTray();
 
-                 // Afficher la notification
-                 trayIcon.displayMessage("Notification", message, TrayIcon.MessageType.INFO);
-             } catch (AWTException e) {
-                 System.err.println("Erreur lors de l'initialisation du SystemTray: " + e);
-             }
-         } else {
-             System.out.println("SystemTray n'est pas pris en charge");
-         }
-     }
+                // Create an icon for the notification
+                Image image = Toolkit.getDefaultToolkit().createImage("icon.png");
+                TrayIcon trayIcon = new TrayIcon(image, "Notification");
+
+                // Add the icon to the SystemTray
+                tray.add(trayIcon);
+
+                // Display the notification
+                trayIcon.displayMessage("Notification", message, TrayIcon.MessageType.INFO);
+
+                // Set the flag to indicate that the notification has been shown
+
+            } catch (AWTException e) {
+                System.err.println("Error initializing SystemTray: " + e);
+            }
+        } else {
+            System.out.println("SystemTray is not supported ");
+        }
+    }
+
+
 
     @FXML
     private void AjouterR(ActionEvent event) throws IOException {
-    
-    FXMLLoader loader = new FXMLLoader(getClass().getResource("/LeagueOfBoost/gui/Reclamation/ajouterR.fxml"));
-    Parent root = loader.load();
-    AjouterRController ajouterController = loader.getController();
 
-    Scene scene = new Scene(root);
-    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-    stage.setScene(scene);
-    stage.show();
+        Parent fxml = FXMLLoader.load(getClass().getResource("/LeagueOfBoost/gui/Reclamation/ajouterR.fxml"));
+        main.getChildren().removeAll();
+        main.getChildren().setAll(fxml);
     }
-    
-    
-    
-    
-    
+
+
+
+
+
 }

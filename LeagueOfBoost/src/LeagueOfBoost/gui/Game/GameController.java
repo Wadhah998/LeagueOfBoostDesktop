@@ -80,7 +80,7 @@ private void handleButtonAction (ActionEvent event)
                  
          }
           System.out.println(index);
-          int index1 = lt.get(index).getGame_id();
+          int index1 = lt.get(index).getId();
             SeviceGame sg = new SeviceGame();
             
              sg.SupprimerById(index1);

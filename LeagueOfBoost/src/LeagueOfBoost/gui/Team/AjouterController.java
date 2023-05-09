@@ -13,6 +13,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import java.io.IOException;
 import java.net.URL;
@@ -73,6 +74,10 @@ public class AjouterController{
     
     @FXML
     private TextField txtp5;
+
+
+    @FXML
+    private AnchorPane content_area;
     
 
     ServiceTeam sp = new ServiceTeam();
@@ -220,13 +225,9 @@ public class AjouterController{
     }
     
     public void handlePreviousClick(MouseEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/LeagueOfBoost/gui/Game/design.fxml"));
-        Parent root = loader.load();
-        DesignController designController = loader.getController();
-        Scene scene = new Scene(root);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
+        Parent fxml = FXMLLoader.load(getClass().getResource("/LeagueOfBoost/gui/Game/design.fxml"));
+        content_area.getChildren().removeAll();
+        content_area.getChildren().setAll(fxml);
 }
         
     public int verif(String mot){

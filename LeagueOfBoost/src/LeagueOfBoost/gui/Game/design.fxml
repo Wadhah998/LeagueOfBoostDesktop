@@ -7,7 +7,6 @@
 <?import javafx.scene.effect.Blend?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.Lighting?>
-<?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -15,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="main1" onMouseClicked="#handleGameClick" prefHeight="600.0" prefWidth="930.0" style="-fx-background-color: #172333;" stylesheets="@Stylesheet.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LeagueOfBoost.gui.Game.DesignController">
+<AnchorPane id="AnchorPane" fx:id="main1" onMouseClicked="#handleGameClick" prefHeight="658.0" prefWidth="1345.0" stylesheets="@Stylesheet.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LeagueOfBoost.gui.Game.DesignController">
    <children>
       <AnchorPane fx:id="main" prefHeight="600.0" prefWidth="80.0" styleClass="sidebar">
          <children>
@@ -65,15 +64,7 @@
             <Font name="Microsoft JhengHei Bold" size="13.0" />
          </font>
       </Label>
-      <ImageView fitHeight="229.0" fitWidth="328.0" layoutX="531.0" layoutY="46.0" opacity="0.28" pickOnBounds="true" smooth="false">
-         <image>
-            <Image url="@images/man.png" />
-         </image>
-         <effect>
-            <Reflection />
-         </effect>
-      </ImageView>
-      
+
       
       
       <VBox fx:id="gameList" fillWidth="false" layoutX="100.0" layoutY="280.0" prefHeight="121.0" prefWidth="215.0" scaleShape="false">
@@ -90,7 +81,7 @@
 
 
       </VBox>
-      <ImageView fitHeight="39.0" fitWidth="41.0" layoutX="514.0" layoutY="302.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="39.0" fitWidth="41.0" layoutX="784.0" layoutY="182.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/icons8_details_popup_filled_50px.png" />
          </image>
@@ -105,22 +96,27 @@
             </Lighting>
          </effect>
       </ImageView>
-      <Label layoutX="566.0" layoutY="309.0" text="Our Champions List " textFill="#ff2727">
+      <Label layoutX="834.0" layoutY="191.0" text="Our Champions List " textFill="#ff2727">
          <font>
             <Font name="Franklin Gothic Demi Cond" size="22.0" />
          </font>
       </Label>
-      <TextField fx:id="prixtotal" layoutX="429.0" layoutY="368.0" prefHeight="27.0" prefWidth="462.0" promptText="Recherche..." styleClass="textfield-design" stylesheets="@design.css" />
-      <TableView fx:id="TeamL" layoutX="429.0" layoutY="421.0" prefHeight="458.0" prefWidth="462.0" stylesheets="@style.css">
+      <TextField fx:id="prixtotal" layoutX="639.0" layoutY="253.0" prefHeight="27.0" prefWidth="462.0" promptText="Recherche..." styleClass="textfield-design" stylesheets="@design.css" />
+      <TableView fx:id="TeamL" layoutX="560.0" layoutY="311.0" prefHeight="310.0" prefWidth="675.0" styleClass="table-view" stylesheets="@../user/dashboardDesign.css">
         <columns>
-            <TableColumn fx:id="name1" prefWidth="44.79998779296875" sortable="false" text="Rank" />
-          <TableColumn fx:id="name" prefWidth="148.0" sortable="false" text="Team" />
-          <TableColumn fx:id="wins" prefWidth="53.60003662109375" text="Wins" />
-            <TableColumn fx:id="losses" prefWidth="57.60003662109375" text="Losses" />
-            <TableColumn fx:id="wr" minWidth="0.0" prefWidth="155.20001220703125" text="Winrate %" />
+            <TableColumn fx:id="name1" prefWidth="123.2000732421875" sortable="false" text="Rank" />
+          <TableColumn fx:id="name" prefWidth="156.79998779296875" sortable="false" text="Team" />
+          <TableColumn fx:id="wins" prefWidth="131.20001220703125" text="Wins" />
+            <TableColumn fx:id="losses" prefWidth="64.00006103515625" text="Losses" />
+            <TableColumn fx:id="wr" minWidth="0.0" prefWidth="192.0001220703125" text="Winrate %" />
         </columns>
        
       </TableView>
+      <ImageView fitHeight="866.0" fitWidth="1540.0" opacity="0.14" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../assets/img/eve.jpg" />
+         </image>
+      </ImageView>
       
 
    </children>

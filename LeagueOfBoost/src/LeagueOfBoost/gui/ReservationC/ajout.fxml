@@ -1,21 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane id="AnchorPane" fx:id="main"  prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="LeagueOfBoost.gui.ReservationC.AjoutController">
+<AnchorPane id="AnchorPane" fx:id="main" prefHeight="658.0" prefWidth="1345.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LeagueOfBoost.gui.ReservationC.AjoutController">
    <children>
-      <Button fx:id="btnajout" layoutX="274.0" layoutY="297.0" mnemonicParsing="false" onAction="#Ajouter" prefHeight="37.0" prefWidth="97.0" text="Ajouter" />
-      <Button fx:id="btnretour" layoutX="400.0" layoutY="297.0" mnemonicParsing="false" onAction="#Retour" prefHeight="37.0" prefWidth="97.0" text="Retour" />
+      <ImageView fitHeight="774.0" fitWidth="1345.0" layoutY="-1.0" opacity="0.59" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../assets/img/sami.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnajout" layoutX="502.0" layoutY="501.0" mnemonicParsing="false" onAction="#Ajouter" prefHeight="37.0" prefWidth="97.0" styleClass="exit" stylesheets="@../user/design.css" text="Ajouter" />
 
-      <Label layoutX="58.0" layoutY="77.0" text="Nbr Heures" />
-      <Label layoutX="58.0" layoutY="152.0" text="Prix" />
-      <Label layoutX="58.0" layoutY="229.0" text="Langue" />
-      <TextField fx:id="txtnbr" layoutX="180.0" layoutY="65.0" />
-      <TextField fx:id="txtprx" layoutX="180.0" layoutY="148.0" />
-      <TextField fx:id="txtlng" layoutX="180.0" layoutY="234.0" />
-   </children>
+      <Label layoutX="375.0" layoutY="128.0" styleClass="product__add-input-label" text="Nbr Heures" textFill="WHITE" />
+      <Label layoutX="371.0" layoutY="240.0" styleClass="product__add-input-label" text="Prix" textFill="WHITE" />
+      <Label layoutX="375.0" layoutY="357.0" styleClass="product__add-input-label" text="Langue" textFill="WHITE" />
+      <TextField fx:id="txtnbr" layoutX="365.0" layoutY="163.0" prefHeight="26.0" prefWidth="391.0" styleClass="product__add-input" />
+      <TextField fx:id="txtprx" layoutX="371.0" layoutY="289.0" prefHeight="26.0" prefWidth="391.0" styleClass="product__add-input" />
+      <TextField fx:id="txtlng" layoutX="375.0" layoutY="399.0" prefHeight="26.0" prefWidth="391.0" styleClass="product__add-input" />
+   </children>  <stylesheets>
+   <URL value="@../../../assets/style/rouaaStyle.css" />
+   <URL value="@../user/design.css" />
+</stylesheets>
 </AnchorPane>

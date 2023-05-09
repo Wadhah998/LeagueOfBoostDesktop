@@ -22,7 +22,7 @@
          <children>
             <ImageView fitHeight="243.0" fitWidth="201.0" pickOnBounds="true" preserveRatio="true" translateX="8.0" translateY="-15.0">
                <image>
-                  <Image url="@../assets/img/logo.png" />
+                  <Image url="@../assets/img/logo.jpg" />
                </image>
             </ImageView>
             <VBox maxWidth="-Infinity" minHeight="-Infinity" prefHeight="349.0" prefWidth="250.0" translateY="1.0">
@@ -82,7 +82,7 @@
                      <children>
                         <ImageView fx:id="newsIcon1" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../assets/img/news.png" />
+                              <Image url="@../assets/img/profile.png" />
                            </image>
                            <HBox.margin>
                               <Insets right="25.0" />
@@ -102,7 +102,7 @@
                      <children>
                         <ImageView fx:id="newsIcon2" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../assets/img/news.png" />
+                              <Image url="@../assets/img/Booster.png" />
                            </image>
                            <HBox.margin>
                               <Insets right="25.0" />
@@ -122,7 +122,7 @@
                      <children>
                         <ImageView fx:id="newsIcon3" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../assets/img/news.png" />
+                              <Image url="@../assets/img/coach.png" />
                            </image>
                            <HBox.margin>
                               <Insets right="25.0" />
@@ -142,7 +142,7 @@
                      <children>
                         <ImageView fx:id="newsIcon4" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../assets/img/news.png" />
+                              <Image url="@../assets/img/reclamation.png" />
                            </image>
                            <HBox.margin>
                               <Insets right="25.0" />
@@ -162,7 +162,7 @@
                      <children>
                         <ImageView fx:id="newsIcon5" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../assets/img/news.png" />
+                              <Image url="@../assets/img/game.png" />
                            </image>
                            <HBox.margin>
                               <Insets right="25.0" />
@@ -182,7 +182,7 @@
                      <children>
                         <ImageView fx:id="newsIcon51" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../assets/img/news.png" />
+                              <Image url="@../assets/img/stat.png" />
                            </image>
                            <HBox.margin>
                               <Insets right="25.0" />
@@ -200,7 +200,7 @@
                   </HBox>
                </children>
             </VBox>
-            <HBox fx:id="sideBarLogout" alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" prefWidth="200.0" styleClass="nav-links" translateY="72.0">
+            <HBox fx:id="sideBarLogout" alignment="CENTER_LEFT" onMouseClicked="#Logout" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" prefWidth="200.0" styleClass="nav-links" translateY="72.0">
                <children>
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -232,7 +232,7 @@
                   <Font name="Montserrat ExtraBold" size="18.0" />
                </font>
             </Text>
-            <HBox fx:id="navBarLogout" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="50.0" styleClass="nav-icon">
+            <HBox fx:id="navBarLogout" alignment="CENTER"   onMouseClicked="#Logout" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="50.0" styleClass="nav-icon">
                <children>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>

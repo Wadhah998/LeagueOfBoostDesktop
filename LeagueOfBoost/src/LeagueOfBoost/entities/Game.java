@@ -15,7 +15,7 @@ import javafx.scene.control.Button;
  */
 public class Game {
     
-    public int game_id;
+    public int id;
     public String title;
     public String description;
     public int price;
@@ -33,8 +33,8 @@ public class Game {
         this.price = price;
         this.date = date;
     }
-     public Game(int game_id, String title, String description, int price, Date date) {
-        this.game_id = game_id;
+     public Game(int id, String title, String description, int price, Date date) {
+        this.id = id;
         this.title = title;
         this.description = description;
         this.price = price;
@@ -53,15 +53,13 @@ public class Game {
     public void setSupprimer(Button supprimer) {
         this.supprimer = supprimer;
     }
-    
-   
 
-    public int getGame_id() {
-        return game_id;
+    public int getId() {
+        return id;
     }
 
-    public void setGame_id(int game_id) {
-        this.game_id = game_id;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -100,6 +98,6 @@ public class Game {
     
     @Override
     public String toString() {
-        return "Game{" + "id=" + game_id + ", title=" + title + ", description=" + description + ", price=" + price + ", date=" + date + '}';
+        return "Game{" + "id=" + id + ", title=" + title + ", description=" + description + ", price=" + price + ", date=" + date + '}';
     }
 }

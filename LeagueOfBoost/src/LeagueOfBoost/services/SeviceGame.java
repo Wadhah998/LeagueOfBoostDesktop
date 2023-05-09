@@ -43,13 +43,13 @@ public class SeviceGame implements IService<Game>{
         ResultSet result = ste.executeQuery();
         
         while (result.next()) {
-            int game_id = result.getInt("game_id");
+            int id = result.getInt("id");
             String title = result.getString("title");
             String description = result.getString("description");
             int price = result.getInt("price");
             int date = result.getInt("date");
             
-            System.out.println("Game ID: " + game_id);
+            System.out.println("Game ID: " + id);
             System.out.println("Title: " + title);
             System.out.println("Description: " + description);
             System.out.println("Price: " + price);
@@ -64,19 +64,19 @@ public class SeviceGame implements IService<Game>{
 
     public void AfficherById(Game t) {
     try {
-        String sql = "SELECT * FROM `LOB`.`Game` WHERE game_id=" + t.getGame_id();
+        String sql = "SELECT * FROM `LOB`.`Game` WHERE id=" + t.getId();
         PreparedStatement ste = con.prepareStatement(sql);
         
         ResultSet result = ste.executeQuery();
         
         while (result.next()) {
-            int game_id = result.getInt("game_id");
+            int id = result.getInt("id");
             String title = result.getString("title");
             String description = result.getString("description");
             int price = result.getInt("price");
             int date = result.getInt("date");
             
-            System.out.println("Game ID: " + game_id);
+            System.out.println("Game ID: " + id);
             System.out.println("Title: " + title);
             System.out.println("Description: " + description);
             System.out.println("Price: " + price);
@@ -97,12 +97,12 @@ public class SeviceGame implements IService<Game>{
         ResultSet result = st.executeQuery(sql);
 
         while (result.next()) {
-            int game_id = result.getInt("game_id");
+            int id = result.getInt("id");
             String title = result.getString("title");
             String description = result.getString("description");
             int price = result.getInt("price");
             Date date = result.getDate("date");
-            Game game = new Game(game_id, title, description, price, date);
+            Game game = new Game(id, title, description, price, date);
             games.add(game);
         }
     } catch (SQLException ex) {
@@ -133,13 +133,13 @@ public class SeviceGame implements IService<Game>{
     @Override
     public void Modifier(Game t) {
     try {
-        String sql = "UPDATE `LOB`.`Game` SET title=?, description=?, price=?, date=? WHERE game_id=?";
+        String sql = "UPDATE `LOB`.`Game` SET title=?, description=?, price=?, date=? WHERE id=?";
         PreparedStatement ste = con.prepareStatement(sql);
         ste.setString(1, t.getTitle());
         ste.setString(2, t.getDescription());
         ste.setInt(3, t.getPrice());
         ste.setDate(4, new java.sql.Date(t.getDate().getTime()));
-        ste.setInt(5, t.getGame_id());
+        ste.setInt(5, t.getId());
         
         ste.executeUpdate();
     } catch (SQLException ex) {
@@ -152,7 +152,7 @@ public class SeviceGame implements IService<Game>{
  
     public void SupprimerById(int t) {
     try {
-        String sql = "DELETE FROM `LOB`.`Game` WHERE game_id=?";
+        String sql = "DELETE FROM `LOB`.`Game` WHERE id=?";
         PreparedStatement ste = con.prepareStatement(sql);
         ste.setInt(1, t);
         

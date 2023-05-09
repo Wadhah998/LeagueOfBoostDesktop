@@ -9,36 +9,36 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="899.0" style="-fx-background-color: #172333;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LeagueOfBoost.gui.Team.AjouterController">
+<AnchorPane id="AnchorPane" fx:id="content_area" prefHeight="620.0" prefWidth="1090.0" style="-fx-background-color: #172333;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LeagueOfBoost.gui.Team.AjouterController">
    <children>
   
-      <Button fx:id="btnres" layoutX="419.0" layoutY="436.0" mnemonicParsing="false" onAction="#reserver" text="Réserver" />
-      <Label layoutX="124.0" layoutY="231.0" text="Game Id" textFill="WHITE" />
-      <Label layoutX="453.0" layoutY="231.0" text="Team Name" textFill="WHITE" />
-      <Label layoutX="81.0" layoutY="278.0" text="Team Description" textFill="WHITE" />
-      <Label layoutX="475.0" layoutY="278.0" text="Player 1" textFill="WHITE" />
-      <Label layoutX="125.0" layoutY="328.0" text="Player 2" textFill="WHITE" />
-      <Label layoutX="475.0" layoutY="328.0" text="Player 3" textFill="WHITE" />
-      <Label layoutX="125.0" layoutY="374.0" text="Player 4" textFill="WHITE" />
-      <Label layoutX="475.0" layoutY="374.0" text="Player 5" textFill="WHITE" />
+      <Button fx:id="btnres" layoutX="610.0" layoutY="499.0" mnemonicParsing="false" onAction="#reserver" prefHeight="35.0" prefWidth="121.0" styleClass="exit" stylesheets="@../user/design.css" text="Réserver" />
+      <Label layoutX="150.0" layoutY="234.0" styleClass="product__add-input-label" stylesheets="@../../../assets/style/rouaaStyle.css" text="Game Id" textFill="WHITE" />
+      <Label layoutX="687.0" layoutY="234.0" stylesheets="@../../../assets/style/rouaaStyle.css" text="Team Name" textFill="WHITE" />
+      <Label layoutX="124.0" layoutY="297.0" styleClass="product__add-input-label" stylesheets="@../../../assets/style/rouaaStyle.css" text="Team Description" textFill="WHITE" />
+      <Label layoutX="687.0" layoutY="297.0" stylesheets="@../../../assets/style/rouaaStyle.css" text="Player 1" textFill="WHITE" />
+      <Label layoutX="129.0" layoutY="368.0" stylesheets="@../../../assets/style/rouaaStyle.css" text="Player 2" textFill="WHITE" />
+      <Label layoutX="680.0" layoutY="368.0" stylesheets="@../../../assets/style/rouaaStyle.css" text="Player 3" textFill="WHITE" />
+      <Label layoutX="129.0" layoutY="440.0" stylesheets="@../../../assets/style/rouaaStyle.css" text="Player 4" textFill="WHITE" />
+      <Label layoutX="680.0" layoutY="427.0" stylesheets="@../../../assets/style/rouaaStyle.css" text="Player 5" textFill="WHITE" />
 
-      <TextField fx:id="txtp5" layoutX="560.0" layoutY="370.0" />
-      <TextField fx:id="txtid" layoutX="205.0" layoutY="227.0" />
-      <TextField fx:id="txtname" layoutX="560.0" layoutY="227.0" />
-      <TextField fx:id="txtdes" layoutX="205.0" layoutY="274.0" />
-      <TextField fx:id="txtp1" layoutX="560.0" layoutY="274.0" />
-      <TextField fx:id="txtp2" layoutX="205.0" layoutY="324.0" />
-      <TextField fx:id="txtp4" layoutX="205.0" layoutY="370.0" />
-      <TextField fx:id="txtp3" layoutX="560.0" layoutY="322.0" />
-      <Label layoutX="291.0" layoutY="164.0" prefHeight="27.0" prefWidth="272.0" text="         Register Your Team !" textFill="#ffdcdc">
+      <TextField fx:id="txtp5" layoutX="831.0" layoutY="427.0" prefWidth="212.0" styleClass="product__add-input" stylesheets="@../../../assets/style/rouaaStyle.css" />
+      <TextField fx:id="txtid" layoutX="298.0" layoutY="227.0" prefWidth="201.0" styleClass="product__add-input" stylesheets="@../../../assets/style/rouaaStyle.css" />
+      <TextField fx:id="txtname" layoutX="831.0" layoutY="227.0" prefWidth="212.0" styleClass="product__add-input" stylesheets="@../../../assets/style/rouaaStyle.css" />
+      <TextField fx:id="txtdes" layoutX="298.0" layoutY="290.0" prefWidth="201.0" styleClass="product__add-input" stylesheets="@../../../assets/style/rouaaStyle.css" />
+      <TextField fx:id="txtp1" layoutX="831.0" layoutY="297.0" prefWidth="212.0" styleClass="product__add-input" stylesheets="@../../../assets/style/rouaaStyle.css" />
+      <TextField fx:id="txtp2" layoutX="298.0" layoutY="361.0" prefWidth="201.0" styleClass="product__add-input" stylesheets="@../../../assets/style/rouaaStyle.css" />
+      <TextField fx:id="txtp4" layoutX="297.0" layoutY="427.0" prefWidth="202.0" styleClass="product__add-input" stylesheets="@../../../assets/style/rouaaStyle.css" />
+      <TextField fx:id="txtp3" layoutX="831.0" layoutY="361.0" prefWidth="212.0" styleClass="product__add-input" stylesheets="@../../../assets/style/rouaaStyle.css" />
+      <Label layoutX="474.0" layoutY="175.0" prefHeight="27.0" prefWidth="272.0" text="         Register Your Team !" textFill="#ffdcdc">
          <font>
             <Font name="Bradley Hand ITC" size="24.0" />
          </font></Label>
-      <TextField fx:id="tcaptcha" layoutX="201.0" layoutY="499.0" prefHeight="38.0" prefWidth="219.0" promptText="Captcha">
+      <TextField fx:id="tcaptcha" layoutX="341.0" layoutY="569.0" prefHeight="38.0" prefWidth="201.0" promptText="Captcha">
                <font>
                  
                </font></TextField>
-            <ImageView fx:id="icaptcha" fitHeight="53.0" fitWidth="212.0" layoutX="427.0" layoutY="495.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="icaptcha" fitHeight="53.0" fitWidth="212.0" layoutX="548.0" layoutY="562.0" pickOnBounds="true" preserveRatio="true" />
             
             
       <ImageView fitHeight="61.0" fitWidth="35.0" layoutX="14.0" layoutY="35.0" onMouseClicked="#handlePreviousClick" pickOnBounds="true" preserveRatio="true">
@@ -51,12 +51,12 @@
             <Image url="@../Game/images/icons8_angle_right_32px_1.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="113.0" fitWidth="329.0" layoutX="353.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="113.0" fitWidth="329.0" layoutX="531.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Game/images/jhjhjh.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="98.0" fitWidth="121.0" layoutX="190.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="98.0" fitWidth="121.0" layoutX="338.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Game/images/man.png" />
          </image>
@@ -64,7 +64,7 @@
             <Reflection />
          </effect>
       </ImageView>
-      <ImageView fitHeight="98.0" fitWidth="121.0" layoutX="586.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="98.0" fitWidth="121.0" layoutX="816.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Game/images/man.png" />
          </image>

@@ -89,11 +89,14 @@ public class LoginController implements Initializable {
     }
     @FXML
     private void login(ActionEvent event) throws SQLException, IOException {
+
+        String p = password.getText();
+        String c = PaswordHasher.hashPassword(p);
         String firstnameText = firstname.getText();
         String lastnameText = lastname.getText();
         String usernameText = username.getText();
         String emailText = email.getText();
-        String passwordText = password.getText();
+        String passwordText = p;
         if(       firstnameText.isEmpty()
                 | lastnameText.isEmpty()
                 | usernameText.isEmpty()

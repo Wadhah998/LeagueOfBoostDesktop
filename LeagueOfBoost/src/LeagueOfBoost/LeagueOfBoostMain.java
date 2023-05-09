@@ -21,7 +21,7 @@ public class LeagueOfBoostMain extends Application {
             //root = FXMLLoader.load(getClass().getResource("/AdminDashboard/AdminDashboard.fxml"));
             Scene scene = new Scene(root);
 
-            primaryStage.getIcons().add(new Image("/assets/img/logo.png"));
+            primaryStage.getIcons().add(new Image("/assets/img/logo.jpg"));
             primaryStage.setTitle("League Of Boost");
             primaryStage.setScene(scene);
             LeagueOfBoostMain.stage = primaryStage;

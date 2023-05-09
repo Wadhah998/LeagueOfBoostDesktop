@@ -97,7 +97,7 @@ public class ModifierController implements Initializable {
     }
     
     public void setTextFields(Game r){
-        id.setText(String.valueOf(r.getGame_id()));
+        id.setText(String.valueOf(r.getId()));
         txttitle.setText(r.getTitle());
         txtdes.setText(r.getDescription());
         txtprice.setText(String.valueOf(r.getPrice())); 

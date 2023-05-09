@@ -126,6 +126,8 @@
       <root url="jar://$PROJECT_DIR$/LeagueOfBoost/src/lib/jBCrypt-0.4.1.jar!/" />
       <root url="jar://$PROJECT_DIR$/LeagueOfBoost/src/lib/httpclient-4.5.13.jar!/" />
       <root url="jar://$PROJECT_DIR$/LeagueOfBoost/src/lib/slf4j-api-1.7.33.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../spring-security-crypto-5.0.0.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../jBCrypt-0.4.1.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

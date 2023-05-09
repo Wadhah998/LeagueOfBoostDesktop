@@ -96,9 +96,9 @@ public class  ServicePersonne  implements IService<User>{
         System.out.println(ex.getMessage());
     }
 }
-    
-    
-    
+
+
+
     public User findUserByLogin(String username, String password) {
         User u = null;
 
@@ -107,6 +107,7 @@ public class  ServicePersonne  implements IService<User>{
             PreparedStatement ste=con.prepareStatement(sql);
             ste.setString(1,username);
             ste.setString(2,password);
+            System.out.println(password);
             ResultSet s = ste.executeQuery();
             if (s.next()) {
 

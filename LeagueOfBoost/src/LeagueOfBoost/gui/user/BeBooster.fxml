@@ -7,39 +7,59 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LeagueOfBoost.gui.user.BeBoosterController">
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.effect.Reflection?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="658.0" prefWidth="1345.0" style="-fx-background-color: #172333" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LeagueOfBoost.gui.user.BeBoosterController">
     <children>
-        <Label layoutX="459.0" layoutY="46.0" style="-fx-font-size: 16;" styleClass="product__add-input-label" text="Lien_Opgg" textFill="WHITE" />
-        <TextField fx:id="Lien_Opgg" layoutX="388.0" layoutY="89.0" prefHeight="28.0" prefWidth="251.0" styleClass="product__add-input">
+        <Label layoutX="506.0" layoutY="45.0" style="-fx-font-size: 16;" styleClass="product__add-input-label" text="Lien_Opgg" textFill="WHITE" />
+        <TextField fx:id="Lien_Opgg" layoutX="506.0" layoutY="89.0" prefHeight="28.0" prefWidth="251.0" styleClass="product__add-input">
 
             <font>
                 <Font size="15.0" />
             </font>
         </TextField>
-        <Label layoutX="476.0" layoutY="136.0" style="-fx-font-size: 16;" styleClass="product__add-input-label" text="Voie" textFill="WHITE" />
-        <TextField fx:id="Voie" layoutX="388.0" layoutY="186.0" prefHeight="28.0" prefWidth="251.0" styleClass="product__add-input">
+        <Label layoutX="506.0" layoutY="145.0" style="-fx-font-size: 16;" styleClass="product__add-input-label" text="Voie" textFill="WHITE" />
+        <TextField fx:id="Voie" layoutX="506.0" layoutY="187.0" prefHeight="28.0" prefWidth="251.0" styleClass="product__add-input">
 
             <font>
                 <Font size="15.0" />
             </font>
         </TextField>
-        <Label layoutX="452.0" layoutY="238.0" style="-fx-font-size: 16;" styleClass="product__add-input-label" text="Description" textFill="WHITE" />
-        <TextField fx:id="description" layoutX="388.0" layoutY="290.0" prefHeight="28.0" prefWidth="251.0" styleClass="product__add-input">
+        <Label layoutX="506.0" layoutY="255.0" style="-fx-font-size: 16;" styleClass="product__add-input-label" text="Description" textFill="WHITE" />
+        <TextField fx:id="description" layoutX="506.0" layoutY="289.0" prefHeight="28.0" prefWidth="251.0" styleClass="product__add-input">
 
             <font>
                 <Font size="15.0" />
             </font>
         </TextField>
-        <Button layoutX="457.0" layoutY="489.0" minWidth="100.0" mnemonicParsing="false" onAction="#BeBoosteer" styleClass="exit" text="Booster" textFill="#FFFFFF" />
+        <Button layoutX="582.0" layoutY="506.0" minWidth="100.0" mnemonicParsing="false" onAction="#BeBoosteer" styleClass="exit" text="Booster" textFill="#FFFFFF" />
 
 
-        <Label layoutX="484.0" layoutY="343.0" style="-fx-font-size: 16;" styleClass="product__add-input-label" text="Prix" textFill="WHITE" />
-        <TextField fx:id="prix" layoutX="381.0" layoutY="404.0" prefHeight="28.0" prefWidth="251.0" styleClass="product__add-input">
+        <Label layoutX="506.0" layoutY="365.0" prefHeight="26.0" prefWidth="34.0" style="-fx-font-size: 16;" styleClass="product__add-input-label" text="Prix" textFill="WHITE" />
+        <TextField fx:id="prix" layoutX="506.0" layoutY="410.0" prefHeight="28.0" prefWidth="251.0" styleClass="product__add-input">
             <font>
                 <Font size="15.0" />
             </font>
         </TextField>
+        <ImageView fitHeight="171.0" fitWidth="251.0" layoutX="101.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+            <image>
+                <Image url="@../../../assets/img/play.png" />
+            </image>
+            <effect>
+                <Reflection />
+            </effect>
+        </ImageView>
+        <ImageView fitHeight="171.0" fitWidth="251.0" layoutX="947.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+            <image>
+                <Image url="@../../../assets/img/play.png" />
+            </image>
+            <effect>
+                <Reflection />
+            </effect>
+        </ImageView>
     </children>
+
     <stylesheets>
         <URL value="@../../../assets/style/rouaaStyle.css" />
         <URL value="@../user/design.css" />

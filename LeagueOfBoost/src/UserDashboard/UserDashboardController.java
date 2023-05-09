@@ -16,6 +16,7 @@ import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -224,5 +225,20 @@ public class UserDashboardController implements Initializable {
         Parent fxml = FXMLLoader.load(getClass().getResource("../LeagueOfBoost/gui/ReservationC/CoachListe.fxml"));
         content_area.getChildren().removeAll();
         content_area.getChildren().setAll(fxml);
+    }
+
+    public void Logout(MouseEvent mouseEvent) throws IOException {
+        InscriptionController.userc = null;
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../LeagueOfBoost/gui/User/inscription.fxml"));
+        Stage stage = new Stage();
+
+        Scene scene = new Scene(loader.load());
+        stage.setScene(scene);
+        stage.show();
+
+        // Fermer la scène précédente
+        Node source = (Node) mouseEvent.getSource();
+        Stage previousStage = (Stage) source.getScene().getWindow();
+        previousStage.close();
     }
 }

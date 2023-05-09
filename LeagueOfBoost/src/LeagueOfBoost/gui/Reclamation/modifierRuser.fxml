@@ -1,19 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
+<?import java.net.URL?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" fx:id="txt" onDragDetected="#confirmeruser" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LeagueOfBoost.gui.Reclamation.ModifierRuserController">
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<AnchorPane id="AnchorPane" fx:id="txt" onDragDetected="#confirmeruser" prefHeight="658.0" prefWidth="1345.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LeagueOfBoost.gui.Reclamation.ModifierRuserController">
+   <ImageView fitHeight="797.0" fitWidth="1418.0" layoutX="1.0" layoutY="4.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../../../assets/img/toto.png" />
+      </image>
+   </ImageView>
    <children>
-      <TextField fx:id="txttheme" layoutX="151.0" layoutY="76.0" />
-      <TextField fx:id="txtobj" layoutX="152.0" layoutY="135.0" />
-      <TextField fx:id="txttxt" layoutX="153.0" layoutY="200.0" />
-      <TextField fx:id="id" layoutX="414.0" layoutY="32.0" visible="false" />
-      <Label layoutX="52.0" layoutY="79.0" prefHeight="18.0" prefWidth="46.0" text="Theme" />
-      <Label layoutX="52.0" layoutY="139.0" text="Object" />
-      <Label layoutX="52.0" layoutY="204.0" text="Text" />
-      <Button fx:id="btnConfirmer" layoutX="274.0" layoutY="289.0" mnemonicParsing="false" onAction="#confirmeruser" text="Button" />
+      <TextField fx:id="txttheme" layoutX="365.0" layoutY="163.0" prefHeight="28.0" prefWidth="251.0" styleClass="product__add-input" />
+      <TextField fx:id="txtobj" layoutX="371.0" layoutY="289.0" prefHeight="28.0" prefWidth="251.0" styleClass="product__add-input" />
+      <TextField fx:id="txttxt" layoutX="375.0" layoutY="399.0" prefHeight="28.0" prefWidth="251.0" styleClass="product__add-input" />
+      <TextField fx:id="id" layoutX="414.0" layoutY="32.0" prefHeight="28.0" prefWidth="251.0" styleClass="product__add-input" visible="false" />
+      <Label layoutX="375.0" layoutY="128.0" prefHeight="18.0" prefWidth="46.0" styleClass="product__add-input-label" text="Theme" textFill="WHITE" />
+      <Label layoutX="371.0" layoutY="240.0" styleClass="product__add-input-label" text="Object" textFill="WHITE" />
+      <Label layoutX="375.0" layoutY="357.0" styleClass="product__add-input-label" text="Text" textFill="WHITE" />
+      <Button fx:id="btnConfirmer" layoutX="453.0" layoutY="509.0" mnemonicParsing="false" onAction="#confirmeruser" styleClass="exit" stylesheets="@../user/design.css" text="Modifier" />
    </children>
+   <stylesheets>
+      <URL value="@../../../assets/style/rouaaStyle.css" />
+      <URL value="@../user/design.css" />
+   </stylesheets>
 </AnchorPane>

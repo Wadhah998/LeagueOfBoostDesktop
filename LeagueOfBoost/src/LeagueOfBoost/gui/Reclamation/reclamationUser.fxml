@@ -4,26 +4,33 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" fx:id="main" prefHeight="548.0" prefWidth="770.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LeagueOfBoost.gui.Reclamation.ReclamationUserController">
+<AnchorPane id="AnchorPane" fx:id="main" prefHeight="658.0" prefWidth="1345.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LeagueOfBoost.gui.Reclamation.ReclamationUserController">
    <children>
-      <TableView fx:id="table" layoutX="97.0" layoutY="106.0" prefHeight="276.0" prefWidth="598.0">
+      <ImageView fitHeight="797.0" fitWidth="1471.0" layoutX="14.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../assets/img/toto.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="table" layoutX="97.0" layoutY="106.0" prefHeight="409.0" prefWidth="890.0" styleClass="table-view" stylesheets="@../user/dashboardDesign.css">
         <columns>
           <TableColumn fx:id="idclm" prefWidth="75.0" text="id" />
           <TableColumn fx:id="userclm" prefWidth="75.0" text="user_id" visible="false" />
             <TableColumn fx:id="etatclm" prefWidth="75.0" text="etat" />
-            <TableColumn fx:id="dateclm" prefWidth="75.0" text="date" />
-            <TableColumn fx:id="themeclm" prefWidth="75.0" text="theme" />
-            <TableColumn fx:id="objclm" prefWidth="75.0" text="objet" />
-            <TableColumn fx:id="txtclm" prefWidth="75.0" text="text" />
+            <TableColumn fx:id="dateclm" prefWidth="148.00001525878906" text="date" />
+            <TableColumn fx:id="themeclm" prefWidth="146.4000244140625" text="theme" />
+            <TableColumn fx:id="objclm" prefWidth="176.79998779296875" text="objet" />
+            <TableColumn fx:id="txtclm" prefWidth="271.20001220703125" text="text" />
         </columns>
       </TableView>
-      <TextField fx:id="prixtotal" layoutX="97.0" layoutY="39.0" prefHeight="26.0" prefWidth="238.0" />
+      <TextField fx:id="prixtotal" layoutX="423.0" layoutY="52.0" prefHeight="26.0" prefWidth="238.0" />
       <TextField fx:id="id" layoutX="411.0" layoutY="40.0" visible="false" />
-      <Button fx:id="btnSupprimer" layoutX="283.0" layoutY="448.0" mnemonicParsing="false" onAction="#Supprimer" text="Supprimer" />
-      <Button fx:id="btnAfficher" layoutX="468.0" layoutY="448.0" mnemonicParsing="false" onAction="#Afficher" text="Afficher" />
-      <Button fx:id="btnmodifier" layoutX="129.0" layoutY="448.0" mnemonicParsing="false" onAction="#ModifierRuser" text="modifier" />
-      <Button fx:id="AjouterR" layoutX="592.0" layoutY="448.0" mnemonicParsing="false" onAction="#AjouterR" text="Ajouter Reclamation" />
+      <Button fx:id="btnSupprimer" layoutX="231.0" layoutY="564.0" mnemonicParsing="false" onAction="#Supprimer" styleClass="exit" stylesheets="@../user/design.css" text="Supprimer" />
+      <Button fx:id="btnAfficher" layoutX="411.0" layoutY="564.0" mnemonicParsing="false" onAction="#Afficher" styleClass="exit" stylesheets="@../user/design.css" text="Afficher" />
+      <Button fx:id="btnmodifier" layoutX="97.0" layoutY="564.0" mnemonicParsing="false" onAction="#ModifierRuser" styleClass="exit" stylesheets="@../user/design.css" text="modifier" />
+      <Button fx:id="AjouterR" layoutX="863.0" layoutY="564.0" mnemonicParsing="false" onAction="#AjouterR" styleClass="exit" stylesheets="@../user/design.css" text="Ajouter Reclamation" />
    </children>
 </AnchorPane>

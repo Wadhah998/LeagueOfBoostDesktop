@@ -4,6 +4,7 @@
  */
 package LeagueOfBoost.gui.user;
 
+import java.awt.event.MouseEvent;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.net.MalformedURLException;
@@ -114,17 +115,19 @@ public class InscriptionController implements Initializable {
     public void login(javafx.event.ActionEvent actionEven) throws IOException {
 
         {
-            User u = ps.findUserByLogin(username.getText(), password.getText());
+            String passwordText = password.getText();
+            String hashedPassword = PaswordHasher.hashPassword(passwordText);
+            User u = ps.findUserByLogin(username.getText(), passwordText);
             userc = u;
-            if (username.getText().equals("admin") && password.getText().equals("123456")) {
+            if (u != null) {
+            if (u.getRoles().equals("[\"ROLE_ADMIN\"]")) {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/AdminDashboard/AdminDashboard.fxml"));
                 Stage stage = new Stage();
 
                 stage.setScene(new Scene(loader.load()));
                 stage.show();
                 Stage currentStage = (Stage) ((Button) actionEven.getSource()).getScene().getWindow();
-                currentStage.hide();
-            } else if (u != null) {
+                currentStage.hide(); }
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/UserDashboard/UserDashboard.fxml"));
                 Stage stage = new Stage();
 
@@ -134,6 +137,8 @@ public class InscriptionController implements Initializable {
                 currentStage.hide();
 
             } else {
+                System.out.println("test");
+
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Travel Me :: Error Message");
                 alert.setHeaderText(null);
@@ -151,12 +156,11 @@ public class InscriptionController implements Initializable {
 
         stage.setScene(new Scene(loader.load()));
         stage.show();
-        Stage currentStage = (Stage) ((Button) actionEvent.getSource()).getScene().getWindow();
-        currentStage.hide();
-
-
+        Node source = (Node) actionEvent.getSource();
+        Stage currentStage = (Stage) source.getScene().getWindow();
+        currentStage.close();
     }
-    public void loginGoogle(ActionEvent event) {
+    public void loginGoogle(javafx.scene.input.MouseEvent mouseEvent) {
         // Set up Google API credentials
         String clientId = "282455751245-33mj5tf4od6mcii4eo0u85ieu3etic3d.apps.googleusercontent.com";
         String clientSecret = "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";

@@ -23,7 +23,7 @@
                      <children>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../assets/img/trash.png" />
+                              <Image url="@/assets/img/trash.png" />
                            </image>
                         </ImageView>
                      </children>
@@ -32,7 +32,7 @@
                      <children>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../assets/img/edit.png" />
+                              <Image url="@/assets/img/edit.png" />
                            </image>
                         </ImageView>
                      </children>

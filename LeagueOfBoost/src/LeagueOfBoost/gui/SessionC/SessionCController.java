@@ -2,6 +2,7 @@ package LeagueOfBoost.gui.SessionC;
 
 import LeagueOfBoost.entities.ReservationC;
 import LeagueOfBoost.entities.SessionC;
+import LeagueOfBoost.entities.User;
 import LeagueOfBoost.gui.ReservationC.ReservationCController;
 import static LeagueOfBoost.gui.ReservationC.ReservationCController.rb;
 import LeagueOfBoost.services.ServiceSessionC;
@@ -177,5 +178,11 @@ private void handleButtonAction (ActionEvent event)
              Logger.getLogger(SessionCController.class.getName()).log(Level.SEVERE, null, ex);
          }
     }
-    
+
+    public void suprimer(ActionEvent event) {
+        SessionC u = SesList.getSelectionModel().getSelectedItem();
+        sg.supprimerSessionCoaching(u.getId());
+
+
+    }
 }

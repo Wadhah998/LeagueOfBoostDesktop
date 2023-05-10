@@ -19,7 +19,7 @@
                <children>
                   <ImageView fx:id="img" fitHeight="181.0" fitWidth="324.0" pickOnBounds="true" preserveRatio="true" scaleX="1.3" scaleY="1.733" translateX="4.0" translateY="12.0">
                      <image>
-                        <Image url="@../../assets/img/lol.png" />
+                        <Image url="@/assets/img/lol.png" />
                      </image>
                   </ImageView>
                </children>
@@ -41,7 +41,7 @@
                                        <children>
                                           <ImageView fx:id="favBtn" fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../assets/img/addFav.png" />
+                                                <Image url="@/assets/img/addFav.png" />
                                              </image>
                                           </ImageView>
                                        </children>
@@ -99,7 +99,7 @@
                            <children>
                               <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../assets/img/facebook-app-symbol.png" />
+                                    <Image url="@/assets/img/facebook-app-symbol.png" />
                                  </image>
                               </ImageView>
                            </children>

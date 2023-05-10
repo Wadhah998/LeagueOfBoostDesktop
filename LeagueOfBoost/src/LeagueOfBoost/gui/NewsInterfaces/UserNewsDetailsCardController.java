@@ -101,10 +101,10 @@ public class UserNewsDetailsCardController implements Initializable {
     shortDesc.setText(news.getShort_description());
     description.setText(news.getDescription());
 
-    Image image = new Image(
-        getClass().getResource("../../../assets/actualiteUploads/" +
-            news.getImg()).toExternalForm());
-    img.setImage(image);
+    //Image image = new Image(
+      //  getClass().getResource("/assets/actualiteUploads/" +
+            //news.getImg()).toExternalForm());
+    //img.setImage(image);
 
     total_views.setText("" + news.getNb_vues());
 

@@ -21,7 +21,8 @@
         </columns>
       </TableView>
       <Button fx:id="btnmod" layoutX="308.0" layoutY="533.0" minHeight="40.0" minWidth="100.0" onAction="#modifier" styleClass="exit" stylesheets="@design.css" text="Modifier" />
-      <TextField fx:id="txtrech" layoutX="354.0" layoutY="53.0" prefHeight="27.0" prefWidth="334.0" promptText="Recherche..." styleClass="textfield-design" />
+       <Button layoutX="753.0" layoutY="533.0" minHeight="40.0" minWidth="100.0" onAction="#tosesion" styleClass="exit" stylesheets="@design.css" text="Session Boosting" />
+       <TextField fx:id="txtrech" layoutX="354.0" layoutY="53.0" prefHeight="27.0" prefWidth="334.0" promptText="Recherche..." styleClass="textfield-design" />
    </children>
    <stylesheets>
       <URL value="@../../../assets/style/rouaaStyle.css" />

@@ -141,9 +141,8 @@ public class AdminAddNewsCardController implements Initializable {
             descriptionInput.setText(n.getDescription());
             shortDescInput.setText(n.getShort_description());
 
-            Image image = new Image(getClass().getResource("/assets/actualiteUploads/" +
-                    n.getImg()).toExternalForm());
-            imageInput.setImage(image);
+           // Image image = new Image(getClass().getResource("/assets/actualiteUploads/" + n.getImg()).toExternalForm());
+            //imageInput.setImage(image);
             imageName = n.getImg();
 
             titleTest = 1;
@@ -252,7 +251,7 @@ public class AdminAddNewsCardController implements Initializable {
             try {
                 // Load the credentials file
                 GoogleCredentials credentials = GoogleCredentials
-                        .fromStream(new FileInputStream("src/LeagueOfBoost/utils/google_cloud_credentials.json"));
+                        .fromStream(new FileInputStream("/src/LeagueOfBoost/utils/google_cloud_credentials.json"));
 
                 // Build the ImageAnnotatorSettings object with the credentials provider
                 ImageAnnotatorSettings settings = ImageAnnotatorSettings.newBuilder()

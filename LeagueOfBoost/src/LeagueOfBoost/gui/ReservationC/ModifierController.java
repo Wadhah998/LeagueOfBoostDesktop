@@ -53,9 +53,9 @@ public class ModifierController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         ReservationC r = ReservationCController.rb;
-        txtnbr.setText(Integer.toString(r.getNbr_heures()));
-        txtprx.setText(Integer.toString(r.getPrix()));
-        txtlng.setText(r.getLangue());
+//        txtnbr.setText(Integer.toString(r.getNbr_heures()));
+  //      txtprx.setText(Integer.toString(r.getPrix()));
+    //    txtlng.setText(r.getLangue());
 
 
        

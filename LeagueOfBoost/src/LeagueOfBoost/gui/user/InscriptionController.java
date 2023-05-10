@@ -128,13 +128,14 @@ public class InscriptionController implements Initializable {
                 stage.show();
                 Stage currentStage = (Stage) ((Button) actionEven.getSource()).getScene().getWindow();
                 currentStage.hide(); }
+            else{
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/UserDashboard/UserDashboard.fxml"));
                 Stage stage = new Stage();
 
                 stage.setScene(new Scene(loader.load()));
                 stage.show();
                 Stage currentStage = (Stage) ((Button) actionEven.getSource()).getScene().getWindow();
-                currentStage.hide();
+                currentStage.hide();}
 
             } else {
                 System.out.println("test");

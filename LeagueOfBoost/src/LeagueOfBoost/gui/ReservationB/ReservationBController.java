@@ -288,7 +288,13 @@ private void recherche() {
             Logger.getLogger(ReservationCController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    public void tosesion(ActionEvent event) throws IOException {
+        Parent fxml = FXMLLoader.load(getClass().getResource("/LeagueOfBoost/gui/sessionb/as.fxml"));
+        main.getChildren().removeAll();
+        main.getChildren().setAll(fxml);
     }
+}
 
 
     

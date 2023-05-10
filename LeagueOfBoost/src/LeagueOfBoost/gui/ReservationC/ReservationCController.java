@@ -187,5 +187,11 @@ private void handleButtonAction (ActionEvent event)
         }
         ResList.setItems(filteredList);
     }
-    
+
+    public void tosesion(ActionEvent event) throws IOException {
+        Parent fxml = FXMLLoader.load(getClass().getResource("/LeagueOfBoost/gui/SessionC/SessionCUser.fxml"));
+        main.getChildren().removeAll();
+        main.getChildren().setAll(fxml);
+
+    }
 }

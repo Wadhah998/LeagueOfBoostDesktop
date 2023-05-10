@@ -10,12 +10,12 @@
 
 <AnchorPane id="AnchorPane" fx:id="main" onMouseClicked="#AjouterButton" prefHeight="678.0" prefWidth="974.0" style="-fx-background-color: #1e1e1e;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LeagueOfBoost.gui.ReservationC.ReservationCController">
    <children>
-      <Button layoutX="685.0" layoutY="533.0" minHeight="40.0" minWidth="100.0"  styleClass="exit" stylesheets="@design.css"  onAction="#reserv" text="Add New Reservation">
+      <Button layoutX="685.0" layoutY="533.0" minHeight="40.0" minWidth="100.0" onAction="#reserv" styleClass="exit" stylesheets="@design.css" text="Add New Reservation">
          <stylesheets>
             <URL value="@../../../assets/style/rouaaStyle.css" />
             <URL value="@../user/design.css" />
          </stylesheets></Button>
-      <Button layoutX="264.0" layoutY="533.0" minHeight="40.0" minWidth="100.0"  styleClass="exit" stylesheets="@design.css" onAction="#modif" text="Modifier Reservation" />
+      <Button layoutX="264.0" layoutY="533.0" minHeight="40.0" minWidth="100.0" onAction="#modif" styleClass="exit" stylesheets="@design.css" text="Modifier Reservation" />
       <TableView fx:id="ResList" layoutX="76.0" layoutY="102.0" prefHeight="409.0" prefWidth="890.0" styleClass="table-view">
         <columns>
           <TableColumn fx:id="coach_id" prefWidth="146.0" text="Coach Id" />
@@ -27,6 +27,7 @@
         </columns>
       </TableView>
       <TextField fx:id="txtrech" layoutX="354.0" layoutY="53.0" prefHeight="27.0" prefWidth="334.0" promptText="Recherche..." styleClass="textfield-design" />
+      <Button layoutX="487.0" layoutY="573.0" minHeight="40.0" minWidth="100.0" onAction="#tosesion" styleClass="exit" stylesheets="@design.css" text="Session Coaching" />
    </children>
    <stylesheets>
       <URL value="@../../../assets/style/rouaaStyle.css" />

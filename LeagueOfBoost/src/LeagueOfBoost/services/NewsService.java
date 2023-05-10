@@ -188,11 +188,12 @@ public class NewsService implements INewsService {
 
   public void ajouterComment(Comment cmt) {
     try {
-      String req = "INSERT INTO `commentaire`(`comment`, `user_id`, `news_id` ) VALUES (?,?,?)";
+      String req = "INSERT INTO `commentaire`(`comment`, `user_id`, `news_id`,`comments_id` ) VALUES (?,?,?,?)";
       PreparedStatement ps = conx.prepareStatement(req);
       ps.setString(1, cmt.getComment());
       ps.setInt(2, InscriptionController.userc.getId());
       ps.setInt(3, cmt.getNews_id());
+      ps.setInt(4, cmt.getNews_id());
       ps.executeUpdate();
       System.out.println("Comment added successfully");
       ps.close();
